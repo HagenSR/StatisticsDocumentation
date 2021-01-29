@@ -13,6 +13,7 @@ Welcome to Traveling Trailsmen's Documentation!
    Formulas
    Distributions
    OtherDefinitions
+   NormalTableTextBook
     
 
 
