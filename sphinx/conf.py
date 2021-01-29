@@ -1,4 +1,7 @@
 import sphinx_rtd_theme
+import recommonmark
+from recommonmark.parser import CommonMarkParser
+from recommonmark.transform import AutoStructify
 
 # Configuration file for the Sphinx documentation builder.
 #
@@ -58,3 +61,17 @@ html_theme = 'sphinx_rtd_theme'
 html_static_path = ['_static']
 
 master_doc = 'index'
+
+# At the bottom of conf.py
+github_doc_root = "https://royale.ndacm.org/DisasterousGameRules/"
+def setup(app):
+    app.add_config_value('recommonmark_config', {
+            'url_resolver': lambda url: github_doc_root + url,
+            'enable_auto_toc_tree': True,
+            'enable_eval_rst': True,
+            'enable_auto_doc_ref': False,
+            }, True)
+    app.add_transform(AutoStructify)
+
+    app.add_stylesheet('accordion.css')
+    app.add_javascript('accordion.js')
