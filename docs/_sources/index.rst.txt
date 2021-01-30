@@ -14,6 +14,7 @@ Welcome to Statistics Documentation!
    Distributions
    OtherDefinitions
    NormalTableTextBook
+   TTableTextBook
     
 
 

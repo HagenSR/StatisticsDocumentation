@@ -49,10 +49,7 @@ much in the same way :math:`\mu = \bar{X}` . In this situation we use the T dist
 
 T(X; µ, s) = :math:`T = \frac{\bar{X} - \mu}{\frac{S}{\sqrt{N}}}` where s is the estimate of :math:`sigma` .
 
-T can also be a function of the Chi square and the Z table?  
-
-.. math:: 
-    T = \\frac{Z}{\\sqrt{\\frac{V}{(n-1)}}}
+T can also be a function of the Chi square and the Z table? :math:`T = \frac{Z}{\sqrt{\frac{V}{(n-1)}}}`
 
 Let Z be a standard normal random variable and V a chi-squared random variable with v degrees of freedom. If Z and V are independent, then the distribution of the random variable T, where
 
@@ -80,10 +77,11 @@ Example:
 A chemical engineer claims that the population mean yield of a certain batch process is 500 grams per milliliter of raw material. To check this claim he samples 25 batches.
 What conclusion should he draw from a sample that has mean :math:`\bar{X}` = 518 grams per milliliter and sample standard deviation of s = 40 grams?
 
-.. math::
-    \tau = \frac{\bar{X} - \mu}{\frac{s}{\sqrt{n}}} = \frac{518 - 500}{\frac{40}{5}}
-    V = 24 degrees of freedom
-    \tau_{2.064}
+:math:`\tau = \frac{\bar{X} - \mu}{\frac{s}{\sqrt{n}}} = \frac{518 - 500}{\frac{40}{5}}`
+
+V = 24 degrees of freedom
+
+:math:`\tau_{2.064}`
 
 Since 2.25 > 2.064, we do fall above :math:`\tau_{0.025}` and the claim about :math:`\mu` is most likely incorrect.
 
@@ -92,8 +90,7 @@ F distribution
 ==============
 The F statistic is defined to be the ratio of 2 independent chi-square random variables, each divided by its degrees of freedom.
 
-.. math::
-    F = \frac{\frac{\upailon}{\nu_{1}}}{\frac{\upailon}{\nu_{2}
+:math:`F = \frac{U / \nu_{1}}{V / \nu_{2}}`
 
 Where U and V are independent chi-square random variables with :math:`\nu_{1}` and :math:`\nu_{2}` degrees of freedom, respectively. The order the degrees of freedom are listed is important. 
 :math:`\nu_{1}` is the numerator degrees of freedom and :math:`\nu_{2}` is the denominator degrees of freedom.
