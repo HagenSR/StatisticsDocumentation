@@ -1,0 +1,330 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8" />
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  
+  <title>Estimating &mdash; Statistics Documentation 9 documentation</title>
+  
+
+  
+  <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="_static/accordion.css" type="text/css" />
+
+  
+  
+
+  
+  
+
+  
+
+  
+  <!--[if lt IE 9]>
+    <script src="_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
+        <script src="_static/jquery.js"></script>
+        <script src="_static/underscore.js"></script>
+        <script src="_static/doctools.js"></script>
+        <script src="_static/accordion.js"></script>
+        <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    
+    <script type="text/javascript" src="_static/js/theme.js"></script>
+
+    
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="Other Definitions" href="OtherDefinitions.html" />
+    <link rel="prev" title="Distributions" href="Distributions.html" />
+    <link href="_static/style.css" rel="stylesheet" type="text/css">
+
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="index.html" class="icon icon-home"> Statistics Documentation
+          
+
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                Version 1.0
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <p class="caption"><span class="caption-text">Contents:</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="Formulas.html">Formulas</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Distributions.html">Distributions</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Estimating</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#estimating-the-mean">Estimating the Mean</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#two-types-of-inferences">Two Types of inferences</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#estimation">Estimation:</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#hypothesis-testing">Hypothesis Testing:</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#point-estimators">Point Estimators</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#interval-estimation">Interval Estimation</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#confidence-level">Confidence Level</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#error">Error</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#one-sided-confidence-bounds">One sided confidence bounds</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="OtherDefinitions.html">Other Definitions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="NormalTableTextBook.html">Normal Table from the Textbook</a></li>
+<li class="toctree-l1"><a class="reference internal" href="TTableTextBook.html">T Table from the Textbook</a></li>
+</ul>
+
+            
+          
+        </div>
+        
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">Statistics Documentation</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="index.html" class="icon icon-home"></a> &raquo;</li>
+        
+      <li>Estimating</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+          
+            <a href="_sources/Estimation.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="estimating">
+<h1>Estimating<a class="headerlink" href="#estimating" title="Permalink to this headline">¶</a></h1>
+<p>Below are some formulas listed in the cheat sheets from probabilty and stats along with a brief description</p>
+<div class="section" id="estimating-the-mean">
+<h2>Estimating the Mean<a class="headerlink" href="#estimating-the-mean" title="Permalink to this headline">¶</a></h2>
+<p>Populations are described by their probability distributions and parameters. For quantitative populations, the mean and shape are described by 𝜇 and 𝜎.
+For binomial populations, the mean and shape are determined by p. If the values of parameters are unknown, we make inferences about them using sample information.</p>
+</div>
+<div class="section" id="two-types-of-inferences">
+<h2>Two Types of inferences<a class="headerlink" href="#two-types-of-inferences" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="estimation">
+<h3>Estimation:<a class="headerlink" href="#estimation" title="Permalink to this headline">¶</a></h3>
+<p>Estimating or predicting the value of the parameter
+“What are the most likely values of 𝜇 or p?”
+Example:
+A consumer wants to estimate the average price of similar homes in their city before putting their home on the market.
+Estimation: Estimate 𝜇, the average home price</p>
+</div>
+<div class="section" id="hypothesis-testing">
+<h3>Hypothesis Testing:<a class="headerlink" href="#hypothesis-testing" title="Permalink to this headline">¶</a></h3>
+<p>Deciding about the value of a parameter based on some preconceived idea.
+“Did the sample come from a population with 𝜇 = 5?”
+Example:
+A manufacturer wants to know if a new type of steel is more resistant to high temperatures than an old type was.
+Hypothesis test: Is the new average resistance, 𝜇_𝑁 equal to the old average resistance, 𝜇_𝑂?</p>
+<p>An estimator is a rule, usually a formula, that tells you how to calculate the estimate based on the sample.</p>
+<p>Interval estimate: two numbers are calculated to create an interval within which the parameter is expected to lie.</p>
+</div>
+</div>
+<div class="section" id="point-estimators">
+<h2>Point Estimators<a class="headerlink" href="#point-estimators" title="Permalink to this headline">¶</a></h2>
+<p>Point estimate: a single number is calculated to estimate the parameter.</p>
+<p>Ex. <span class="math notranslate nohighlight">\(\bar{X}\)</span> is a point estimate for 𝜇</p>
+<p>Since an estimator is calculated from sample values, it varies from sample to sample according to its sampling distribution.
+An estimator is unbiased if the mean of its sampling distribution equals the parameter of interest.</p>
+<p>Ex. <span class="math notranslate nohighlight">\(E(\bar{X})\)</span> = 𝜇</p>
+<p>Of all the unbiased estimators, we prefer the estimator whose sampling distribution has the smallest spread or variability.
+The unbiased estimator with the smallest variance is called the most efficient estimator of the parameter of interest.</p>
+</div>
+<div class="section" id="interval-estimation">
+<h2>Interval Estimation<a class="headerlink" href="#interval-estimation" title="Permalink to this headline">¶</a></h2>
+<p>Even the most efficient unbiased estimator is unlikely to estimate the pppulation parameter exactly.
+There are many situations in which it is preferable to determine an interval where we would expect to find the parameter.</p>
+<p>For a generalized population parameter θ an interval estimate is of the form:</p>
+<div class="math notranslate nohighlight">
+\[\theta_{L} &lt; \theta &lt; \theta_{U}\]</div>
+<p><span class="math notranslate nohighlight">\(\theta_{L}\)</span> represents the lower bound
+<span class="math notranslate nohighlight">\(\theta_{U}\)</span> represents the upper bound</p>
+<p>These bounds will depend on the point estimate, 𝜃, and the sampling distribution. The interval estimate is found such that: <span class="math notranslate nohighlight">\(P(𝜃_{L}&lt;𝜃&lt;𝜃_{𝑈}) = 1 - 𝛼\)</span>
+1 - 𝛼 is called the confidence coefficient or degree of confidence. 𝛼 is called the level of significance <span class="math notranslate nohighlight">\(\theta_{L} , \theta_{U}\)</span> are called the confidence limits</p>
+<p>Example:
+If 𝛼 = 0.05 we would have a (1 – 0.05) = 95% confidence interval.
+If 𝛼 = 0.01 we would have a 99% confidence interval.
+The wider the interval is, the more confident we can be that the interval contains the unknown parameter.</p>
+<p>This confidence interval can be found by:
+<span class="math notranslate nohighlight">\(P(\bar{X} - Z_{\alpha/2}\frac{\sigma}{\sqrt{n}} &lt; \mu &lt;  \bar{X} + Z_{\alpha/2}\frac{\sigma}{\sqrt{n}}) = 1 – α\)</span> when sigma is known and N &gt; 30</p>
+<p>Example:
+The average zinc concentration recovered from a sample of zinc measurements in 36 different locations is found to be 2.6 grams per milliliter. Find the 99% confidence interval for
+the zinc concentration in the river. Assume that the population standard deviation is 0.3 gram per milliliter.</p>
+<div class="math notranslate nohighlight">
+\[\bar{X} \pm Z_{\alpha/2}\frac{\sigma}{\sqrt{n}}
+2.6 \pm 2.575(\frac{0.3}{\sqrt{36}})
+(2.47, 2.73)\]</div>
+<p>or 2.47 &lt; 𝜇 &lt; 2.73. So In the repeated sampling, we should expect 99% of the time that the average zinc concentration  is between 2.47 and 2.73 gr./mill.</p>
+<div class="section" id="confidence-level">
+<h3>Confidence Level<a class="headerlink" href="#confidence-level" title="Permalink to this headline">¶</a></h3>
+<p>The more confident we want to be, the larger the margin of error must be. Every confidence interval is a balance between certainty and precision
+When choosing confidence level we want to be, in most cases, both sufficiently certain and sufficiently precise to make useful statements</p>
+</div>
+<div class="section" id="error">
+<h3>Error<a class="headerlink" href="#error" title="Permalink to this headline">¶</a></h3>
+<p>Confidence intervals provide an estimate of the accuracy of our point estimate. Most of the time <span class="math notranslate nohighlight">\(\bar{X}\)</span> will not exactly equal 𝜇 and the difference between our point estimate and the actual parameter value will be the error.
+If <span class="math notranslate nohighlight">\(\bar{X}\)</span> is used as an estimate of 𝜇, we can be 100(1 -𝛼)% confident that the error will not exceed <span class="math notranslate nohighlight">\(Z_{\alpha/2}\frac{\sigma}{\sqrt{n}}\)</span>.</p>
+<p>Often we are concerned with how large a sample is necessary to ensure that the error in estimating 𝜇 will be less than a specified amount, e.
+If 𝑋 ̅ is used as an estimate of 𝜇, we can be 100(1 -𝛼)% confident that the error will not exceed e when the sample size is:
+<span class="math notranslate nohighlight">\(n = (\frac{Z_{\alpha/2}*\sigma}{e})^2\)</span> . N must be a whole number, so round up.</p>
+<p>Example:
+How large a sample is required if we want to be 95% confident that our estimate of 𝜇 in Example 1 is off by less than 0.05?
+<span class="math notranslate nohighlight">\(n = (\frac{Z_{\alpha/2}*\sigma}{e})^2 = (\frac{1.96 * 0.3}{0.05})^2\)</span> = 138.3 = 139</p>
+</div>
+<div class="section" id="one-sided-confidence-bounds">
+<h3>One sided confidence bounds<a class="headerlink" href="#one-sided-confidence-bounds" title="Permalink to this headline">¶</a></h3>
+<p>Confidence intervals are by their nature two-sided since they produce upper and lower bounds for the parameter. One-sided bounds can be constructed simply by using a value of z that puts a rather than a/2 in the tail of the z distribution.</p>
+<div class="math notranslate nohighlight">
+\[ \begin{align}\begin{aligned}P(\mu &gt; \bar{X} - Z_{\alpha}\frac{\sigma}{\sqrt{n}} = 1 -\alpha)\\P(\mu &lt; \bar{X} + Z_{\alpha}\frac{\sigma}{\sqrt{n}} = 1 -\alpha)\end{aligned}\end{align} \]</div>
+<p>Example:</p>
+<p>In a psychological testing experiment, 25 subjects are selected randomly and their reaction time, in seconds to a particular stimulus is measured. Assume population variance is 4 seconds2 and that the distribution is approximately normal.
+In our sample the average reaction time was 6.2 seconds. Give a 95% upper bound for the mean reaction time.</p>
+<p><span class="math notranslate nohighlight">\(\bar{X} + z_{\alpha}\frac{\sigma}{\sqrt{n}}\)</span></p>
+<p><span class="math notranslate nohighlight">\(6.2 + 1.645\frac{2}{\sqrt{25}}\)</span></p>
+<p>6.2 + 0.658 = 6.858</p>
+<p>We are 95% confident that the mean reaction time is less than 6.858 seconds</p>
+</div>
+</div>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+        <a href="OtherDefinitions.html" class="btn btn-neutral float-right" title="Other Definitions" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+        <a href="Distributions.html" class="btn btn-neutral float-left" title="Distributions" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &#169; Copyright 2021-2022, NDSU ACM.
+
+    </p>
+  </div>
+    
+    
+    
+    Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    
+    provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>

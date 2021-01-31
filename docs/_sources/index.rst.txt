@@ -12,6 +12,7 @@ Welcome to Statistics Documentation!
 
    Formulas
    Distributions
+   Estimation
    OtherDefinitions
    NormalTableTextBook
    TTableTextBook

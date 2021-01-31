@@ -75,10 +75,3 @@ The Range is simply :math:`X_{max} - X_{min}`
 
 
 
-Distributions
-=================
-
-Normal Distribution
--------------------
-
-
