@@ -132,3 +132,173 @@ In our sample the average reaction time was 6.2 seconds. Give a 95% upper bound 
 We are 95% confident that the mean reaction time is less than 6.858 seconds
 
 
+Paired Comparison
+-----------------
+
+Comparing observations from two groups. This Requires
+-Conditions of the two populations are not assigned randomly to experimental units​
+-Each homogeneous experimental unit receives both population conditions​
+-Our observations of interest are the differences between the homogeneous units
+
+The ith difference is: :math:`D_{i} = X_{1i} - X_{2i}`
+
+If we are sampling from normal populations, these differences will be normally distributed with a mean of :math:`\mu_{D} = \mu_{1} - \mu_{2}`
+
+If :math:`\bar{d} and s_{d}` are the mean and standard deviation of the normally distributed differences of n random pairs of the normally
+distributed of n random pairs of measurements, a 100(1-:math:`\alpha` )% confidence interval for :math:`\mu_{D} = \mu{1} - \mu_{2}` is
+
+.. math::
+    \bar{d} \pm t_{\alpha/2}\frac{S_{d}}{\sqrt{n}}
+    
+Where V = n-1 degrees of freedom
+
+Paired observations
+-------------------
+
+Once you have designed the experiment by pairing, you MUST analyze it as a paired experiment. If the experiment is not designed as a paired 
+experiment in advance, do not use this procedure.
+
+Example:
+Two types of tires, A and B, are randomly assigned to each of the rear wheels of five cars. Compare the average wear for types A and B using a 95% confidence interval.
+
+===== ======= =======
+cars  Type A  Type B
+===== ======= =======
+ 1      10.6    10.2
+ 2      9.8     9.4
+ 3      12.3    11.8
+ 4      9.7     9.1
+ 5      8.8     8.3
+===== ======= =======
+
+This experiment includes paired observations because the measurements are taken on the same car.​
+We must calculate the differences:
+
+===== ======= ======= ========
+cars  Type A  Type B   Diff
+===== ======= ======= ========
+ 1      10.6    10.2    0.4
+ 2      9.8     9.4     0.4
+ 3      12.3    11.8    0.5
+ 4      9.7     9.1     0.6
+ 5      8.8     8.3     0.5
+===== ======= ======= ========
+
+:math:`\bar{d}` = mean of the differences so (0.4 + 0.4 +0.5 + 0.6 + 0.5)/5
+:math:`S_{d}` = standard deviation of the differences
+
+= :math:`\sqrt{\frac{1}{n-1}*\sum_{i=1}^{n}(D_{i}-\bar{d})^2}`
+
+= :math:`\sqrt{\frac{1}{4}*((0.4 - 0.48)^2 + (0.4 - 0.48)^2) + (0.5 - 0.48)^2 + (0.6 - 0.48)^2 + (0.5 - 0.48)^2}`
+
+= 0.08367
+
+
+Example 1:
+n = 5
+95% confidence Interval gives :math:`\alpha` = 0.05
+
+:math:`t_{\alpha/2} = t_{0.025}` = 2.776 (V = 4)
+
+:math:`\bar{d} \pm t_{\alpha/2} * \frac{S_{d}}{\sqrt{n}}`
+
+:math:`0.48 \pm 2.776 * \frac{0.08367}{\sqrt{5}}`
+
+:math:`0.48 \pm 0.1039`
+
+(0.3761, 0.5839)
+0.3761 < :math:`\mu_{D}` < 0.5839
+
+We are 95% confident that Type A tires have a higher average wear (?)
+or the mean difference between type A tires and Type B tires is between 0.3761 < :math:`\mu_{D}` < 0.5839
+
+Estimating Proportions
+======================
+
+A random sample of size n is selected from a binomial distribution. We are interested in the number of "Successes"
+The population has parameter p which equals probability equals probability of success. We estimate p by taking the
+number of Successes, x, divided by the total number in the sample, n.
+:math:`\hat{p} = \frac{x}{n}`
+:math:`\hat{p}` is an unbiassed estimator for p:
+so if we are sampling from a binomial population, E(X) = np then the mean is
+
+    :math:`E(\hat{p}) = p`
+
+The variance of :math:`\hat{p}` is 
+
+    :math:`\frac{pq}{n}`
+
+Then if n is large and p is not too close to zero or one, the sampling distribution of :math:`\hat{p}` will be 
+approximately normal and we have the property that
+
+.. math::
+    Z = \frac{\hat{p} - p}{\sqrt{\frac{pq}{n}}}
+
+which has a standard normal distribution.
+
+Confidence interval for a Proportions
+-------------------------------------
+
+The confidence interval for the probability of success, p is 
+
+.. math::
+    P(\hat{p}-Z_{\alpha/2}\sqrt{(\hat{p}\hat{q})/{n}} < p < \hat{p}+Z_{\alpha/2}\sqrt{(\hat{p}\hat{q})/{n}}) = 1 - \alpha
+
+If :math:`\hat{p}` is the proportion of successes in a random sample of size n and :math:`\hat{q}` = 1- :math:`\hat{p}` ,
+an approximate 100(1-\alpha)% confidence interval for the binomial paramter p is:
+
+.. math::
+    \hat{p} \pm z_{\alpha/2}\sqrt{\frac{\hat{p}\hat{q}}{n}}
+
+Example:
+In a random sample of n = 500 families owning TV’s in the city of Hamilton, Canada, it is found that x = 340 subscribe to HBO. 
+Find a 95% confidence interval for the actual proportion of families with TVs in this city that subscribe to HBO.
+
+.. math::
+    n = 500, x = 340
+
+    \hat{p} = \frac{x}{n} = \frac{340}{500} = 0.68
+
+    \hat{q} = 1 - \hat{p} = 0.32
+
+    \hat{p} \pm z_{\alpha/2}\sqrt{\frac{\hat{p}\hat{q}}{n}}
+
+    0.68  \pm 1.96\sqrt{\frac{0.68(0.32)}{500}}
+
+    0.68 \pm 0.041
+
+    0.639 < p < 0.721
+
+
+We are 95% confident that the real proportion of families that subscribe to HBO is between 0.639 < p < 0.721
+
+Difference between two binomial Proportions
+-------------------------------------------
+
+Consider a situations where we wish to estimate the difference between two proportions, p1 and p2.​
+
+Example: p1 is the proportion of smokers who have lung cancer and p2 is the proportion of non-smokers with lung cancer, 
+and we wish to estimate the difference between these two.
+
+Using the samping distribution of a single proportion, we can determine the sampling distribution of the difference of 
+propotions.
+
+    :math:`E(\hat{p_{1}} - \hat{p_{2}}) = p_{1} - p_{2}`
+
+    :math:`Var(\hat{p}_{1} - \hat{p}_{2}) = \frac{p_{1}q_{1}}{n_{1}} + \frac{p_{2}q_{2}}{n_{2}}`
+
+Since :math:`\hat{p}_1` and :math:`\hat{p}_2` both have approximately normal distributions, their difference will 
+also be approximately normal. We can find a confidence interval for the difference of the proportions using the 
+standard normal distribution
+
+.. math::
+    Z = \frac{(\hat{p_{1}} - \hat{p_{2}}) - (p_{1} - p_{2})}{\sqrt{\frac{p_{1}q_{1}}{n_{1}}+\frac{p_{2}q_{2}}{n_{2}}}}
+
+Confidence Interval for the difference between propotions
+---------------------------------------------------------
+
+If :math:`\hat{p}_1` and :math:`\hat{p}_2` are proportions of successes in random samples of sizes :math:`n_1` and :math:`n_2` 
+an approximate :math:`100(1-\alpha)%` confidence interval for the difference of two binomial parameters ( :math:`\hat{p}_1` - :math:`\hat{p}_2` ) is
+
+.. math::
+    (\hat{p}_1 - \hat{p}_2) \pm Z_{\alpha/2} \sqrt{\frac{p_{1}q_{1}}{n_{1}}+\frac{p_{2}q_{2}}{n_{2}}}
