@@ -23,7 +23,10 @@ Sample Mean
 -----------
 The most common statistics used to measure the center of a sample is the mean. Let :math:`X_{1}, X_{2}...X_{n}` represent n random variables from a sample.
 The Sample Mean is defined by :math:`\bar{Z}=\frac{1}{\eta}\sum_{i=1}^n{X_{i}}`
-Example: Suppose we take a sample of 7 students and record the number of classes they took last year. The sample is: 2, 4, 9, 8, 6, 5, 3. Then the sample mean
+
+**Example**: 
+
+Suppose we take a sample of 7 students and record the number of classes they took last year. The sample is: 2, 4, 9, 8, 6, 5, 3. Then the sample mean
 would be :math:`\bar{x}=\frac{1}{7}` (2+3+9+8+6+5+3) = 5.29
 
 Median
@@ -57,7 +60,8 @@ Sample Variance
 
 :math:`S^2=\frac{1}{n-1}\sum_{i=1}^n({X_{i}-\bar{X}})^2`
 
-Example:
+**Example**:
+
 Sample Data: 2, 4, 9, 8, 6, 5, 3
 :math:`\bar{x}` = 5.29.
 So the sample variance is 

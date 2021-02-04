@@ -33,7 +33,8 @@ Central Limit Theorem
 If :math:`\bar{X}` is the mean of a random sample of size n taken from a population with mean :math:`\mu` and finite variance :math:`\sigma^2` , then the limiting form of the 
 distribution of :math:`Z=\frac{\bar{X}-\mu}{\sigma}` , As :math:`N \to \infty` is the standard normal distribution, N(0,1). As long as N > 30, The clt applies.
 
-Example:
+**Example**:
+
 Suppose the amount of TV a college student watches in a week follows a normal distribution with a mean of 8 hours and a standard deviation of 3 hours.​
 Find the probability that, for a sample of 10 students, they have a mean time of less than 6 hours per week?
 So N(8, 3) then the sampling distribution of :math:`\bar{X} = Normal(\mu_{\bar{x}} = 8, \sigma_{\bar{x}}^2 = 9/10 )`
@@ -63,17 +64,20 @@ A t-value that falls below :math:`-\tau_{0.025}` or above :math:`\tau_{0.025}` w
 The probability we fall in that region given that µ is correct is only 5%.
 
 
-Example:
+**Example**:
+
 The t-value with v = 14 degrees of freedom that has an area to the right of 0.025 is: :math:`\tau_{0.025, 14} = 2.145`
 
-Example: 
+**Example**: 
+
 :math:`P(\tau_{0.025} < T < \tau_{0.05})`
 :math:`= P(T < \tau_{0.05}) - P(T < -\tau_{0.025})`
 =(1-0.05) - 0.025
 = 0.95 - 0.025
 = 0.925
 
-Example: 
+**Example**: 
+
 A chemical engineer claims that the population mean yield of a certain batch process is 500 grams per milliliter of raw material. To check this claim he samples 25 batches.
 What conclusion should he draw from a sample that has mean :math:`\bar{X}` = 518 grams per milliliter and sample standard deviation of s = 40 grams?
 
@@ -88,6 +92,7 @@ Since 2.25 > 2.064, we do fall above :math:`\tau_{0.025}` and the claim about :m
 
 F distribution
 ==============
+
 The F statistic is defined to be the ratio of 2 independent chi-square random variables, each divided by its degrees of freedom.
 
 :math:`F = \frac{U / \nu_{1}}{V / \nu_{2}}`
@@ -99,7 +104,8 @@ Where U and V are independent chi-square random variables with :math:`\nu_{1}` a
 :math:`P(F > f_{\alpha})` 
 The F-distribution is not symmetric but we do have the property: :math:`f_{1-\alpha}(\nu_{1}, \nu_{2}) = \frac{1}{f_{\alpha}(\nu_{1}, \nu_{1})}`
 
-Example:
+**Example**:
+
 We wish to test if two population variances are equal. We take a sample of 10 from the first population and come up with a sample variance of :math:`s_{1}^2` = 10.441.
 We take a sample of 8 from the second population and come up with a sample variance of :math:`s_{2}^2` = 1.846.
 

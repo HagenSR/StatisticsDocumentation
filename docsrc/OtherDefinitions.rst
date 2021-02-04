@@ -9,9 +9,10 @@ Population
 
 a set of all measurements of interest ​Or, the totality of observations with which we are concerned​
 
-Example: we are interested in the number of classes a student at NDSU will take in a year.​
+**Example**:
 
-The population would be the number of classes taken in a year for every student.​
+ we are interested in the number of classes a student at NDSU will take in a year. The population would be the number of classes
+ taken in a year for every student.​
 
 Parameter
 =================
@@ -50,7 +51,7 @@ The measure of center we have discussed for a population is the mean, µ.​ Pop
 
 
 Sample
-=================
+=======
 
 A sample is a subset of a population.​
 

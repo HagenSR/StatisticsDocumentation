@@ -18,7 +18,9 @@ Estimation:
 
 Estimating or predicting the value of the parameter
 “What are the most likely values of 𝜇 or p?”
-Example:
+
+**Example**:
+
 A consumer wants to estimate the average price of similar homes in their city before putting their home on the market.
 Estimation: Estimate 𝜇, the average home price
 
@@ -27,9 +29,11 @@ Hypothesis Testing:
 
 Deciding about the value of a parameter based on some preconceived idea.
 “Did the sample come from a population with 𝜇 = 5?”
-Example:
+
+**Example**:
+
 A manufacturer wants to know if a new type of steel is more resistant to high temperatures than an old type was.
-Hypothesis test: Is the new average resistance, 𝜇_𝑁 equal to the old average resistance, 𝜇_𝑂?
+Hypothesis test: Is the new average resistance, :math:`𝜇_{𝑁}` equal to the old average resistance, :math:`𝜇_{O}`?
 
 An estimator is a rule, usually a formula, that tells you how to calculate the estimate based on the sample.
 
@@ -55,7 +59,7 @@ The unbiased estimator with the smallest variance is called the most efficient e
 Interval Estimation
 ===================
 
-Even the most efficient unbiased estimator is unlikely to estimate the pppulation parameter exactly.
+Even the most efficient unbiased estimator is unlikely to estimate the population parameter exactly.
 There are many situations in which it is preferable to determine an interval where we would expect to find the parameter.
 
 For a generalized population parameter θ an interval estimate is of the form:
@@ -66,18 +70,22 @@ For a generalized population parameter θ an interval estimate is of the form:
 :math:`\theta_{L}` represents the lower bound 
 :math:`\theta_{U}` represents the upper bound
 
-These bounds will depend on the point estimate, 𝜃, and the sampling distribution. The interval estimate is found such that: :math:`P(𝜃_{L}<𝜃<𝜃_{𝑈}) = 1 - 𝛼`
+These bounds will depend on the point estimate, 𝜃, and the sampling distribution. The interval estimate is found such that: :math:`P(𝜃_{L}<𝜃<𝜃_{𝑈}) = 1 - 𝛼` .
 1 - 𝛼 is called the confidence coefficient or degree of confidence. 𝛼 is called the level of significance :math:`\theta_{L} , \theta_{U}` are called the confidence limits
 
-Example:
-If 𝛼 = 0.05 we would have a (1 – 0.05) = 95% confidence interval.
-If 𝛼 = 0.01 we would have a 99% confidence interval.
+**Example**:
+
+If 𝛼 = 0.05 we would have a (1 – 0.05) = 95% confidence interval. If 𝛼 = 0.01 we would have a 99% confidence interval.
 The wider the interval is, the more confident we can be that the interval contains the unknown parameter.
 
 This confidence interval can be found by:
-:math:`P(\bar{X} - Z_{\alpha/2}\frac{\sigma}{\sqrt{n}} < \mu <  \bar{X} + Z_{\alpha/2}\frac{\sigma}{\sqrt{n}}) = 1 – α` when sigma is known and N > 30
 
-Example:
+:math:`P(\bar{X} - Z_{\alpha/2}\frac{\sigma}{\sqrt{n}} < \mu <  \bar{X} + Z_{\alpha/2}\frac{\sigma}{\sqrt{n}}) = 1 – α` 
+
+when sigma is known and N > 30
+
+**Example**:
+
 The average zinc concentration recovered from a sample of zinc measurements in 36 different locations is found to be 2.6 grams per milliliter. Find the 99% confidence interval for 
 the zinc concentration in the river. Assume that the population standard deviation is 0.3 gram per milliliter. 
 
@@ -104,9 +112,13 @@ Often we are concerned with how large a sample is necessary to ensure that the e
 If 𝑋 ̅ is used as an estimate of 𝜇, we can be 100(1 -𝛼)% confident that the error will not exceed e when the sample size is:
 :math:`n = (\frac{Z_{\alpha/2}*\sigma}{e})^2` . N must be a whole number, so round up.
 
-Example:
-How large a sample is required if we want to be 95% confident that our estimate of 𝜇 in Example 1 is off by less than 0.05?
-:math:`n = (\frac{Z_{\alpha/2}*\sigma}{e})^2 = (\frac{1.96 * 0.3}{0.05})^2` = 138.3 = 139
+**Example**:
+
+How large a sample is required if we want to be 95% confident that our estimate of 𝜇 in example 1 is off by less than 0.05?
+
+:math:`n = (\frac{Z_{\alpha/2}*\sigma}{e})^2 = (\frac{1.96 * 0.3}{0.05})^2` 
+
+= 138.3 = 139
 
 One sided confidence bounds
 ---------------------------
@@ -118,16 +130,16 @@ Confidence intervals are by their nature two-sided since they produce upper and 
 
     P(\mu < \bar{X} + Z_{\alpha}\frac{\sigma}{\sqrt{n}} = 1 -\alpha)
 
-Example:
+**Example**:
 
 In a psychological testing experiment, 25 subjects are selected randomly and their reaction time, in seconds to a particular stimulus is measured. Assume population variance is 4 seconds2 and that the distribution is approximately normal. 
 In our sample the average reaction time was 6.2 seconds. Give a 95% upper bound for the mean reaction time.
 
-:math:`\bar{X} + z_{\alpha}\frac{\sigma}{\sqrt{n}}`
+    :math:`\bar{X} + z_{\alpha}\frac{\sigma}{\sqrt{n}}`
 
-:math:`6.2 + 1.645\frac{2}{\sqrt{25}}` 
+    :math:`6.2 + 1.645\frac{2}{\sqrt{25}}` 
 
-6.2 + 0.658 = 6.858
+    6.2 + 0.658 = 6.858
 
 We are 95% confident that the mean reaction time is less than 6.858 seconds
 
@@ -158,7 +170,8 @@ Paired observations
 Once you have designed the experiment by pairing, you MUST analyze it as a paired experiment. If the experiment is not designed as a paired 
 experiment in advance, do not use this procedure.
 
-Example:
+**Example**:
+
 Two types of tires, A and B, are randomly assigned to each of the rear wheels of five cars. Compare the average wear for types A and B using a 95% confidence interval.
 
 ===== ======= =======
@@ -184,30 +197,34 @@ cars  Type A  Type B   Diff
  5      8.8     8.3     0.5
 ===== ======= ======= ========
 
-:math:`\bar{d}` = mean of the differences so (0.4 + 0.4 +0.5 + 0.6 + 0.5)/5
-:math:`S_{d}` = standard deviation of the differences
+    :math:`\bar{d}` = mean of the differences so (0.4 + 0.4 +0.5 + 0.6 + 0.5)/5
 
-= :math:`\sqrt{\frac{1}{n-1}*\sum_{i=1}^{n}(D_{i}-\bar{d})^2}`
+    :math:`S_{d}` = standard deviation of the differences
 
-= :math:`\sqrt{\frac{1}{4}*((0.4 - 0.48)^2 + (0.4 - 0.48)^2) + (0.5 - 0.48)^2 + (0.6 - 0.48)^2 + (0.5 - 0.48)^2}`
+    = :math:`\sqrt{\frac{1}{n-1}*\sum_{i=1}^{n}(D_{i}-\bar{d})^2}`
 
-= 0.08367
+    = :math:`\sqrt{\frac{1}{4}*((0.4 - 0.48)^2 + (0.4 - 0.48)^2) + (0.5 - 0.48)^2 + (0.6 - 0.48)^2 + (0.5 - 0.48)^2}`
+
+    = 0.08367
 
 
-Example 1:
-n = 5
-95% confidence Interval gives :math:`\alpha` = 0.05
+**Example**:
 
-:math:`t_{\alpha/2} = t_{0.025}` = 2.776 (V = 4)
+    n = 5
 
-:math:`\bar{d} \pm t_{\alpha/2} * \frac{S_{d}}{\sqrt{n}}`
+    95% confidence Interval gives :math:`\alpha` = 0.05
 
-:math:`0.48 \pm 2.776 * \frac{0.08367}{\sqrt{5}}`
+    :math:`t_{\alpha/2} = t_{0.025}` = 2.776 (V = 4)
 
-:math:`0.48 \pm 0.1039`
+    :math:`\bar{d} \pm t_{\alpha/2} * \frac{S_{d}}{\sqrt{n}}`
 
-(0.3761, 0.5839)
-0.3761 < :math:`\mu_{D}` < 0.5839
+    :math:`0.48 \pm 2.776 * \frac{0.08367}{\sqrt{5}}`
+
+    :math:`0.48 \pm 0.1039`
+
+    (0.3761, 0.5839)
+
+    0.3761 < :math:`\mu_{D}` < 0.5839
 
 We are 95% confident that Type A tires have a higher average wear (?)
 or the mean difference between type A tires and Type B tires is between 0.3761 < :math:`\mu_{D}` < 0.5839
@@ -218,8 +235,11 @@ Estimating Proportions
 A random sample of size n is selected from a binomial distribution. We are interested in the number of "Successes"
 The population has parameter p which equals probability equals probability of success. We estimate p by taking the
 number of Successes, x, divided by the total number in the sample, n.
+
 :math:`\hat{p} = \frac{x}{n}`
+
 :math:`\hat{p}` is an unbiassed estimator for p:
+
 so if we are sampling from a binomial population, E(X) = np then the mean is
 
     :math:`E(\hat{p}) = p`
@@ -250,7 +270,7 @@ an approximate 100(1-\alpha)% confidence interval for the binomial paramter p is
 .. math::
     \hat{p} \pm z_{\alpha/2}\sqrt{\frac{\hat{p}\hat{q}}{n}}
 
-Example:
+**Example**:
 In a random sample of n = 500 families owning TV’s in the city of Hamilton, Canada, it is found that x = 340 subscribe to HBO. 
 Find a 95% confidence interval for the actual proportion of families with TVs in this city that subscribe to HBO.
 
@@ -277,7 +297,7 @@ Difference between two binomial Proportions
 
 Consider a situations where we wish to estimate the difference between two proportions, p1 and p2.​
 
-Example: p1 is the proportion of smokers who have lung cancer and p2 is the proportion of non-smokers with lung cancer, 
+**Example**: p1 is the proportion of smokers who have lung cancer and p2 is the proportion of non-smokers with lung cancer, 
 and we wish to estimate the difference between these two.
 
 Using the samping distribution of a single proportion, we can determine the sampling distribution of the difference of 
@@ -303,7 +323,7 @@ an approximate :math:`100(1-\alpha)%` confidence interval for the difference of 
 .. math::
     (\hat{p}_1 - \hat{p}_2) \pm Z_{\alpha/2} \sqrt{\frac{p_{1}q_{1}}{n_{1}}+\frac{p_{2}q_{2}}{n_{2}}}
 
-Example:
+**Example**:
 
 We are interested in the proportion of males and females in the population who have a minor blood disorder. In a random sample of 1000 males, 250 are found to be afflicted. ​
 
@@ -343,7 +363,7 @@ which has a chi-squared distribution with n-1 degrees of freedom. So the confide
 
 Where v = n-1
 
-Example
+**Example**
 The weights of 10 packages of grass seed were measured and found to have a sample variance of 0.286 decagrams2.​Find a 95% confidence 
 interval for the variance of the weights of all such packages, assuming they are coming from a normal distribution.
 
@@ -377,7 +397,7 @@ variances.
 .. math::
     P(\frac{S^2_{1}}{S^2_{2}}\frac{1}{f_{\alpha/2}(v_{1}, v_{2})} < \frac{\sigma^2_{1}}{\sigma^2_{2}} <  \frac{S^2_{1}}{S^2_{2}}f_{\alpha/2}(v_{1}, v_{2})) = 1 - \alpha 
 
-Example:
+**Example**:
 
 We wish to compare the variance of levels of the chemical orthophosphorus at two different stations along a river. Sixteen samples were collected at the first 
 station and found to have a standard deviation of 3.07. Eleven samples were collected at the second station and found to have a standard deviation of 0.80.​
@@ -390,6 +410,7 @@ Find a 90% confidence interval for the ratio of the variances at the two station
 
     90% confidence gives \alpha = 0.10
     f_{\alpha/2}(v_{1}, v_{2}) = f_{0.05}(15,10) = 2.85
+    
     f_{\alpha/2}(v_{2}, v_{1}) = f_{0.05}(10,15) = 2.54
 
      P(\frac{S^2_{1}}{S^2_{2}}\frac{1}{f_{\alpha/2}(v_{1}, v_{2})} < \frac{\sigma^2_{1}}{\sigma^2_{2}} <  \frac{S^2_{1}}{S^2_{2}}f_{\alpha/2}(v_{1}, v_{2}))

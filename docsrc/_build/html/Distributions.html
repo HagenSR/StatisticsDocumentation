@@ -199,7 +199,7 @@ averages around the population mean <span class="math notranslate nohighlight">\
 <h2>Central Limit Theorem<a class="headerlink" href="#central-limit-theorem" title="Permalink to this headline">¶</a></h2>
 <p>If <span class="math notranslate nohighlight">\(\bar{X}\)</span> is the mean of a random sample of size n taken from a population with mean <span class="math notranslate nohighlight">\(\mu\)</span> and finite variance <span class="math notranslate nohighlight">\(\sigma^2\)</span> , then the limiting form of the
 distribution of <span class="math notranslate nohighlight">\(Z=\frac{\bar{X}-\mu}{\sigma}\)</span> , As <span class="math notranslate nohighlight">\(N \to \infty\)</span> is the standard normal distribution, N(0,1). As long as N &gt; 30, The clt applies.</p>
-<p>Example:
+<p>**Example**:
 Suppose the amount of TV a college student watches in a week follows a normal distribution with a mean of 8 hours and a standard deviation of 3 hours.​
 Find the probability that, for a sample of 10 students, they have a mean time of less than 6 hours per week?
 So N(8, 3) then the sampling distribution of <span class="math notranslate nohighlight">\(\bar{X} = Normal(\mu_{\bar{x}} = 8, \sigma_{\bar{x}}^2 = 9/10 )\)</span>
@@ -219,15 +219,15 @@ Only when n goes to infinity are T and Z the same. <span class="math notranslate
 Since T is symmetric about zero: <span class="math notranslate nohighlight">\(\tau_{1 - \alpha} = -\tau_{\alpha}\)</span> <span class="math notranslate nohighlight">\(P(T &gt; -\tau_{\alpha}) = 1 - \alpha\)</span>. The T table is used for fingin t-values.</p>
 <p>A t-value that falls below <span class="math notranslate nohighlight">\(-\tau_{0.025}\)</span> or above <span class="math notranslate nohighlight">\(\tau_{0.025}\)</span> would make us believe that a very rare event has occurred or that our assumption about population mean µ is incorrect.
 The probability we fall in that region given that µ is correct is only 5%.</p>
-<p>Example:
+<p>**Example**:
 The t-value with v = 14 degrees of freedom that has an area to the right of 0.025 is: <span class="math notranslate nohighlight">\(\tau_{0.025, 14} = 2.145\)</span></p>
-<p>Example:
+<p>**Example**:
 <span class="math notranslate nohighlight">\(P(\tau_{0.025} &lt; T &lt; \tau_{0.05})\)</span>
 <span class="math notranslate nohighlight">\(= P(T &lt; \tau_{0.05}) - P(T &lt; -\tau_{0.025})\)</span>
 =(1-0.05) - 0.025
 = 0.95 - 0.025
 = 0.925</p>
-<p>Example:
+<p>**Example**:
 A chemical engineer claims that the population mean yield of a certain batch process is 500 grams per milliliter of raw material. To check this claim he samples 25 batches.
 What conclusion should he draw from a sample that has mean <span class="math notranslate nohighlight">\(\bar{X}\)</span> = 518 grams per milliliter and sample standard deviation of s = 40 grams?</p>
 <p><span class="math notranslate nohighlight">\(\tau = \frac{\bar{X} - \mu}{\frac{s}{\sqrt{n}}} = \frac{518 - 500}{\frac{40}{5}}\)</span></p>
@@ -244,7 +244,7 @@ What conclusion should he draw from a sample that has mean <span class="math not
 <p><span class="math notranslate nohighlight">\(f_{a}\)</span> denotes the f-value with a probability to the right of <span class="math notranslate nohighlight">\(\alpha\)</span> so
 <span class="math notranslate nohighlight">\(P(F &gt; f_{\alpha})\)</span>
 The F-distribution is not symmetric but we do have the property: <span class="math notranslate nohighlight">\(f_{1-\alpha}(\nu_{1}, \nu_{2}) = \frac{1}{f_{\alpha}(\nu_{1}, \nu_{1})}\)</span></p>
-<p>Example:
+<p>**Example**:
 We wish to test if two population variances are equal. We take a sample of 10 from the first population and come up with a sample variance of <span class="math notranslate nohighlight">\(s_{1}^2\)</span> = 10.441.
 We take a sample of 8 from the second population and come up with a sample variance of <span class="math notranslate nohighlight">\(s_{2}^2\)</span> = 1.846.</p>
 <p><span class="math notranslate nohighlight">\(f = \frac{\sigma_{2}^2 S_{1}^2}{\sigma_{1}^2 S_{2}^2} = \frac{10.411}{1.846} = 5.656\)</span></p>
