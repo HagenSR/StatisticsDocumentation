@@ -302,3 +302,100 @@ an approximate :math:`100(1-\alpha)%` confidence interval for the difference of 
 
 .. math::
     (\hat{p}_1 - \hat{p}_2) \pm Z_{\alpha/2} \sqrt{\frac{p_{1}q_{1}}{n_{1}}+\frac{p_{2}q_{2}}{n_{2}}}
+
+Example:
+
+We are interested in the proportion of males and females in the population who have a minor blood disorder. In a random sample of 1000 males, 250 are found to be afflicted. ​
+
+In a sample of 1000 females, 275 are afflicted.​
+
+Compute a 95% confidence interval for the difference between the proportions of males and females who have this blood disorder.
+
+.. math::
+    n_{1} = 1000, x_{1} = 250, \hat{p}_{1} = 0.25
+
+    n_{2} = 1000, x_{2} = 275, \hat{p}_{2} = 0.275
+
+    (\hat{p}_1 - \hat{p}_2) \pm Z_{\alpha/2} \sqrt{\frac{p_{1}q_{1}}{n_{1}}+\frac{p_{2}q_{2}}{n_{2}}}
+
+    (.25 - .275) \pm 1.96 \sqrt{\frac{.25(.75)}{1000}+\frac{.275(.725)}{1000}}
+
+    -0.025 \pm 0.0386
+
+    -0.0636 < (p_{1} - p_{2}) < 0.0136
+
+Because the interval crosses 0, there appears to be no significant difference in the proportion of males who have the disorder and the proportion of
+females who have the disorder.
+
+Estimating variance, One and two sample
+---------------------------------------
+
+Sometimes the primary parameter of interest is not the population mean :math:`\mu` but rather the population variance :math:`\sigma^2` . We choose a 
+random sample of size n from a normal distribution. We use the following to describe the sampling distribution of :math:`s^2`
+
+.. math::
+    \chi^2 = \frac{(n - 1)S^2}{\sigma^2}
+
+which has a chi-squared distribution with n-1 degrees of freedom. So the confidence interval for variance would be
+
+.. math::
+    P(\frac{(n - 1)S^2}{\chi^2_{\alpha/2}} < \sigma^2 < \frac{(n - 1)S^2}{\chi^2_{1 - \alpha/2}})
+
+Where v = n-1
+
+Example
+The weights of 10 packages of grass seed were measured and found to have a sample variance of 0.286 decagrams2.​Find a 95% confidence 
+interval for the variance of the weights of all such packages, assuming they are coming from a normal distribution.
+
+95% confidence gives :math:`\alpha` = 0.05, n = 10, v = 9 degrees of freedom. So
+
+.. math::
+    \chi^2_{\alpha/2} = \chi^2_{0.025} = 19.023
+
+    \chi^2_{1 - \alpha/2} = \chi^2_{0.975} = 2.7
+
+    \frac{(n - 1)S^2}{\chi^2_{\alpha/2}} < \sigma^2 < \frac{(n - 1)S^2}{\chi^2_{1 - \alpha/2}}
+
+    P(\frac{(9)(0.286)}{19.023} < \sigma^2 < \frac{(9)(0.286)}{2.7})
+
+    0.135 < \sigma^2 < 0.953 
+
+Estimating the Ratio of Two Variances
+-------------------------------------
+
+A point estimate of the ratio of two population variances :math:`\frac{\sigma^2_{1}}{\sigma^2_{2}}` is given by the ratio 
+:math:`\frac{S^2_{1}}{S^2_{2}}` of the sample variances. We can establish an interval estimate for the ratio of the population
+variances by using the statistic:
+
+.. math::
+    F = \frac{\sigma^2_{2}S^2_{1}}{\sigma^2_{1}S^2_{2}}
+
+The F statistic, when calculated, will have :math:`v_{1} = n_{1} - 1` degrees of freedom in the numerator and :math:`v_{2} = n_{2} - 1` 
+degrees of freedom in the denominator. By using the F distribution we can create an interval estimate of the ration of the two population 
+variances.
+
+.. math::
+    P(\frac{S^2_{1}}{S^2_{2}}\frac{1}{f_{\alpha/2}(v_{1}, v_{2})} < \frac{\sigma^2_{1}}{\sigma^2_{2}} <  \frac{S^2_{1}}{S^2_{2}}f_{\alpha/2}(v_{1}, v_{2})) = 1 - \alpha 
+
+Example:
+
+We wish to compare the variance of levels of the chemical orthophosphorus at two different stations along a river. Sixteen samples were collected at the first 
+station and found to have a standard deviation of 3.07. Eleven samples were collected at the second station and found to have a standard deviation of 0.80.​
+Find a 90% confidence interval for the ratio of the variances at the two stations.
+
+.. math::
+    n_{1} = 16, s_{1} = 3.07
+
+    n_{2} = 11, s_{2} = 0.80
+
+    90% confidence gives \alpha = 0.10
+    f_{\alpha/2}(v_{1}, v_{2}) = f_{0.05}(15,10) = 2.85
+    f_{\alpha/2}(v_{2}, v_{1}) = f_{0.05}(10,15) = 2.54
+
+     P(\frac{S^2_{1}}{S^2_{2}}\frac{1}{f_{\alpha/2}(v_{1}, v_{2})} < \frac{\sigma^2_{1}}{\sigma^2_{2}} <  \frac{S^2_{1}}{S^2_{2}}f_{\alpha/2}(v_{1}, v_{2}))
+
+     P(\frac{3.07^2}{0.8^2}\frac{1}{2.85} < \frac{\sigma^2_{1}}{\sigma^2_{2}} <  \frac{3.07^2}{0.8^2}(2.54)) 
+
+     5.167 < \frac{\sigma^2_{1}}{\sigma^2_{2}} < 37.405
+
+we are 90% confident that the real standard deviation is between 5.167 and 37.405
