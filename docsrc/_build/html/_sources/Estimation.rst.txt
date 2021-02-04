@@ -112,7 +112,7 @@ If 𝑋 ̅ is used as an estimate of 𝜇, we can be 100(1 -𝛼)% confident th
 
 **Example**:
 
-How large a sample is required if we want to be 95% confident that our estimate of 𝜇 in **Example** 1 is off by less than 0.05?
+How large a sample is required if we want to be 95% confident that our estimate of 𝜇 in example 1 is off by less than 0.05?
 :math:`n = (\frac{Z_{\alpha/2}*\sigma}{e})^2 = (\frac{1.96 * 0.3}{0.05})^2` = 138.3 = 139
 
 One sided confidence bounds
