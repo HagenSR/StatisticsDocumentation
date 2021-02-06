@@ -1,7 +1,7 @@
 
 
 <!DOCTYPE html>
-<html class="writer-html5" lang="en" >
+<html class="writer-html4" lang="en" >
 <head>
   <meta charset="utf-8" />
   
@@ -30,11 +30,12 @@
   
     
       <script type="text/javascript" id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
-        <script src="_static/jquery.js"></script>
-        <script src="_static/underscore.js"></script>
-        <script src="_static/doctools.js"></script>
-        <script src="_static/accordion.js"></script>
-        <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+        <script type="text/javascript" src="_static/jquery.js"></script>
+        <script type="text/javascript" src="_static/underscore.js"></script>
+        <script type="text/javascript" src="_static/doctools.js"></script>
+        <script type="text/javascript" src="_static/language_data.js"></script>
+        <script type="text/javascript" src="_static/accordion.js"></script>
+        <script async="async" type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
     
     <script type="text/javascript" src="_static/js/theme.js"></script>
 
@@ -248,14 +249,12 @@ There are many situations in which it is preferable to determine an interval whe
 The wider the interval is, the more confident we can be that the interval contains the unknown parameter.</p>
 <p>This confidence interval can be found by:</p>
 <p><span class="math notranslate nohighlight">\(P(\bar{X} - Z_{\alpha/2}\frac{\sigma}{\sqrt{n}} &lt; \mu &lt;  \bar{X} + Z_{\alpha/2}\frac{\sigma}{\sqrt{n}}) = 1 – α\)</span></p>
-<p>when sigma is known and N &gt; 30</p>
+<p>when sigma is known and N &gt; 30. <strong>When n is less than 30</strong> use the T distribution, which is located in the distributions page.</p>
 <p><strong>Example</strong>:</p>
 <p>The average zinc concentration recovered from a sample of zinc measurements in 36 different locations is found to be 2.6 grams per milliliter. Find the 99% confidence interval for
 the zinc concentration in the river. Assume that the population standard deviation is 0.3 gram per milliliter.</p>
 <div class="math notranslate nohighlight">
-\[\bar{X} \pm Z_{\alpha/2}\frac{\sigma}{\sqrt{n}}
-2.6 \pm 2.575(\frac{0.3}{\sqrt{36}})
-(2.47, 2.73)\]</div>
+\[ \begin{align}\begin{aligned}\bar{X} \pm Z_{\alpha/2}\frac{\sigma}{\sqrt{n}}\\2.6 \pm 2.575(\frac{0.3}{\sqrt{36}})\\(2.47, 2.73)\end{aligned}\end{align} \]</div>
 <p>or 2.47 &lt; 𝜇 &lt; 2.73. So In the repeated sampling, we should expect 99% of the time that the average zinc concentration  is between 2.47 and 2.73 gr./mill.</p>
 <div class="section" id="confidence-level">
 <h3>Confidence Level<a class="headerlink" href="#confidence-level" title="Permalink to this headline">¶</a></h3>
@@ -267,7 +266,7 @@ When choosing confidence level we want to be, in most cases, both sufficiently c
 <p>Confidence intervals provide an estimate of the accuracy of our point estimate. Most of the time <span class="math notranslate nohighlight">\(\bar{X}\)</span> will not exactly equal 𝜇 and the difference between our point estimate and the actual parameter value will be the error.
 If <span class="math notranslate nohighlight">\(\bar{X}\)</span> is used as an estimate of 𝜇, we can be 100(1 -𝛼)% confident that the error will not exceed <span class="math notranslate nohighlight">\(Z_{\alpha/2}\frac{\sigma}{\sqrt{n}}\)</span>.</p>
 <p>Often we are concerned with how large a sample is necessary to ensure that the error in estimating 𝜇 will be less than a specified amount, e.
-If 𝑋 ̅ is used as an estimate of 𝜇, we can be 100(1 -𝛼)% confident that the error will not exceed e when the sample size is:
+If 𝑋&nbsp;̅ is used as an estimate of 𝜇, we can be 100(1 -𝛼)% confident that the error will not exceed e when the sample size is:
 <span class="math notranslate nohighlight">\(n = (\frac{Z_{\alpha/2}*\sigma}{e})^2\)</span> . N must be a whole number, so round up.</p>
 <p><strong>Example</strong>:</p>
 <p>How large a sample is required if we want to be 95% confident that our estimate of 𝜇 in example 1 is off by less than 0.05?</p>
@@ -309,82 +308,82 @@ distributed of n random pairs of measurements, a 100(1-<span class="math notrans
 experiment in advance, do not use this procedure.</p>
 <p><strong>Example</strong>:</p>
 <p>Two types of tires, A and B, are randomly assigned to each of the rear wheels of five cars. Compare the average wear for types A and B using a 95% confidence interval.</p>
-<table class="docutils align-default">
+<table border="1" class="docutils">
 <colgroup>
-<col style="width: 26%" />
-<col style="width: 37%" />
-<col style="width: 37%" />
+<col width="26%" />
+<col width="37%" />
+<col width="37%" />
 </colgroup>
-<thead>
-<tr class="row-odd"><th class="head"><p>cars</p></th>
-<th class="head"><p>Type A</p></th>
-<th class="head"><p>Type B</p></th>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head">cars</th>
+<th class="head">Type A</th>
+<th class="head">Type B</th>
 </tr>
 </thead>
-<tbody>
-<tr class="row-even"><td><p>1</p></td>
-<td><p>10.6</p></td>
-<td><p>10.2</p></td>
+<tbody valign="top">
+<tr class="row-even"><td>1</td>
+<td>10.6</td>
+<td>10.2</td>
 </tr>
-<tr class="row-odd"><td><p>2</p></td>
-<td><p>9.8</p></td>
-<td><p>9.4</p></td>
+<tr class="row-odd"><td>2</td>
+<td>9.8</td>
+<td>9.4</td>
 </tr>
-<tr class="row-even"><td><p>3</p></td>
-<td><p>12.3</p></td>
-<td><p>11.8</p></td>
+<tr class="row-even"><td>3</td>
+<td>12.3</td>
+<td>11.8</td>
 </tr>
-<tr class="row-odd"><td><p>4</p></td>
-<td><p>9.7</p></td>
-<td><p>9.1</p></td>
+<tr class="row-odd"><td>4</td>
+<td>9.7</td>
+<td>9.1</td>
 </tr>
-<tr class="row-even"><td><p>5</p></td>
-<td><p>8.8</p></td>
-<td><p>8.3</p></td>
+<tr class="row-even"><td>5</td>
+<td>8.8</td>
+<td>8.3</td>
 </tr>
 </tbody>
 </table>
 <p>This experiment includes paired observations because the measurements are taken on the same car.​
 We must calculate the differences:</p>
-<table class="docutils align-default">
+<table border="1" class="docutils">
 <colgroup>
-<col style="width: 19%" />
-<col style="width: 26%" />
-<col style="width: 26%" />
-<col style="width: 30%" />
+<col width="19%" />
+<col width="26%" />
+<col width="26%" />
+<col width="30%" />
 </colgroup>
-<thead>
-<tr class="row-odd"><th class="head"><p>cars</p></th>
-<th class="head"><p>Type A</p></th>
-<th class="head"><p>Type B</p></th>
-<th class="head"><p>Diff</p></th>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head">cars</th>
+<th class="head">Type A</th>
+<th class="head">Type B</th>
+<th class="head">Diff</th>
 </tr>
 </thead>
-<tbody>
-<tr class="row-even"><td><p>1</p></td>
-<td><p>10.6</p></td>
-<td><p>10.2</p></td>
-<td><p>0.4</p></td>
+<tbody valign="top">
+<tr class="row-even"><td>1</td>
+<td>10.6</td>
+<td>10.2</td>
+<td>0.4</td>
 </tr>
-<tr class="row-odd"><td><p>2</p></td>
-<td><p>9.8</p></td>
-<td><p>9.4</p></td>
-<td><p>0.4</p></td>
+<tr class="row-odd"><td>2</td>
+<td>9.8</td>
+<td>9.4</td>
+<td>0.4</td>
 </tr>
-<tr class="row-even"><td><p>3</p></td>
-<td><p>12.3</p></td>
-<td><p>11.8</p></td>
-<td><p>0.5</p></td>
+<tr class="row-even"><td>3</td>
+<td>12.3</td>
+<td>11.8</td>
+<td>0.5</td>
 </tr>
-<tr class="row-odd"><td><p>4</p></td>
-<td><p>9.7</p></td>
-<td><p>9.1</p></td>
-<td><p>0.6</p></td>
+<tr class="row-odd"><td>4</td>
+<td>9.7</td>
+<td>9.1</td>
+<td>0.6</td>
 </tr>
-<tr class="row-even"><td><p>5</p></td>
-<td><p>8.8</p></td>
-<td><p>8.3</p></td>
-<td><p>0.5</p></td>
+<tr class="row-even"><td>5</td>
+<td>8.8</td>
+<td>8.3</td>
+<td>0.5</td>
 </tr>
 </tbody>
 </table>
@@ -419,12 +418,10 @@ number of Successes, x, divided by the total number in the sample, n.</p>
 <p><span class="math notranslate nohighlight">\(\hat{p}\)</span> is an unbiassed estimator for p:</p>
 <p>so if we are sampling from a binomial population, E(X) = np then the mean is</p>
 <blockquote>
-<div><p><span class="math notranslate nohighlight">\(E(\hat{p}) = p\)</span></p>
-</div></blockquote>
+<div><span class="math notranslate nohighlight">\(E(\hat{p}) = p\)</span></div></blockquote>
 <p>The variance of <span class="math notranslate nohighlight">\(\hat{p}\)</span> is</p>
 <blockquote>
-<div><p><span class="math notranslate nohighlight">\(\frac{pq}{n}\)</span></p>
-</div></blockquote>
+<div><span class="math notranslate nohighlight">\(\frac{pq}{n}\)</span></div></blockquote>
 <p>Then if n is large and p is not too close to zero or one, the sampling distribution of <span class="math notranslate nohighlight">\(\hat{p}\)</span> will be
 approximately normal and we have the property that</p>
 <div class="math notranslate nohighlight">

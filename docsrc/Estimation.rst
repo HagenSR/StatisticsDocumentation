@@ -82,7 +82,7 @@ This confidence interval can be found by:
 
 :math:`P(\bar{X} - Z_{\alpha/2}\frac{\sigma}{\sqrt{n}} < \mu <  \bar{X} + Z_{\alpha/2}\frac{\sigma}{\sqrt{n}}) = 1 – α` 
 
-when sigma is known and N > 30
+when sigma is known and N > 30. **When n is less than 30** use the T distribution, which is located in the distributions page.
 
 **Example**:
 
@@ -91,7 +91,9 @@ the zinc concentration in the river. Assume that the population standard deviati
 
 .. math::
     \bar{X} \pm Z_{\alpha/2}\frac{\sigma}{\sqrt{n}}
+
     2.6 \pm 2.575(\frac{0.3}{\sqrt{36}})
+
     (2.47, 2.73)
 
 or 2.47 < 𝜇 < 2.73. So In the repeated sampling, we should expect 99% of the time that the average zinc concentration  is between 2.47 and 2.73 gr./mill. 
