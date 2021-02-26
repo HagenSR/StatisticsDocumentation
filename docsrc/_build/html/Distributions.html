@@ -1,7 +1,7 @@
 
 
 <!DOCTYPE html>
-<html class="writer-html5" lang="en" >
+<html class="writer-html4" lang="en" >
 <head>
   <meta charset="utf-8" />
   
@@ -30,11 +30,12 @@
   
     
       <script type="text/javascript" id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
-        <script src="_static/jquery.js"></script>
-        <script src="_static/underscore.js"></script>
-        <script src="_static/doctools.js"></script>
-        <script src="_static/accordion.js"></script>
-        <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+        <script type="text/javascript" src="_static/jquery.js"></script>
+        <script type="text/javascript" src="_static/underscore.js"></script>
+        <script type="text/javascript" src="_static/doctools.js"></script>
+        <script type="text/javascript" src="_static/language_data.js"></script>
+        <script type="text/javascript" src="_static/accordion.js"></script>
+        <script async="async" type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
     
     <script type="text/javascript" src="_static/js/theme.js"></script>
 
@@ -108,6 +109,7 @@
 <li class="toctree-l1"><a class="reference internal" href="OtherDefinitions.html">Other Definitions</a></li>
 <li class="toctree-l1"><a class="reference internal" href="NormalTableTextBook.html">Normal Table from the Textbook</a></li>
 <li class="toctree-l1"><a class="reference internal" href="TTableTextBook.html">T Table from the Textbook</a></li>
+<li class="toctree-l1"><a class="reference internal" href="HypothesisTesting.html">Hypothesis Testing</a></li>
 </ul>
 
             
@@ -199,8 +201,8 @@ averages around the population mean <span class="math notranslate nohighlight">\
 <h2>Central Limit Theorem<a class="headerlink" href="#central-limit-theorem" title="Permalink to this headline">¶</a></h2>
 <p>If <span class="math notranslate nohighlight">\(\bar{X}\)</span> is the mean of a random sample of size n taken from a population with mean <span class="math notranslate nohighlight">\(\mu\)</span> and finite variance <span class="math notranslate nohighlight">\(\sigma^2\)</span> , then the limiting form of the
 distribution of <span class="math notranslate nohighlight">\(Z=\frac{\bar{X}-\mu}{\sigma}\)</span> , As <span class="math notranslate nohighlight">\(N \to \infty\)</span> is the standard normal distribution, N(0,1). As long as N &gt; 30, The clt applies.</p>
-<p>**Example**:
-Suppose the amount of TV a college student watches in a week follows a normal distribution with a mean of 8 hours and a standard deviation of 3 hours.​
+<p><strong>Example</strong>:</p>
+<p>Suppose the amount of TV a college student watches in a week follows a normal distribution with a mean of 8 hours and a standard deviation of 3 hours.​
 Find the probability that, for a sample of 10 students, they have a mean time of less than 6 hours per week?
 So N(8, 3) then the sampling distribution of <span class="math notranslate nohighlight">\(\bar{X} = Normal(\mu_{\bar{x}} = 8, \sigma_{\bar{x}}^2 = 9/10 )\)</span>
 Then <span class="math notranslate nohighlight">\(P(\bar{X} &lt; 6)\)</span> needs to be converted to Z so <span class="math notranslate nohighlight">\(Z=\frac{6-8}{\frac{3}{\sqrt{10}}}\)</span> = -2.11
@@ -219,16 +221,16 @@ Only when n goes to infinity are T and Z the same. <span class="math notranslate
 Since T is symmetric about zero: <span class="math notranslate nohighlight">\(\tau_{1 - \alpha} = -\tau_{\alpha}\)</span> <span class="math notranslate nohighlight">\(P(T &gt; -\tau_{\alpha}) = 1 - \alpha\)</span>. The T table is used for fingin t-values.</p>
 <p>A t-value that falls below <span class="math notranslate nohighlight">\(-\tau_{0.025}\)</span> or above <span class="math notranslate nohighlight">\(\tau_{0.025}\)</span> would make us believe that a very rare event has occurred or that our assumption about population mean µ is incorrect.
 The probability we fall in that region given that µ is correct is only 5%.</p>
-<p>**Example**:
-The t-value with v = 14 degrees of freedom that has an area to the right of 0.025 is: <span class="math notranslate nohighlight">\(\tau_{0.025, 14} = 2.145\)</span></p>
-<p>**Example**:
-<span class="math notranslate nohighlight">\(P(\tau_{0.025} &lt; T &lt; \tau_{0.05})\)</span>
+<p><strong>Example</strong>:</p>
+<p>The t-value with v = 14 degrees of freedom that has an area to the right of 0.025 is: <span class="math notranslate nohighlight">\(\tau_{0.025, 14} = 2.145\)</span></p>
+<p><strong>Example</strong>:</p>
+<p><span class="math notranslate nohighlight">\(P(\tau_{0.025} &lt; T &lt; \tau_{0.05})\)</span>
 <span class="math notranslate nohighlight">\(= P(T &lt; \tau_{0.05}) - P(T &lt; -\tau_{0.025})\)</span>
 =(1-0.05) - 0.025
 = 0.95 - 0.025
 = 0.925</p>
-<p>**Example**:
-A chemical engineer claims that the population mean yield of a certain batch process is 500 grams per milliliter of raw material. To check this claim he samples 25 batches.
+<p><strong>Example</strong>:</p>
+<p>A chemical engineer claims that the population mean yield of a certain batch process is 500 grams per milliliter of raw material. To check this claim he samples 25 batches.
 What conclusion should he draw from a sample that has mean <span class="math notranslate nohighlight">\(\bar{X}\)</span> = 518 grams per milliliter and sample standard deviation of s = 40 grams?</p>
 <p><span class="math notranslate nohighlight">\(\tau = \frac{\bar{X} - \mu}{\frac{s}{\sqrt{n}}} = \frac{518 - 500}{\frac{40}{5}}\)</span></p>
 <p>V = 24 degrees of freedom</p>
@@ -244,8 +246,8 @@ What conclusion should he draw from a sample that has mean <span class="math not
 <p><span class="math notranslate nohighlight">\(f_{a}\)</span> denotes the f-value with a probability to the right of <span class="math notranslate nohighlight">\(\alpha\)</span> so
 <span class="math notranslate nohighlight">\(P(F &gt; f_{\alpha})\)</span>
 The F-distribution is not symmetric but we do have the property: <span class="math notranslate nohighlight">\(f_{1-\alpha}(\nu_{1}, \nu_{2}) = \frac{1}{f_{\alpha}(\nu_{1}, \nu_{1})}\)</span></p>
-<p>**Example**:
-We wish to test if two population variances are equal. We take a sample of 10 from the first population and come up with a sample variance of <span class="math notranslate nohighlight">\(s_{1}^2\)</span> = 10.441.
+<p><strong>Example</strong>:</p>
+<p>We wish to test if two population variances are equal. We take a sample of 10 from the first population and come up with a sample variance of <span class="math notranslate nohighlight">\(s_{1}^2\)</span> = 10.441.
 We take a sample of 8 from the second population and come up with a sample variance of <span class="math notranslate nohighlight">\(s_{2}^2\)</span> = 1.846.</p>
 <p><span class="math notranslate nohighlight">\(f = \frac{\sigma_{2}^2 S_{1}^2}{\sigma_{1}^2 S_{2}^2} = \frac{10.411}{1.846} = 5.656\)</span></p>
 <p>So the f distribution value is <span class="math notranslate nohighlight">\(f_{0.05}(9,7)\)</span> = 3.68

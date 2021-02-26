@@ -33,7 +33,7 @@ Deciding about the value of a parameter based on some preconceived idea.
 **Example**:
 
 A manufacturer wants to know if a new type of steel is more resistant to high temperatures than an old type was.
-Hypothesis test: Is the new average resistance, 𝜇_𝑁 equal to the old average resistance, 𝜇_𝑂?
+Hypothesis test: Is the new average resistance, :math:`𝜇_{𝑁}` equal to the old average resistance, :math:`𝜇_{O}`?
 
 An estimator is a rule, usually a formula, that tells you how to calculate the estimate based on the sample.
 
@@ -75,12 +75,14 @@ These bounds will depend on the point estimate, 𝜃, and the sampling distribut
 
 **Example**:
 
-If 𝛼 = 0.05 we would have a (1 – 0.05) = 95% confidence interval.
-If 𝛼 = 0.01 we would have a 99% confidence interval.
+If 𝛼 = 0.05 we would have a (1 – 0.05) = 95% confidence interval. If 𝛼 = 0.01 we would have a 99% confidence interval.
 The wider the interval is, the more confident we can be that the interval contains the unknown parameter.
 
 This confidence interval can be found by:
-:math:`P(\bar{X} - Z_{\alpha/2}\frac{\sigma}{\sqrt{n}} < \mu <  \bar{X} + Z_{\alpha/2}\frac{\sigma}{\sqrt{n}}) = 1 – α` when sigma is known and N > 30
+
+:math:`P(\bar{X} - Z_{\alpha/2}\frac{\sigma}{\sqrt{n}} < \mu <  \bar{X} + Z_{\alpha/2}\frac{\sigma}{\sqrt{n}}) = 1 – α` 
+
+when sigma is known and N > 30. **When n is less than 30** use the T distribution, which is located in the distributions page.
 
 **Example**:
 
@@ -89,7 +91,9 @@ the zinc concentration in the river. Assume that the population standard deviati
 
 .. math::
     \bar{X} \pm Z_{\alpha/2}\frac{\sigma}{\sqrt{n}}
+
     2.6 \pm 2.575(\frac{0.3}{\sqrt{36}})
+
     (2.47, 2.73)
 
 or 2.47 < 𝜇 < 2.73. So In the repeated sampling, we should expect 99% of the time that the average zinc concentration  is between 2.47 and 2.73 gr./mill. 
@@ -113,7 +117,10 @@ If 𝑋 ̅ is used as an estimate of 𝜇, we can be 100(1 -𝛼)% confident th
 **Example**:
 
 How large a sample is required if we want to be 95% confident that our estimate of 𝜇 in example 1 is off by less than 0.05?
-:math:`n = (\frac{Z_{\alpha/2}*\sigma}{e})^2 = (\frac{1.96 * 0.3}{0.05})^2` = 138.3 = 139
+
+:math:`n = (\frac{Z_{\alpha/2}*\sigma}{e})^2 = (\frac{1.96 * 0.3}{0.05})^2` 
+
+= 138.3 = 139
 
 One sided confidence bounds
 ---------------------------
@@ -130,11 +137,11 @@ Confidence intervals are by their nature two-sided since they produce upper and 
 In a psychological testing experiment, 25 subjects are selected randomly and their reaction time, in seconds to a particular stimulus is measured. Assume population variance is 4 seconds2 and that the distribution is approximately normal. 
 In our sample the average reaction time was 6.2 seconds. Give a 95% upper bound for the mean reaction time.
 
-:math:`\bar{X} + z_{\alpha}\frac{\sigma}{\sqrt{n}}`
+    :math:`\bar{X} + z_{\alpha}\frac{\sigma}{\sqrt{n}}`
 
-:math:`6.2 + 1.645\frac{2}{\sqrt{25}}` 
+    :math:`6.2 + 1.645\frac{2}{\sqrt{25}}` 
 
-6.2 + 0.658 = 6.858
+    6.2 + 0.658 = 6.858
 
 We are 95% confident that the mean reaction time is less than 6.858 seconds
 
@@ -166,6 +173,7 @@ Once you have designed the experiment by pairing, you MUST analyze it as a paire
 experiment in advance, do not use this procedure.
 
 **Example**:
+
 Two types of tires, A and B, are randomly assigned to each of the rear wheels of five cars. Compare the average wear for types A and B using a 95% confidence interval.
 
 ===== ======= =======
@@ -191,31 +199,34 @@ cars  Type A  Type B   Diff
  5      8.8     8.3     0.5
 ===== ======= ======= ========
 
-:math:`\bar{d}` = mean of the differences so (0.4 + 0.4 +0.5 + 0.6 + 0.5)/5
-:math:`S_{d}` = standard deviation of the differences
+    :math:`\bar{d}` = mean of the differences so (0.4 + 0.4 +0.5 + 0.6 + 0.5)/5
 
-= :math:`\sqrt{\frac{1}{n-1}*\sum_{i=1}^{n}(D_{i}-\bar{d})^2}`
+    :math:`S_{d}` = standard deviation of the differences
 
-= :math:`\sqrt{\frac{1}{4}*((0.4 - 0.48)^2 + (0.4 - 0.48)^2) + (0.5 - 0.48)^2 + (0.6 - 0.48)^2 + (0.5 - 0.48)^2}`
+    = :math:`\sqrt{\frac{1}{n-1}*\sum_{i=1}^{n}(D_{i}-\bar{d})^2}`
 
-= 0.08367
+    = :math:`\sqrt{\frac{1}{4}*((0.4 - 0.48)^2 + (0.4 - 0.48)^2) + (0.5 - 0.48)^2 + (0.6 - 0.48)^2 + (0.5 - 0.48)^2}`
+
+    = 0.08367
 
 
-**Example** 1:
+**Example**:
 
-n = 5
-95% confidence Interval gives :math:`\alpha` = 0.05
+    n = 5
 
-:math:`t_{\alpha/2} = t_{0.025}` = 2.776 (V = 4)
+    95% confidence Interval gives :math:`\alpha` = 0.05
 
-:math:`\bar{d} \pm t_{\alpha/2} * \frac{S_{d}}{\sqrt{n}}`
+    :math:`t_{\alpha/2} = t_{0.025}` = 2.776 (V = 4)
 
-:math:`0.48 \pm 2.776 * \frac{0.08367}{\sqrt{5}}`
+    :math:`\bar{d} \pm t_{\alpha/2} * \frac{S_{d}}{\sqrt{n}}`
 
-:math:`0.48 \pm 0.1039`
+    :math:`0.48 \pm 2.776 * \frac{0.08367}{\sqrt{5}}`
 
-(0.3761, 0.5839)
-0.3761 < :math:`\mu_{D}` < 0.5839
+    :math:`0.48 \pm 0.1039`
+
+    (0.3761, 0.5839)
+
+    0.3761 < :math:`\mu_{D}` < 0.5839
 
 We are 95% confident that Type A tires have a higher average wear (?)
 or the mean difference between type A tires and Type B tires is between 0.3761 < :math:`\mu_{D}` < 0.5839
@@ -226,8 +237,11 @@ Estimating Proportions
 A random sample of size n is selected from a binomial distribution. We are interested in the number of "Successes"
 The population has parameter p which equals probability equals probability of success. We estimate p by taking the
 number of Successes, x, divided by the total number in the sample, n.
+
 :math:`\hat{p} = \frac{x}{n}`
+
 :math:`\hat{p}` is an unbiassed estimator for p:
+
 so if we are sampling from a binomial population, E(X) = np then the mean is
 
     :math:`E(\hat{p}) = p`
@@ -398,6 +412,7 @@ Find a 90% confidence interval for the ratio of the variances at the two station
 
     90% confidence gives \alpha = 0.10
     f_{\alpha/2}(v_{1}, v_{2}) = f_{0.05}(15,10) = 2.85
+    
     f_{\alpha/2}(v_{2}, v_{1}) = f_{0.05}(10,15) = 2.54
 
      P(\frac{S^2_{1}}{S^2_{2}}\frac{1}{f_{\alpha/2}(v_{1}, v_{2})} < \frac{\sigma^2_{1}}{\sigma^2_{2}} <  \frac{S^2_{1}}{S^2_{2}}f_{\alpha/2}(v_{1}, v_{2}))

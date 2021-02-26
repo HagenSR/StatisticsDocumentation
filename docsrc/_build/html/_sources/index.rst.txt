@@ -16,6 +16,7 @@ Welcome to Statistics Documentation!
    OtherDefinitions
    NormalTableTextBook
    TTableTextBook
+   HypothesisTesting
     
 
 

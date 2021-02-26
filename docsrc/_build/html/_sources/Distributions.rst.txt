@@ -68,12 +68,11 @@ The probability we fall in that region given that µ is correct is only 5%.
 
 The t-value with v = 14 degrees of freedom that has an area to the right of 0.025 is: :math:`\tau_{0.025, 14} = 2.145`
 
+**Example**: 
+
 :math:`P(\tau_{0.025} < T < \tau_{0.05})`
-
 :math:`= P(T < \tau_{0.05}) - P(T < -\tau_{0.025})`
-
 =(1-0.05) - 0.025
-
 = 0.95 - 0.025
 = 0.925
 
@@ -93,6 +92,7 @@ Since 2.25 > 2.064, we do fall above :math:`\tau_{0.025}` and the claim about :m
 
 F distribution
 ==============
+
 The F statistic is defined to be the ratio of 2 independent chi-square random variables, each divided by its degrees of freedom.
 
 :math:`F = \frac{U / \nu_{1}}{V / \nu_{2}}`
