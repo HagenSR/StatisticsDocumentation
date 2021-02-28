@@ -179,7 +179,7 @@ the sample data if :math:`H_{0}` is true. We will reject :math:`H_{0}` if the p-
 
 
 Single Sample Hypothesis Tests​
-==============================
+===============================
 
 Large Sample Test
 -----------------
