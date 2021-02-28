@@ -13,10 +13,11 @@ Welcome to Statistics Documentation!
    Formulas
    Distributions
    Estimation
+   HypothesisTesting
    OtherDefinitions
    NormalTableTextBook
    TTableTextBook
-   HypothesisTesting
+
     
 
 

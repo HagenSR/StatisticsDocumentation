@@ -42,7 +42,8 @@
     
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
-    <link rel="prev" title="T Table from the Textbook" href="TTableTextBook.html" />
+    <link rel="next" title="Other Definitions" href="OtherDefinitions.html" />
+    <link rel="prev" title="Estimating" href="Estimation.html" />
     <link href="_static/style.css" rel="stylesheet" type="text/css">
 
 </head>
@@ -98,9 +99,6 @@
 <li class="toctree-l1"><a class="reference internal" href="Formulas.html">Formulas</a></li>
 <li class="toctree-l1"><a class="reference internal" href="Distributions.html">Distributions</a></li>
 <li class="toctree-l1"><a class="reference internal" href="Estimation.html">Estimating</a></li>
-<li class="toctree-l1"><a class="reference internal" href="OtherDefinitions.html">Other Definitions</a></li>
-<li class="toctree-l1"><a class="reference internal" href="NormalTableTextBook.html">Normal Table from the Textbook</a></li>
-<li class="toctree-l1"><a class="reference internal" href="TTableTextBook.html">T Table from the Textbook</a></li>
 <li class="toctree-l1 current"><a class="current reference internal" href="#">Hypothesis Testing</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="#introduction">Introduction</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="#null-hypothosis">Null Hypothosis</a></li>
@@ -127,8 +125,30 @@
 <li class="toctree-l3"><a class="reference internal" href="#making-a-decision">Making a decision</a></li>
 </ul>
 </li>
+<li class="toctree-l2"><a class="reference internal" href="#single-sample-hypothesis-tests">Single Sample Hypothesis Tests​</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#large-sample-test">Large Sample Test</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id1">Test Statistic</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#rejection-regions">Rejection Regions</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#example">Example:</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#rejection-region-approach">Rejection Region approach</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#p-value-approach">P value approach</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id2">Example</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#rejection-region">Rejection region</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id3">P value approach</a></li>
 </ul>
 </li>
+<li class="toctree-l2"><a class="reference internal" href="#small-sample-test">Small Sample Test</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#id4">Rejection Regions</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id5">Example</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id6">Rejection Region</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#p-value">P Value</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="OtherDefinitions.html">Other Definitions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="NormalTableTextBook.html">Normal Table from the Textbook</a></li>
+<li class="toctree-l1"><a class="reference internal" href="TTableTextBook.html">T Table from the Textbook</a></li>
 </ul>
 
             
@@ -340,6 +360,118 @@ is “innocent”.​</p>
 the sample data if <span class="math notranslate nohighlight">\(H_{0}\)</span> is true. We will reject <span class="math notranslate nohighlight">\(H_{0}\)</span> if the p-value is less than <span class="math notranslate nohighlight">\(a\)</span> ie p-value &lt; <span class="math notranslate nohighlight">\(a\)</span> reject.</p>
 </div>
 </div>
+<div class="section" id="single-sample-hypothesis-tests">
+<h2>Single Sample Hypothesis Tests​<a class="headerlink" href="#single-sample-hypothesis-tests" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="large-sample-test">
+<h3>Large Sample Test<a class="headerlink" href="#large-sample-test" title="Permalink to this headline">¶</a></h3>
+<p>Take a random sample of size <span class="math notranslate nohighlight">\(n \geq 30\)</span> from a population with mean <span class="math notranslate nohighlight">\(\mu\)</span> and standard deviation <span class="math notranslate nohighlight">\(\sigma\)</span>. We assume that either:
+- <span class="math notranslate nohighlight">\(\sigma\)</span> is known or
+- <span class="math notranslate nohighlight">\(S \approx \sigma\)</span> since n is Large</p>
+<p>The hypothesis to be tested is <span class="math notranslate nohighlight">\(H_{0}: \mu = \mu_{0}\)</span></p>
+<p>To begin with, we assume <span class="math notranslate nohighlight">\(H_{0}\)</span> is true. The sample mean, <span class="math notranslate nohighlight">\(\bar{X}\)</span> , is our best estimate of <span class="math notranslate nohighlight">\(\mu\)</span> . We will use <span class="math notranslate nohighlight">\(\bar{X}\)</span>
+in its standardized form.</p>
+</div>
+<div class="section" id="id1">
+<h3>Test Statistic<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h3>
+<div class="math notranslate nohighlight">
+\[Z = \frac{\bar{X} - \mu_{0}}{s/\sqrt{n}}\]</div>
+<p>Z follows a standard normal distribution.</p>
+<p>If <span class="math notranslate nohighlight">\(H_{0}\)</span> is true the value of <span class="math notranslate nohighlight">\(\bar{X}\)</span> should be close to <span class="math notranslate nohighlight">\(\mu_{0}\)</span> and the test statistic will be close to zero. If <span class="math notranslate nohighlight">\(H_{0}\)</span>
+is false <span class="math notranslate nohighlight">\(\bar{X}\)</span> will be much larger or smaller than <span class="math notranslate nohighlight">\(\mu_{0}\)</span> and the test statistic will be large or small compared to zero, and then we
+should reject <span class="math notranslate nohighlight">\(H_{0}\)</span> .</p>
+</div>
+<div class="section" id="rejection-regions">
+<h3>Rejection Regions<a class="headerlink" href="#rejection-regions" title="Permalink to this headline">¶</a></h3>
+<p>The rejection region will vary depending on the alternative hypothesis.</p>
+<ol class="arabic simple">
+<li><span class="math notranslate nohighlight">\(H_{a}: \mu \ne \mu_{0}\)</span> : reject <span class="math notranslate nohighlight">\(H_{0}\)</span> for <span class="math notranslate nohighlight">\(|Z| &gt; Z_{a/2}\)</span></li>
+<li><span class="math notranslate nohighlight">\(H_{a}: \mu &gt; \mu_{0}\)</span> : Reject <span class="math notranslate nohighlight">\(H_{0}\)</span> for <span class="math notranslate nohighlight">\(|Z| &gt; Z_{a}\)</span></li>
+<li><span class="math notranslate nohighlight">\(H_{a}: \mu &lt; \mu_{0}\)</span> : Reject <span class="math notranslate nohighlight">\(H_{0}\)</span> for <span class="math notranslate nohighlight">\(|Z| &lt; -Z_{a}\)</span></li>
+</ol>
+</div>
+<div class="section" id="example">
+<h3>Example:<a class="headerlink" href="#example" title="Permalink to this headline">¶</a></h3>
+</div>
+<div class="section" id="rejection-region-approach">
+<h3>Rejection Region approach<a class="headerlink" href="#rejection-region-approach" title="Permalink to this headline">¶</a></h3>
+<p>The daily yield for a chemical plant has averaged 880 tons for several years. The quality control manager wants to know if this average has changed.
+She randomly selects 50 days and records an average yield of 871 tons with a standard deviation of 21 tons.​ Use 0.05 level of significance.</p>
+<p><span class="math notranslate nohighlight">\(H_{0}: \mu = 880\)</span> ,</p>
+<p><span class="math notranslate nohighlight">\(H_{a}: \mu \ne 880\)</span> ,</p>
+<p>n = 50 <span class="math notranslate nohighlight">\(\bar{X} = 871\)</span> s = 21</p>
+<p>Test  Statistic: <span class="math notranslate nohighlight">\(Z = \frac{\bar{X} - \mu_{0}}{s/\sqrt{n}} = \frac{871 - 880}{21/\sqrt{50}} = -3.03\)</span></p>
+<p>Critical  Value = <span class="math notranslate nohighlight">\(Z_{a/2} = Z_{0.025} = 1.96\)</span></p>
+<p>Because <span class="math notranslate nohighlight">\(|-3.03| &gt; 1.96\)</span> We reject <span class="math notranslate nohighlight">\(H_{0}\)</span> and conclude that there is sufficient evidence that the mean daily yield has changed and is
+no longer 880.</p>
+</div>
+<div class="section" id="p-value-approach">
+<h3>P value approach<a class="headerlink" href="#p-value-approach" title="Permalink to this headline">¶</a></h3>
+<p>Or we could use the p-value approach instead of finding a rejection region.</p>
+<div class="math notranslate nohighlight">
+\[P-value = P(|Z| &gt; |-3.03|) with \mu = 880
+= P(Z &gt; 3.03) + P(Z &lt; -3.03)
+= 2(0.0012)
+= 0.0024\]</div>
+<p>P-value is 0.0024 &lt; 0.05 = alpha Therefore we reject <span class="math notranslate nohighlight">\(H_{0}\)</span> .</p>
+</div>
+<div class="section" id="id2">
+<h3>Example<a class="headerlink" href="#id2" title="Permalink to this headline">¶</a></h3>
+</div>
+<div class="section" id="rejection-region">
+<h3>Rejection region<a class="headerlink" href="#rejection-region" title="Permalink to this headline">¶</a></h3>
+<p>A random sample of 100 recorded deaths in the United States during the past year showed an average life span of 71.8 years. Assuming a population standard deviation of 8.9 years,
+does the data seem to indicate that the mean life span today is greater than 70 years?​ Use 0.10 level of significance.​</p>
+<div class="math notranslate nohighlight">
+\[ \begin{align}\begin{aligned}H_{0}: \mu = 70\\H_{a}: \mu &gt; 70\\n = 100    \bar{X} = 71.8 \sigma = 8.9\\Test statistic: Z = \frac{\bar{X} - \mu_{0}}{s/\sqrt{n}} = \frac{71.8 - 70}{8.9/\sqrt{100}} = 1.28\end{aligned}\end{align} \]</div>
+<p>Rejection Region: Reject <span class="math notranslate nohighlight">\(H_{0}\)</span> if Z &gt; 1.28​. Because 2.02 &gt; 1.28 we reject <span class="math notranslate nohighlight">\(H_{0}\)</span> and conclude that there is sufficient evidence that the average life span is greater than 70 years.</p>
+</div>
+<div class="section" id="id3">
+<h3>P value approach<a class="headerlink" href="#id3" title="Permalink to this headline">¶</a></h3>
+<p>Or we could use the p-value approach instead of finding a rejection region.</p>
+<p>P-value = P(Z &gt; 2.02) with <span class="math notranslate nohighlight">\(\mu\)</span> = 70</p>
+<p>= 0.0217</p>
+<p>0.0217 &lt; 0.1 = alpha. Therefore we reject <span class="math notranslate nohighlight">\(H_{0}\)</span> .</p>
+</div>
+</div>
+<div class="section" id="small-sample-test">
+<h2>Small Sample Test<a class="headerlink" href="#small-sample-test" title="Permalink to this headline">¶</a></h2>
+<p>If the sample size is small (n &lt; 30) we cannot make the assumption that S <span class="math notranslate nohighlight">\(\approx \sigma\)</span> .
+When <span class="math notranslate nohighlight">\(\sigma\)</span> is unknown the test statistic we calculate will not follow a normal distribution,
+but instead will follow a T-distribution. We are still performing a test on the population mean so the
+null hypothesis is still <span class="math notranslate nohighlight">\(H_{0}: \mu = \mu_{0}\)</span> .</p>
+<p>Test Statistic:</p>
+<div class="math notranslate nohighlight">
+\[T = \frac{\bar{X} - \mu_{0}}{s/\sqrt{n}}\]</div>
+<p>This will follow a T-distribution with v = n-1 degrees of freedom.</p>
+<div class="section" id="id4">
+<h3>Rejection Regions<a class="headerlink" href="#id4" title="Permalink to this headline">¶</a></h3>
+<p>The rejection region will vary depending on the alternative hypothesis.</p>
+<ol class="arabic simple">
+<li><span class="math notranslate nohighlight">\(H_{a}: \mu \ne \mu_{0}\)</span> : reject <span class="math notranslate nohighlight">\(H_{0}\)</span> for <span class="math notranslate nohighlight">\(|T| &gt; t_{a/2}\)</span></li>
+<li><span class="math notranslate nohighlight">\(H_{a}: \mu &gt; \mu_{0}\)</span> : Reject <span class="math notranslate nohighlight">\(H_{0}\)</span> for <span class="math notranslate nohighlight">\(|T| &gt; t_{a}\)</span></li>
+<li><span class="math notranslate nohighlight">\(H_{a}: \mu &lt; \mu_{0}\)</span> : Reject <span class="math notranslate nohighlight">\(H_{0}\)</span> for <span class="math notranslate nohighlight">\(|T| &lt; -t_{a}\)</span></li>
+</ol>
+</div>
+<div class="section" id="id5">
+<h3>Example<a class="headerlink" href="#id5" title="Permalink to this headline">¶</a></h3>
+</div>
+<div class="section" id="id6">
+<h3>Rejection Region<a class="headerlink" href="#id6" title="Permalink to this headline">¶</a></h3>
+<p>It is claimed that a certain vacuum cleaner uses an average of 46 kilowatt hours per year. A random sample of 12 vacuums produced an average of 42 kilowatt hours per year with a standard deviation of 11.9 kilowatt hours.​
+Does this sample suggest that this vacuum cleaner uses less than 46 kilowatt hours per year?​ Use 0.05 level of significance.​</p>
+<div class="math notranslate nohighlight">
+\[ \begin{align}\begin{aligned}H_{0}: \mu = 46\\H_{a}: \mu &lt; 46\\n = 12    \bar{X} = 42 \sigma = 11.9\\Test statistic: T = \frac{\bar{X} - \mu_{0}}{s/\sqrt{n}} = \frac{42 - 46}{11.9/\sqrt{12}} = -1.16\\Critical Value: t_{a} = t_{0.05} = 1.796 (v = 11)\end{aligned}\end{align} \]</div>
+<p>Rejection Region: Reject <span class="math notranslate nohighlight">\(H_{0}\)</span> if T &lt; <span class="math notranslate nohighlight">\(-t_{a}\)</span></p>
+<p>-1.16 &gt; -1.796</p>
+<p>Therefore we do not reject <span class="math notranslate nohighlight">\(H_{0}\)</span> and conclude that the average kilowatt hours used annually by these vacuums is not significantly less than 46.</p>
+</div>
+<div class="section" id="p-value">
+<h3>P Value<a class="headerlink" href="#p-value" title="Permalink to this headline">¶</a></h3>
+<p>When using the T-distribution it is difficult to find an exact p-value if we are not using computer software. We are only able to get a range for the p-value.​</p>
+<p>P-value = P(T &lt; -1.16) = P(T &gt; 1.16) because t is symmetric.</p>
+<p>0.10 &lt; p-value &lt; 0.15 (using the T table with v = 11)</p>
+</div>
+</div>
 </div>
 
 
@@ -348,7 +480,8 @@ the sample data if <span class="math notranslate nohighlight">\(H_{0}\)</span> i
           </div>
           <footer>
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
-        <a href="TTableTextBook.html" class="btn btn-neutral float-left" title="T Table from the Textbook" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="OtherDefinitions.html" class="btn btn-neutral float-right" title="Other Definitions" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+        <a href="Estimation.html" class="btn btn-neutral float-left" title="Estimating" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
     </div>
 
   <hr/>
