@@ -212,9 +212,9 @@ The rejection region will vary depending on the alternative hypothesis.
 
 1. :math:`H_{a}: \mu \ne \mu_{0}` : reject :math:`H_{0}` for :math:`|Z| > Z_{a/2}`
    
-2. :math:`H_{a}: \mu > \mu_{0}` : Reject :math:`H_{0}` for :math:`|Z| > Z_{a}` 
+2. :math:`H_{a}: \mu > \mu_{0}` : Reject :math:`H_{0}` for :math:`Z > Z_{a}` 
    
-3. :math:`H_{a}: \mu < \mu_{0}` : Reject :math:`H_{0}` for :math:`|Z| < -Z_{a}`
+3. :math:`H_{a}: \mu < \mu_{0}` : Reject :math:`H_{0}` for :math:`Z < -Z_{a}`
 
 
 Example:
@@ -305,9 +305,9 @@ The rejection region will vary depending on the alternative hypothesis.
 
 1. :math:`H_{a}: \mu \ne \mu_{0}` : reject :math:`H_{0}` for :math:`|T| > t_{a/2}`
    
-2. :math:`H_{a}: \mu > \mu_{0}` : Reject :math:`H_{0}` for :math:`|T| > t_{a}` 
+2. :math:`H_{a}: \mu > \mu_{0}` : Reject :math:`H_{0}` for :math:`T > t_{a}` 
    
-3. :math:`H_{a}: \mu < \mu_{0}` : Reject :math:`H_{0}` for :math:`|T| < -t_{a}`
+3. :math:`H_{a}: \mu < \mu_{0}` : Reject :math:`H_{0}` for :math:`T < -t_{a}`
 
 Example
 -------
@@ -344,9 +344,92 @@ P-value = P(T < -1.16) = P(T > 1.16) because t is symmetric.
 
 0.10 < p-value < 0.15 (using the T table with v = 11)
 
+Two Sample Hypothesis Tests​
+===============================
+
+Large Sample Test
+-----------------
+
+Two independent random samples are drawn. The first sample is size :math:`n_{1}` from a population with mean :math:`\mu_{1}` and variance :math:`\sigma_{1}^2` . 
+The second sample is size :math:`n_{2}` from a population with mean :math:`\sigma_{0}^2` . The hypothesis of interest involves the difference :math:`\mu_{1} - \mu_{2}` .
+:math:`H_{0}: \mu_{1} - \mu{2} = d_{0}` . Where :math:`d_{0}` is some hypothesized difference (usually zero).
+
+If :math:`n_{1}` and :math:`n_{2}` are both greater than thirty we can make one of two assumptions:
+
+1. :math:`\sigma_{1}^2` and :math:`\sigma_{2}^2` are known
+2. Or :math:`s_{1}^2 \approx \sigma_{1}^2` and :math:`s_{2}^2 \approx \sigma_{2}^2` 
+
+We can now use the standard normal distribution for our test statistic.
+
+If :math:`n_{1}` and :math:`n_{2}` are both greater than thirty, the test statistic used for the hypothesis test given by the null hypothesis:
+:math:`H_{0}: \mu_{1} - \mu{2} = d_{0}`
+
+.. math::
+    Z = \frac{(\bar{X_{1}} -\bar{X_{2}}) - d_{0}}{\sqrt{\frac{s_{1}^2}{n_{1}} + \frac{s_{2}^2}{n_{2}}}}
+
+The test will follow a standard normal distribution.
+
+Rejection Regions
+------------------
+
+The rejection region will vary depending on the alternative hypothesis. 
+
+1. :math:`H_{a}: \mu_{1} - \mu_{2} \ne d_{0}` : reject :math:`H_{0}` for :math:`|Z| > Z_{a/2}`
+   
+2. :math:`H_{a}: \mu_{1} - \mu_{2} > d_{0}` : Reject :math:`H_{0}` for :math:`Z > Z_{a}` 
+   
+3. :math:`H_{a}: \mu_{1} - \mu_{2} < d_{0}` : Reject :math:`H_{0}` for :math:`Z < -Z_{a}`
 
 
+Small sample Test
+------------------
+
+Two independent random samples of sizes :math:`n_{1}` and  :math:`n_{2}` are drawn. If  :math:`n_{1}` and  :math:`n_{2}` are both less than thirty we cannot 
+make the assumption that :math:`s_{1}^2 \approx \sigma_{1}^2` and :math:`s_{2}^2 \approx \sigma_{2}^2` . If we can assume that the population variances are equal, 
+our test statistic will follow a T-distribution instead of standard normal. The null hypothesis is still :math:`H_{0}: \mu_{1} - \mu{2} = d_{0}`
+
+If  :math:`n_{1}` and  :math:`n_{2}` are both less than thirty, the test statistic used for the hypothesis test given by the null hypothesis: :math:`H_{0}: \mu_{1} - \mu{2} = d_{0}`
+
+.. math::
+    T = \frac{(\bar{X_{1}}-\bar{X_{2}})-d_{0}}{S_{p}\sqrt{\frac{1}{n_{1}}+\frac{1}{n_{2}}}}
 
 
+    S_{p}^2 =\frac{(n_{1}-1)s_{1}^2 + (n_{2}-1)s_{2}^2}{n_1+n_2-2} 
 
+The test statistic will follow a T-distribution with :math:`n_{1} + n_{2} - 2` degrees of freedom. Please note that if the population variances cannot be assumed equal the T-distribution is
+much more difficult to estimate. Computer software is usually used in those cases.
 
+Rejection Regions
+-----------------
+
+For :math:`n_{1}` and :math:`n_{2}` less than thirty and population variances equal we have:
+
+1. :math:`H_{a}: \mu_{1} - \mu_{2} \ne d_{0}` : reject :math:`H_{0}` for :math:`|T| > t_{a/2}`
+   
+2. :math:`H_{a}: \mu_{1} - \mu_{2} > d_{0}` : Reject :math:`H_{0}` for :math:`T > t_{a}` 
+   
+3. :math:`H_{a}: \mu_{1} - \mu_{2} < d_{0}` : Reject :math:`H_{0}` for :math:`T < -t_{a}`
+
+Paired Observations
+-------------------
+
+As we have previously seen, sample variance can be reduced by creating an experiment with paired observations. EX: weight before vs weight after, Different tire brands on same car.
+For paired observations we are interested in the quantity: :math:`\mu_{D} = \mu_{1} - \mu_{2}`
+
+If we have an experiment with paired observations the null hypothesis is: :math:`H_0: \mu_D = d_0`
+
+.. math:: 
+    T = \frac{\bar{d} - d_0}{s_d / \sqrt{n}}
+
+This test statistic will follow a T-distribution with v = n - 1 degrees of freedom.
+
+Rejection Regions
+-----------------
+
+The rejection region will vary depending on the alternative hypothesis. 
+
+1. :math:`H_{a}: \mu_d \ne d_{0}` : reject :math:`H_{0}` for :math:`|T| > t_{a/2}`
+   
+2. :math:`H_{a}: \mu_d > d_{0}` : Reject :math:`H_{0}` for :math:`T > t_{a}` 
+   
+3. :math:`H_{a}: \mu_d < d_{0}` : Reject :math:`H_{0}` for :math:`T < -t_{a}`
