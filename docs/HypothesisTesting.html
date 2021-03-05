@@ -152,6 +152,14 @@
 <li class="toctree-l3"><a class="reference internal" href="#id11">Rejection Regions</a></li>
 </ul>
 </li>
+<li class="toctree-l2"><a class="reference internal" href="#tests-involving-proportions">Tests Involving proportions</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#id12">Rejection Regions</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#test-on-the-difference-of-two-proportions">Test on the Difference of Two Proportions:</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#id13">Rejection Regions</a></li>
+</ul>
+</li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="OtherDefinitions.html">Other Definitions</a></li>
@@ -545,6 +553,106 @@ For paired observations we are interested in the quantity: <span class="math not
 <li><p><span class="math notranslate nohighlight">\(H_{a}: \mu_d &gt; d_{0}\)</span> : Reject <span class="math notranslate nohighlight">\(H_{0}\)</span> for <span class="math notranslate nohighlight">\(T &gt; t_{a}\)</span></p></li>
 <li><p><span class="math notranslate nohighlight">\(H_{a}: \mu_d &lt; d_{0}\)</span> : Reject <span class="math notranslate nohighlight">\(H_{0}\)</span> for <span class="math notranslate nohighlight">\(T &lt; -t_{a}\)</span></p></li>
 </ol>
+</div>
+</div>
+<div class="section" id="tests-involving-proportions">
+<h2>Tests Involving proportions<a class="headerlink" href="#tests-involving-proportions" title="Permalink to this headline">¶</a></h2>
+<p>Test on proportions are important in many areas.​ Politicians are concerned with the percentage of voters who favor them.​ Manufacturers need to know the proportion of defective items
+being produced.​ We will consider the problem of testing that the proportion is equal to some specified value, <span class="math notranslate nohighlight">\(H_0: p = p_0\)</span></p>
+<p>A random sample of size n from a binomial population to test  <span class="math notranslate nohighlight">\(H_0: p = p_0\)</span> the test statistic is calculated as:</p>
+<div class="math notranslate nohighlight">
+\[Z = \frac{\hat{p} - p_0}{\sqrt{\frac{p_0 q_0}{n}}}\]</div>
+<p>Where  <span class="math notranslate nohighlight">\(\hat{p}\)</span> is the number of successes divided by n. This test statistic will follow a standard normal distribution.</p>
+<div class="section" id="id12">
+<h3>Rejection Regions<a class="headerlink" href="#id12" title="Permalink to this headline">¶</a></h3>
+<p>The rejection region will vary depending on the alternative hypothesis.</p>
+<ol class="arabic simple">
+<li><p><span class="math notranslate nohighlight">\(H_{a}: p \ne p_{0}\)</span> : reject <span class="math notranslate nohighlight">\(H_{0}\)</span> for <span class="math notranslate nohighlight">\(|Z| &gt; Z_{a/2}\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(H_{a}: p &gt; p_{0}\)</span> : Reject <span class="math notranslate nohighlight">\(H_{0}\)</span> for <span class="math notranslate nohighlight">\(Z &gt; Z_{a}\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(H_{a}: p &lt; p_{0}\)</span> : Reject <span class="math notranslate nohighlight">\(H_{0}\)</span> for <span class="math notranslate nohighlight">\(Z &lt; -Z_{a}\)</span></p></li>
+</ol>
+<p><strong>Example</strong></p>
+<dl class="simple">
+<dt>A commonly prescribed drug is believed to be only 60% effective. A random sample of 100 adults taking this drug show a 70% effective rate.</dt><dd><p>Is this sufficient evidence to conclude that the drug is preforming better than originally thought?​</p>
+</dd>
+</dl>
+<p>Use 0.05 level of significance.</p>
+<div class="math notranslate nohighlight">
+\[ \begin{align}\begin{aligned}n = 100     \hat{p} = 0.70\\H_0: p = 0.60\\H_a: p &gt; 0.60\\Test statistic: Z = \frac{\hat{p}-p_0}{\sqrt{\frac{p_0 q_0}{n}}} = \frac{0.70 - 0.60}{\sqrt{\frac{0.60(0.40)}{100}}}\end{aligned}\end{align} \]</div>
+<p>Rejection Region: Reject <span class="math notranslate nohighlight">\(H_{0}\)</span> if Z &gt; <span class="math notranslate nohighlight">\(Z_{a}\)</span></p>
+<p>2.04 &gt; 1.645</p>
+<p>Reject <span class="math notranslate nohighlight">\(H_{0}\)</span> . There is sufficient evidence (at level 0.05) that the drug is performing better than it was originally believed.</p>
+<p>P-value = P(Z &gt; 2.04) = 1 - P(Z &lt; 2.04)</p>
+<p>= 1 - 0.9793</p>
+<p>0.0207 &lt; 0.05</p>
+<p>Reject <span class="math notranslate nohighlight">\(H_{0}\)</span></p>
+</div>
+</div>
+<div class="section" id="test-on-the-difference-of-two-proportions">
+<h2>Test on the Difference of Two Proportions:<a class="headerlink" href="#test-on-the-difference-of-two-proportions" title="Permalink to this headline">¶</a></h2>
+<p>If we take two independent samples from two different binomial populations generally we are interested in whether the two population proportions are
+equal. <span class="math notranslate nohighlight">\(H_{0}: p_1 = p_2\)</span> Which would be equivalent to testing:  <span class="math notranslate nohighlight">\(H_{0}: p_1 - p_2\)</span></p>
+<p>Thus we will use the sampling distribution for  <span class="math notranslate nohighlight">\(\hat{p}_1 - \hat{p}_2\)</span> to determine the appropriate test.</p>
+<p>A sample size of <span class="math notranslate nohighlight">\(n_1\)</span> results in <span class="math notranslate nohighlight">\(x_1\)</span> successes.</p>
+<p>A sample size of <span class="math notranslate nohighlight">\(n_2\)</span> results in <span class="math notranslate nohighlight">\(x_2\)</span> successes.</p>
+<p><span class="math notranslate nohighlight">\(\hat{p_1} = \frac{x_1}{n_1}\)</span> and <span class="math notranslate nohighlight">\(\hat{p_2} = \frac{x_2}{n_2}\)</span></p>
+<p><span class="math notranslate nohighlight">\(H_0: p_1 = p_2\)</span></p>
+<p>When <span class="math notranslate nohighlight">\(H_0\)</span> is true, <span class="math notranslate nohighlight">\(p_1 = p_2 = p\)</span> we have a pooled estimate of the proportion p.</p>
+<div class="math notranslate nohighlight">
+\[ \begin{align}\begin{aligned}\hat{p} = \frac{x_1 + x_2}{n_1 + n_2}\\H_0: p_1 = p_2\end{aligned}\end{align} \]</div>
+<p>The test statistic is calculated as:</p>
+<div class="math notranslate nohighlight">
+\[Z = \frac{\hat{p_1} - \hat{p_2}}{\sqrt{\hat{p}\hat{q}(\frac{1}{n_1}+\frac{1}{n_2})}}\]</div>
+<p>This will follow the standard normal distribution.</p>
+<div class="section" id="id13">
+<h3>Rejection Regions<a class="headerlink" href="#id13" title="Permalink to this headline">¶</a></h3>
+<p>The rejection region will vary depending on the alternative hypothesis.</p>
+<ol class="arabic simple">
+<li><p><span class="math notranslate nohighlight">\(H_{a}: p_1 \ne p_{2}\)</span> : reject <span class="math notranslate nohighlight">\(H_{0}\)</span> for <span class="math notranslate nohighlight">\(|Z| &gt; Z_{a/2}\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(H_{a}: p_1 &gt; p_{2}\)</span> : Reject <span class="math notranslate nohighlight">\(H_{0}\)</span> for <span class="math notranslate nohighlight">\(Z &gt; Z_{a}\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(H_{a}: p_1 &lt; p_{2}\)</span> : Reject <span class="math notranslate nohighlight">\(H_{0}\)</span> for <span class="math notranslate nohighlight">\(Z &lt; -Z_{a}\)</span></p></li>
+</ol>
+<p><strong>Example</strong></p>
+<p>Use the information in the table below to test whether the first population has a higher probability of success than the second population at a level of 0.05.</p>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 50%" />
+<col style="width: 50%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Sample 1</p></th>
+<th class="head"><p>Sample 2</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><span class="math notranslate nohighlight">\(n_1\)</span> = 200</p></td>
+<td><p><span class="math notranslate nohighlight">\(n_2\)</span> = 500</p></td>
+</tr>
+<tr class="row-odd"><td><p><span class="math notranslate nohighlight">\(x_1\)</span> = 120</p></td>
+<td><p><span class="math notranslate nohighlight">\(x_2\)</span> = 240</p></td>
+</tr>
+</tbody>
+</table>
+<p><span class="math notranslate nohighlight">\(\hat{p}_1 = \frac{120}{200}\)</span> = 0.6 and <span class="math notranslate nohighlight">\(\hat{p}_2 = \frac{240}{500}\)</span> = 0.48</p>
+<p><span class="math notranslate nohighlight">\(\hat{p} = \frac{120 + 240}{200 + 500} = \frac{360}{700}\)</span> = 0.51</p>
+<p><span class="math notranslate nohighlight">\(H_0: p_1= p_2\)</span></p>
+<p><span class="math notranslate nohighlight">\(H_a: p_1 &gt; p_2\)</span></p>
+<p>Test Statistic:</p>
+<div class="math notranslate nohighlight">
+\[Z = \frac{0.6 - 0.48}{\sqrt{0.51(0.49)(\frac{1}{200} + \frac{1}{500})}} = 2.87\]</div>
+<p><strong>Example</strong></p>
+<p>Critical Value <span class="math notranslate nohighlight">\(Z_\alpha = Z_0.005 = 1.645\)</span></p>
+<p>Rejection Region: Reject <span class="math notranslate nohighlight">\(H_0\)</span> if <span class="math notranslate nohighlight">\(Z &gt; Z_a\)</span></p>
+<p>2.87 &gt; 1.645</p>
+<p>Reject <span class="math notranslate nohighlight">\(H_0\)</span>. There is sufficient evidence (at 0.05) that the first population proportion is greater than the second population proportion.</p>
+<dl class="simple">
+<dt>P Value = P(Z &gt; 2.87)</dt><dd><p>= 1 - P(Z &lt; 2.87)
+= 1 - 0.9979
+= 0.0021</p>
+</dd>
+</dl>
+<p>0.0021 &lt; 0.05</p>
+<p>Reject <span class="math notranslate nohighlight">\(H_0\)</span></p>
 </div>
 </div>
 </div>

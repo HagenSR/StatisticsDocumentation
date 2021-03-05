@@ -433,3 +433,147 @@ The rejection region will vary depending on the alternative hypothesis.
 2. :math:`H_{a}: \mu_d > d_{0}` : Reject :math:`H_{0}` for :math:`T > t_{a}` 
    
 3. :math:`H_{a}: \mu_d < d_{0}` : Reject :math:`H_{0}` for :math:`T < -t_{a}`
+
+
+
+Tests Involving proportions
+===========================
+
+Test on proportions are important in many areas.​ Politicians are concerned with the percentage of voters who favor them.​ Manufacturers need to know the proportion of defective items 
+being produced.​ We will consider the problem of testing that the proportion is equal to some specified value, :math:`H_0: p = p_0` 
+
+A random sample of size n from a binomial population to test  :math:`H_0: p = p_0` the test statistic is calculated as:
+
+.. math::
+    Z = \frac{\hat{p} - p_0}{\sqrt{\frac{p_0 q_0}{n}}}
+
+Where  :math:`\hat{p}` is the number of successes divided by n. This test statistic will follow a standard normal distribution. 
+
+Rejection Regions
+-----------------
+
+The rejection region will vary depending on the alternative hypothesis. 
+
+1. :math:`H_{a}: p \ne p_{0}` : reject :math:`H_{0}` for :math:`|Z| > Z_{a/2}`
+   
+2. :math:`H_{a}: p > p_{0}` : Reject :math:`H_{0}` for :math:`Z > Z_{a}` 
+   
+3. :math:`H_{a}: p < p_{0}` : Reject :math:`H_{0}` for :math:`Z < -Z_{a}`
+
+
+**Example**
+
+A commonly prescribed drug is believed to be only 60% effective. A random sample of 100 adults taking this drug show a 70% effective rate.
+ Is this sufficient evidence to conclude that the drug is preforming better than originally thought?​
+
+Use 0.05 level of significance.
+
+.. math::
+    n = 100     \hat{p} = 0.70
+
+    H_0: p = 0.60
+
+    H_a: p > 0.60 
+
+    Test statistic: Z = \frac{\hat{p}-p_0}{\sqrt{\frac{p_0 q_0}{n}}} = \frac{0.70 - 0.60}{\sqrt{\frac{0.60(0.40)}{100}}}
+
+Rejection Region: Reject :math:`H_{0}` if Z > :math:`Z_{a}`
+
+2.04 > 1.645
+
+Reject :math:`H_{0}` . There is sufficient evidence (at level 0.05) that the drug is performing better than it was originally believed.
+
+P-value = P(Z > 2.04) = 1 - P(Z < 2.04)
+
+= 1 - 0.9793
+
+0.0207 < 0.05
+
+Reject :math:`H_{0}`
+
+Test on the Difference of Two Proportions:
+===========================================
+
+If we take two independent samples from two different binomial populations generally we are interested in whether the two population proportions are
+equal. :math:`H_{0}: p_1 = p_2` Which would be equivalent to testing:  :math:`H_{0}: p_1 - p_2`
+
+Thus we will use the sampling distribution for  :math:`\hat{p}_1 - \hat{p}_2` to determine the appropriate test.
+
+A sample size of :math:`n_1` results in :math:`x_1` successes. 
+
+A sample size of :math:`n_2` results in :math:`x_2` successes. 
+
+:math:`\hat{p_1} = \frac{x_1}{n_1}` and :math:`\hat{p_2} = \frac{x_2}{n_2}`
+
+:math:`H_0: p_1 = p_2`
+
+When :math:`H_0` is true, :math:`p_1 = p_2 = p` we have a pooled estimate of the proportion p.
+
+.. math::
+    \hat{p} = \frac{x_1 + x_2}{n_1 + n_2}
+
+    H_0: p_1 = p_2
+
+The test statistic is calculated as:
+
+.. math::
+
+    Z = \frac{\hat{p_1} - \hat{p_2}}{\sqrt{\hat{p}\hat{q}(\frac{1}{n_1}+\frac{1}{n_2})}}
+
+This will follow the standard normal distribution.
+
+
+Rejection Regions
+-----------------
+
+The rejection region will vary depending on the alternative hypothesis. 
+
+1. :math:`H_{a}: p_1 \ne p_{2}` : reject :math:`H_{0}` for :math:`|Z| > Z_{a/2}`
+   
+2. :math:`H_{a}: p_1 > p_{2}` : Reject :math:`H_{0}` for :math:`Z > Z_{a}` 
+   
+3. :math:`H_{a}: p_1 < p_{2}` : Reject :math:`H_{0}` for :math:`Z < -Z_{a}`
+
+
+**Example**
+
+Use the information in the table below to test whether the first population has a higher probability of success than the second population at a level of 0.05.
+
+==================== ====================
+    Sample 1            Sample 2
+==================== ====================
+:math:`n_1` = 200     :math:`n_2` = 500 
+:math:`x_1` = 120     :math:`x_2` = 240     
+==================== ====================
+
+:math:`\hat{p}_1 = \frac{120}{200}` = 0.6 and :math:`\hat{p}_2 = \frac{240}{500}` = 0.48
+
+:math:`\hat{p} = \frac{120 + 240}{200 + 500} = \frac{360}{700}` = 0.51
+
+:math:`H_0: p_1= p_2`
+
+:math:`H_a: p_1 > p_2`
+
+Test Statistic:
+
+.. math::
+    Z = \frac{0.6 - 0.48}{\sqrt{0.51(0.49)(\frac{1}{200} + \frac{1}{500})}} = 2.87
+
+**Example**
+
+Critical Value :math:`Z_\alpha = Z_0.005 = 1.645`
+
+Rejection Region: Reject :math:`H_0` if :math:`Z > Z_a`
+
+2.87 > 1.645
+
+Reject :math:`H_0`. There is sufficient evidence (at 0.05) that the first population proportion is greater than the second population proportion.
+
+P Value = P(Z > 2.87) 
+        = 1 - P(Z < 2.87)
+        = 1 - 0.9979
+        = 0.0021
+
+0.0021 < 0.05
+
+Reject :math:`H_0`
