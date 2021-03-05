@@ -569,6 +569,9 @@ Rejection Region: Reject :math:`H_0` if :math:`Z > Z_a`
 
 Reject :math:`H_0`. There is sufficient evidence (at 0.05) that the first population proportion is greater than the second population proportion.
 
+p-value
+--------
+
 P Value = P(Z > 2.87) 
         = 1 - P(Z < 2.87)
         = 1 - 0.9979
@@ -577,3 +580,112 @@ P Value = P(Z > 2.87)
 0.0021 < 0.05
 
 Reject :math:`H_0`
+
+Tests involving variance
+=========================
+
+When the primary parameter of interest is sample variance, :math:`\sigma^2` , we use the sample standard deviation :math:`s^2` to estimate values 
+of the parameter. We choose a sample of size n from a normal distribution. The sampling distribution of :math:`s^2` is given by standardizing with
+the formula:
+
+.. math::
+    \chi^2 = \frac{(n-1)S^2}{\sigma^2_0}
+
+Which has a chi-square distribution with v = n-1
+
+Rejection Regions
+-----------------
+
+The rejection region will vary depending on the alternative hypothesis. 
+
+1. :math:`H_{a}: \sigma^2 \ne \sigma_{0}^2` : reject :math:`H_{0}` for :math:`\chi^2 < \chi^2_{1-\alpha/2}` or :math:`\chi^2 > \chi^2_{a/2}`
+   
+2. :math:`H_{a}: \sigma^2 > \sigma_{0}^2` : Reject :math:`H_{0}` for :math:`\chi^2 > \chi^2_{\alpha}` 
+   
+3. :math:`H_{a}: \sigma^2 < \sigma_{0}^2` : Reject :math:`H_{0}` for :math:`\chi^2 < \chi^2_{1-\alpha}`
+
+
+**Example**
+
+A certain mechanical process claims to have a variance of 10 units :math:`^2` . A sample of 12 is found to have a variance of 13.96. Test whether the variance
+is significantly higher than previously claimed. Use 0.05 level of significance.
+
+:math:`H_{0}: \sigma^2 = 10`
+
+:math:`H_{a}: \sigma^2 > 10`
+
+n = 12                  :math:`s^2 = 13.96`
+
+Test Statistic:
+
+.. math:: 
+    \chi^2 = \frac{11(13.96)}{10} = 15.356
+
+Critical value: :math:`\chi^2_{\alpha} = \chi^2_{0.05} = 19.675` using v = 11 
+
+Rejection Region: Reject :math:`H_0` if :math:`\chi^2 > 19.675`
+
+Since 15.356 < 19.675, we do not reject :math:`H_0` . There is not sufficient evidence, at 0.05 level, that the population variance is more than 10.
+
+P-Value
+---------
+
+P-Value = :math:`P(\chi^2 > 15.356)` . Go to the chi-squared table and find the row with 11 degrees of freedom. Find where 15.356 would lie on that row,
+this gives a range for the p-value. 
+
+:math:`0.10 < P(\chi^2 15.356) < 0.20` . So 0.10 < p-value < 0.20. This is greater than 0.05 so we do not reject :math:`H_0` .
+
+Two Sample Test
+----------------
+
+For independent random samples of sizes :math:`n_1` and :math:`n_2` from two normal populations with variances :math:`\sigma^2_{1}` and :math:`\sigma^2_{2}`
+we are interested in testing if the two population variances are equal. Thus, our null hypothesis is: :math:`H_0: \sigma^2_{1} = \sigma^2_{2}`
+
+We will use the ratio of two variances to find a test statistic.
+
+When testing the hypothesis: :math:`H_0: \sigma^2_{1} = \sigma^2_{2}` our test statistic is given by:
+
+.. math::
+    F = \frac{s^2_1}{s^2_2}
+
+This will follow an F-distribution with :math:`V_1 = n_1 - 1` and :math:`V_2 = n_2 - 1` degrees of freedom.
+
+Rejection Regions
+-----------------
+
+The rejection region will vary depending on the alternative hypothesis. 
+
+1. :math:`H_{a}: \sigma^2_{1} \ne \sigma_{2}^2` : reject :math:`H_{0}` for :math:`F > f_{\alpha/2}` or :math:`F < f_{1-\alpha/2}`
+   
+2. :math:`H_{a}: \sigma^2_1 > \sigma_{2}^2` : Reject :math:`H_{0}` for :math:`F > f_{\alpha}` 
+   
+3. :math:`H_{a}: \sigma^2_1 < \sigma_{2}^2` : Reject :math:`H_{0}` for :math:`F < f_{1-\alpha}`
+
+
+**Example**
+
+An experiment was performed to compared the abrasive wear of two different laminated materials. It is believed that the two populations have equal variances.​
+A sample of 11 is taken with the first material and found to have a variance of 16.​ A sample of 10 is taken with the second material and found to have a 
+variance of 25.​
+
+Test if the two population variances are equal or not at 0.10 level.
+
+:math:`H_{0}: \sigma^2_{1} = \sigma_{2}^2`
+
+:math:`H_{a}: \sigma^2_{1} \ne \sigma_{2}^2`
+
+:math:`n_1 = 11`      :math:`s_1^2 = 16`
+:math:`n_12 = 10`     :math:`s_2^2 = 25`
+
+Test Statistic = :math:`F = \frac{16}{25}` = 0.64
+
+Critical values = :math:`f_{\alpha/2} = f_{0.1/2} = f_{0.05}(10,9) = 3.14`
+
+:math:`f_{1 - \alpha/2} = f_{1 - 0.05} = f_{0.95}(10,9) = \frac{1}{f_{0.05}(9,10)} = \frac{1}{3.02} = 0.33`
+
+Rejection Region: Reject :math:`H_0` if, F > 3.14 or F < 0.33
+
+Our test statistic was F = 0.64. This value does not fall in the rejection region. 
+
+We do not reject :math:`H_0` and conclude that there is not sufficient evidence, at the 0.10 level, that the population variances are different.
+
