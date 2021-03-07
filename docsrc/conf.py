@@ -187,3 +187,4 @@ def setup(app):
 
     app.add_stylesheet('accordion.css')
     app.add_javascript('accordion.js')
+    

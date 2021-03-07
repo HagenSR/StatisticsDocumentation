@@ -689,3 +689,197 @@ Our test statistic was F = 0.64. This value does not fall in the rejection regio
 
 We do not reject :math:`H_0` and conclude that there is not sufficient evidence, at the 0.10 level, that the population variances are different.
 
+Independence Testing, Or Analysis of Categorical data
+======================================================
+
+Many experiments result in measurements that are qualitative or categorical rather than quantitative.​ 
+- Cars classified by color​
+- M&Ms classified by type (plain or peanut)​
+
+These data sets have the characteristics of a multinomial experiment.  ​
+
+Multinomial experiment
+----------------------
+
+1. The experiment consists of n identical trials.​\
+2. Each trial results in one of k categories.​
+3. The probability that the outcome falls into a particular category i on a single trial is :math:`p_i` and remains constant from trial to trial. The sum of all k probabilities, :math:`p_1+p_2 +…+ p_k = 1`. ​
+4. The trials are independent
+5. We are interested in the number of outcomes in each category, :math:`O_1, O_2, ..., O_k` with :math:`O_1, O_2, ..., O_k = n`
+
+The Binomial experiment
+-----------------------
+
+- A special case of the multinomial experiment with k = 2.
+- Categories 1 and 2: success and failure​
+- p1 and p2:	p and q​
+- O1 and O2: x and n-x​
+- We made inferences about p ​(and q = 1 - p)​
+
+
+Pearson's Chi-Square Statistic
+-------------------------------
+
+- We have some preconceived idea about the values of the pi and want to use sample information to see if we are correct.
+- The expected number of times that outcome i will occur is :math:`E_i = np_i` . If the observed cell counts, :math:`O_i`, are too far from what we hypothesize under :math:`H_0`, the more likely it is that :math:`H_0` should be rejected. ​
+
+We use the pearson chi-square statistic:
+
+.. math::
+    \chi^2 = \sum{\frac{(O_i-E_i)^2}{E_i}}
+
+When :math:`H_0` is true, the differences O-E will be  small, but large when :math:`H_0` is false. 
+
+Look for large values of :math:`\chi_0` based on the chi-square distribution with a particular number of degrees of freedom.​
+
+Goodness of Fit test
+---------------------
+
+- A single categorical variable is measured, and exact numerical values are specified for each of the :math:`p_i`.​
+- Expected cell counts are :math:`E_i = np_i`
+- Degrees of freedom: :math:`df = k-1`
+
+**Example**
+
+Toss a die 300 times with the following results. Is the die fair or biased? ​
+
+=========== ========== ========== ========== ========== ========== ==========  
+Upper Face      1           2          3          4         5           6              
+=========== ========== ========== ========== ========== ========== ========== 
+# of times      50          39         45        62        61          43  
+=========== ========== ========== ========== ========== ========== ==========
+
+- A multinomial experiment with k = 6 and O1 to O6 given in the table. 
+- We test at alpha = 0.05:
+
+:math:`H_0: p_n = 1/6` (die is fair)
+:math:`H_a:` at least one :math:`p_i` is different from 1/6 (die is biased)
+
+The first step is to calculate the expected cell counts: :math:`E_i = np_i = 300(1/6) = 50`
+
+======================= ========== ========== ========== ========== ========== ==========  
+Upper Face                  1           2          3          4         5           6              
+======================= ========== ========== ========== ========== ========== ========== 
+# of times :math:`O_i`      50          39         45        62        61          43  
+:math:`E_i:`                50          50         50        50        50          50
+======================= ========== ========== ========== ========== ========== ==========
+
+Test statistic and rejection Region:
+
+..math::
+    \chi^2 = \sum{\frac{(O_i-E_i)^2}{E_i}} = \frac{(50 - 50)^2}{50} + \frac{(39 - 50)^2}{50} + ... + \frac{(43 - 50)^2}{50} = 9.2
+
+Reject :math:`H_0` if :math:`X^2` > :math:`\chi^2_0.05` = 11.07 with k-1 = 6-1 = 5 df
+
+We do not reject :math:`H_0` . There is insufficient evidence to indicate that the die is biased.
+
+Things to note
+--------------
+
+- The test statistic, :math:`X^2` has only an approximate chi-square distribution. 
+- For the approximation to be accurate, statisticians recommend :math:`E_i \ge 5` for all cells
+- Goodness of fit tests are different from previous tests since the experimenter uses :math:`H_0` for the model he thinks is true. ​
+- Be careful not to accept :math:`H_0` (say the model is correct)
+
+Test of Independence
+=====================
+
+Contigency Tables: A Two-Way classification
+--------------------------------------------
+
+​The experimenter measures two qualitative variables to generate bivariate data.
+- Gender and colorblindness
+- Age and opinion
+- Professiorial rank and type of university
+
+Summarize the data by counting the observed number of outcomes in each of the intersections of category levels in a contingency table.​
+
+R x c Contigency Table
+-----------------------
+
+The contingency table has r rows and c columns - rc total cells.
+
+========== ============== ============== ============== ==============
+                1                2            ,,,,             c
+========== ============== ============== ============== ==============
+    1       :math:`O_11`   :math:`O_12`        ,,,,       :math:`O_1c`
+    2       :math:`O_21`   :math:`O_22`        ,,,,       :math:`O_2c`
+   ,,,,          ,,,,          ,,,, 
+    r       :math:`O_r1`   :math:`O_r2`        ,,,,       :math:`O_rc`
+========== ============== ============== ============== ==============
+
+We study the relationship between the two variables. Is one method of classification contingent or dependent on the other? 
+
+Does the distribution of measurements in the various categories for variable 1 depend on which category of variable 2 is being observed?​
+If not, the variables are independent.
+
+Chi Square test of Independence
+--------------------------------
+
+:math:`H_0:` classifications are independent
+
+:math:`H_a:` classifications are dependent
+
+Observed cell counts are :math:`O_ij:` for row i and column j.​
+
+Expected cell counts are :math:`E_ij = np_ij`
+
+:math:`p_{ij} = p_ip_j` = P(falling in row i)P(falling in row j)​
+
+Chi-Square test of Independence
+--------------------------------
+
+Estimate :math:`p_i` and :math:`p_j` with :math:`\frac{r_i}{n}` and ​:math:`\frac{c_j}{n}`
+
+.. math::
+    \hat{E_{ij}} = n(\frac{r_i}{n})(\frac{c_j}{n}) = \frac{r_ic_j}{n}
+
+Test statistic
+
+.. math::
+    X^2 = \sum{\frac{(O_{ij} - \hat{E_{ij}})^2}{\hat{E_{ij}}}}
+
+The test statistic has an approcimate chi-square distribution with df = (r-1)(c-1)
+
+**Example**
+
+Furniture defects are classified according to type of defect and shift on which it was made.​
+
+========= ======== ======== ======== =============
+    x                     Shift
+--------- ----------------------------------------
+   Type     1         2         3        Total   
+========= ======== ======== ======== =============
+    A       15         26     33        74
+    B       21         31     17        69
+    C       45         34     49        128
+    D       13         5      20        38
+  Total     94         96     119       309
+========= ======== ======== ======== =============
+
+Does the data present sufficient evidence to indicate that the type of furniture defect varies with the shift during which the piece of furniture is produced? Test at the 1% level of significance.​
+
+:math:`H_0:` type of defect is independent of shift​
+
+:math:`H_a:` type of defect depends on the shift 
+
+Then calculate the expected cell counts. For Example
+
+.. math:: 
+
+    chi-sqr = 19.178 for df = 6 and p-value = 0.004
+
+    \hat{E_{12}} = \frac{r_1c_2}{n} = \frac{74(96)}{309} = 22.99
+
+Reject :math:`H_0:`. There is sufficient evidence to indicate that the proportion of defect types vary from shift to shift.​
+
+Test for Homogeneity
+---------------------
+
+Sometimes researchers design an experiment so that the number of experimental units falling in one set of  categories is fixed in advance.
+
+Example: An experimenter selects 900 patients who have been treated for flu prevention. She selects 300 from each of three types—no vaccine, one shot, and two shots. 
+
+Each of the c columns (or r rows) whose totals have been fixed in advance is actually a single multinomial experiment.
+
+The chi-square test of independence with (r-1)(c-1) df is equivalent to a test of the equality of c (or r)  multinomial populations.

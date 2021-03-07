@@ -169,6 +169,22 @@
 <li class="toctree-l3"><a class="reference internal" href="#id17">Rejection Regions</a></li>
 </ul>
 </li>
+<li class="toctree-l2"><a class="reference internal" href="#independence-testing-or-analysis-of-categorical-data">Independence Testing, Or Analysis of Categorical data</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#multinomial-experiment">Multinomial experiment</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#the-binomial-experiment">The Binomial experiment</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#pearson-s-chi-square-statistic">Pearson’s Chi-Square Statistic</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#goodness-of-fit-test">Goodness of Fit test</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#things-to-note">Things to note</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#test-of-independence">Test of Independence</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#contigency-tables-a-two-way-classification">Contigency Tables: A Two-Way classification</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#r-x-c-contigency-table">R x c Contigency Table</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#chi-square-test-of-independence">Chi Square test of Independence</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id18">Chi-Square test of Independence</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#test-for-homogeneity">Test for Homogeneity</a></li>
+</ul>
+</li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="OtherDefinitions.html">Other Definitions</a></li>
@@ -735,6 +751,295 @@ variance of 25.​</p>
 <p>Rejection Region: Reject <span class="math notranslate nohighlight">\(H_0\)</span> if, F &gt; 3.14 or F &lt; 0.33</p>
 <p>Our test statistic was F = 0.64. This value does not fall in the rejection region.</p>
 <p>We do not reject <span class="math notranslate nohighlight">\(H_0\)</span> and conclude that there is not sufficient evidence, at the 0.10 level, that the population variances are different.</p>
+</div>
+</div>
+<div class="section" id="independence-testing-or-analysis-of-categorical-data">
+<h2>Independence Testing, Or Analysis of Categorical data<a class="headerlink" href="#independence-testing-or-analysis-of-categorical-data" title="Permalink to this headline">¶</a></h2>
+<p>Many experiments result in measurements that are qualitative or categorical rather than quantitative.​
+- Cars classified by color​
+- M&amp;Ms classified by type (plain or peanut)​</p>
+<p>These data sets have the characteristics of a multinomial experiment.  ​</p>
+<div class="section" id="multinomial-experiment">
+<h3>Multinomial experiment<a class="headerlink" href="#multinomial-experiment" title="Permalink to this headline">¶</a></h3>
+<ol class="arabic simple">
+<li>The experiment consists of n identical trials.​</li>
+<li>Each trial results in one of k categories.​</li>
+<li>The probability that the outcome falls into a particular category i on a single trial is <span class="math notranslate nohighlight">\(p_i\)</span> and remains constant from trial to trial. The sum of all k probabilities, <span class="math notranslate nohighlight">\(p_1+p_2 +…+ p_k = 1\)</span>. ​</li>
+<li>The trials are independent</li>
+<li>We are interested in the number of outcomes in each category, <span class="math notranslate nohighlight">\(O_1, O_2, ..., O_k\)</span> with <span class="math notranslate nohighlight">\(O_1, O_2, ..., O_k = n\)</span></li>
+</ol>
+</div>
+<div class="section" id="the-binomial-experiment">
+<h3>The Binomial experiment<a class="headerlink" href="#the-binomial-experiment" title="Permalink to this headline">¶</a></h3>
+<ul class="simple">
+<li>A special case of the multinomial experiment with k = 2.</li>
+<li>Categories 1 and 2: success and failure​</li>
+<li>p1 and p2:    p and q​</li>
+<li>O1 and O2: x and n-x​</li>
+<li>We made inferences about p ​(and q = 1 - p)​</li>
+</ul>
+</div>
+<div class="section" id="pearson-s-chi-square-statistic">
+<h3>Pearson’s Chi-Square Statistic<a class="headerlink" href="#pearson-s-chi-square-statistic" title="Permalink to this headline">¶</a></h3>
+<ul class="simple">
+<li>We have some preconceived idea about the values of the pi and want to use sample information to see if we are correct.</li>
+<li>The expected number of times that outcome i will occur is <span class="math notranslate nohighlight">\(E_i = np_i\)</span> . If the observed cell counts, <span class="math notranslate nohighlight">\(O_i\)</span>, are too far from what we hypothesize under <span class="math notranslate nohighlight">\(H_0\)</span>, the more likely it is that <span class="math notranslate nohighlight">\(H_0\)</span> should be rejected. ​</li>
+</ul>
+<p>We use the pearson chi-square statistic:</p>
+<div class="math notranslate nohighlight">
+\[\chi^2 = \sum{\frac{(O_i-E_i)^2}{E_i}}\]</div>
+<p>When <span class="math notranslate nohighlight">\(H_0\)</span> is true, the differences O-E will be  small, but large when <span class="math notranslate nohighlight">\(H_0\)</span> is false.</p>
+<p>Look for large values of <span class="math notranslate nohighlight">\(\chi_0\)</span> based on the chi-square distribution with a particular number of degrees of freedom.​</p>
+</div>
+<div class="section" id="goodness-of-fit-test">
+<h3>Goodness of Fit test<a class="headerlink" href="#goodness-of-fit-test" title="Permalink to this headline">¶</a></h3>
+<ul class="simple">
+<li>A single categorical variable is measured, and exact numerical values are specified for each of the <span class="math notranslate nohighlight">\(p_i\)</span>.​</li>
+<li>Expected cell counts are <span class="math notranslate nohighlight">\(E_i = np_i\)</span></li>
+<li>Degrees of freedom: <span class="math notranslate nohighlight">\(df = k-1\)</span></li>
+</ul>
+<p><strong>Example</strong></p>
+<p>Toss a die 300 times with the following results. Is the die fair or biased? ​</p>
+<table border="1" class="docutils">
+<colgroup>
+<col width="15%" />
+<col width="14%" />
+<col width="14%" />
+<col width="14%" />
+<col width="14%" />
+<col width="14%" />
+<col width="14%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head">Upper Face</th>
+<th class="head">1</th>
+<th class="head">2</th>
+<th class="head">3</th>
+<th class="head">4</th>
+<th class="head">5</th>
+<th class="head">6</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td># of times</td>
+<td>50</td>
+<td>39</td>
+<td>45</td>
+<td>62</td>
+<td>61</td>
+<td>43</td>
+</tr>
+</tbody>
+</table>
+<ul class="simple">
+<li>A multinomial experiment with k = 6 and O1 to O6 given in the table.</li>
+<li>We test at alpha = 0.05:</li>
+</ul>
+<p><span class="math notranslate nohighlight">\(H_0: p_n = 1/6\)</span> (die is fair)
+<span class="math notranslate nohighlight">\(H_a:\)</span> at least one <span class="math notranslate nohighlight">\(p_i\)</span> is different from 1/6 (die is biased)</p>
+<p>The first step is to calculate the expected cell counts: <span class="math notranslate nohighlight">\(E_i = np_i = 300(1/6) = 50\)</span></p>
+<table border="1" class="docutils">
+<colgroup>
+<col width="28%" />
+<col width="12%" />
+<col width="12%" />
+<col width="12%" />
+<col width="12%" />
+<col width="12%" />
+<col width="12%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head">Upper Face</th>
+<th class="head">1</th>
+<th class="head">2</th>
+<th class="head">3</th>
+<th class="head">4</th>
+<th class="head">5</th>
+<th class="head">6</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td># of times <span class="math notranslate nohighlight">\(O_i\)</span></td>
+<td>50</td>
+<td>39</td>
+<td>45</td>
+<td>62</td>
+<td>61</td>
+<td>43</td>
+</tr>
+<tr class="row-odd"><td><span class="math notranslate nohighlight">\(E_i:\)</span></td>
+<td>50</td>
+<td>50</td>
+<td>50</td>
+<td>50</td>
+<td>50</td>
+<td>50</td>
+</tr>
+</tbody>
+</table>
+<p>Test statistic and rejection Region:</p>
+<dl class="docutils">
+<dt>..math::</dt>
+<dd>chi^2 = sum{frac{(O_i-E_i)^2}{E_i}} = frac{(50 - 50)^2}{50} + frac{(39 - 50)^2}{50} + … + frac{(43 - 50)^2}{50} = 9.2</dd>
+</dl>
+<p>Reject <span class="math notranslate nohighlight">\(H_0\)</span> if <span class="math notranslate nohighlight">\(X^2\)</span> &gt; <span class="math notranslate nohighlight">\(\chi^2_0.05\)</span> = 11.07 with k-1 = 6-1 = 5 df</p>
+<p>We do not reject <span class="math notranslate nohighlight">\(H_0\)</span> . There is insufficient evidence to indicate that the die is biased.</p>
+</div>
+<div class="section" id="things-to-note">
+<h3>Things to note<a class="headerlink" href="#things-to-note" title="Permalink to this headline">¶</a></h3>
+<ul class="simple">
+<li>The test statistic, <span class="math notranslate nohighlight">\(X^2\)</span> has only an approximate chi-square distribution.</li>
+<li>For the approximation to be accurate, statisticians recommend <span class="math notranslate nohighlight">\(E_i \ge 5\)</span> for all cells</li>
+<li>Goodness of fit tests are different from previous tests since the experimenter uses <span class="math notranslate nohighlight">\(H_0\)</span> for the model he thinks is true. ​</li>
+<li>Be careful not to accept <span class="math notranslate nohighlight">\(H_0\)</span> (say the model is correct)</li>
+</ul>
+</div>
+</div>
+<div class="section" id="test-of-independence">
+<h2>Test of Independence<a class="headerlink" href="#test-of-independence" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="contigency-tables-a-two-way-classification">
+<h3>Contigency Tables: A Two-Way classification<a class="headerlink" href="#contigency-tables-a-two-way-classification" title="Permalink to this headline">¶</a></h3>
+<p>​The experimenter measures two qualitative variables to generate bivariate data.
+- Gender and colorblindness
+- Age and opinion
+- Professiorial rank and type of university</p>
+<p>Summarize the data by counting the observed number of outcomes in each of the intersections of category levels in a contingency table.​</p>
+</div>
+<div class="section" id="r-x-c-contigency-table">
+<h3>R x c Contigency Table<a class="headerlink" href="#r-x-c-contigency-table" title="Permalink to this headline">¶</a></h3>
+<p>The contingency table has r rows and c columns - rc total cells.</p>
+<table border="1" class="docutils">
+<colgroup>
+<col width="15%" />
+<col width="21%" />
+<col width="21%" />
+<col width="21%" />
+<col width="21%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head">&#160;</th>
+<th class="head">&#160;</th>
+<th class="head">&#160;</th>
+<th class="head">&#160;</th>
+<th class="head">&#160;</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td>1</td>
+<td><span class="math notranslate nohighlight">\(O_11\)</span></td>
+<td><span class="math notranslate nohighlight">\(O_12\)</span></td>
+<td>&#160;</td>
+<td><span class="math notranslate nohighlight">\(O_1c\)</span></td>
+</tr>
+<tr class="row-odd"><td>2</td>
+<td><span class="math notranslate nohighlight">\(O_21\)</span></td>
+<td><span class="math notranslate nohighlight">\(O_22\)</span></td>
+<td>&#160;</td>
+<td><span class="math notranslate nohighlight">\(O_2c\)</span></td>
+</tr>
+<tr class="row-even"><td>&#160;</td>
+<td>&#160;</td>
+<td>&#160;</td>
+<td>&#160;</td>
+<td>&#160;</td>
+</tr>
+<tr class="row-odd"><td>r</td>
+<td><span class="math notranslate nohighlight">\(O_r1\)</span></td>
+<td><span class="math notranslate nohighlight">\(O_r2\)</span></td>
+<td>&#160;</td>
+<td><span class="math notranslate nohighlight">\(O_rc\)</span></td>
+</tr>
+</tbody>
+</table>
+<p>We study the relationship between the two variables. Is one method of classification contingent or dependent on the other?</p>
+<p>Does the distribution of measurements in the various categories for variable 1 depend on which category of variable 2 is being observed?​
+If not, the variables are independent.</p>
+</div>
+<div class="section" id="chi-square-test-of-independence">
+<h3>Chi Square test of Independence<a class="headerlink" href="#chi-square-test-of-independence" title="Permalink to this headline">¶</a></h3>
+<p><span class="math notranslate nohighlight">\(H_0:\)</span> classifications are independent</p>
+<p><span class="math notranslate nohighlight">\(H_a:\)</span> classifications are dependent</p>
+<p>Observed cell counts are <span class="math notranslate nohighlight">\(O_ij:\)</span> for row i and column j.​</p>
+<p>Expected cell counts are <span class="math notranslate nohighlight">\(E_ij = np_ij\)</span></p>
+<p><span class="math notranslate nohighlight">\(p_{ij} = p_ip_j\)</span> = P(falling in row i)P(falling in row j)​</p>
+</div>
+<div class="section" id="id18">
+<h3>Chi-Square test of Independence<a class="headerlink" href="#id18" title="Permalink to this headline">¶</a></h3>
+<p>Estimate <span class="math notranslate nohighlight">\(p_i\)</span> and <span class="math notranslate nohighlight">\(p_j\)</span> with <span class="math notranslate nohighlight">\(\frac{r_i}{n}\)</span> and ​:math:<cite>frac{c_j}{n}</cite></p>
+<div class="math notranslate nohighlight">
+\[\hat{E_{ij}} = n(\frac{r_i}{n})(\frac{c_j}{n}) = \frac{r_ic_j}{n}\]</div>
+<p>Test statistic</p>
+<div class="math notranslate nohighlight">
+\[X^2 = \sum{\frac{(O_{ij} - \hat{E_{ij}})^2}{\hat{E_{ij}}}}\]</div>
+<p>The test statistic has an approcimate chi-square distribution with df = (r-1)(c-1)</p>
+<p><strong>Example</strong></p>
+<p>Furniture defects are classified according to type of defect and shift on which it was made.​</p>
+<table border="1" class="docutils">
+<colgroup>
+<col width="20%" />
+<col width="17%" />
+<col width="17%" />
+<col width="17%" />
+<col width="28%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head">x</th>
+<th class="head" colspan="4">Shift</th>
+</tr>
+<tr class="row-even"><th class="head">Type</th>
+<th class="head">1</th>
+<th class="head">2</th>
+<th class="head">3</th>
+<th class="head">Total</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-odd"><td>A</td>
+<td>15</td>
+<td>26</td>
+<td>33</td>
+<td>74</td>
+</tr>
+<tr class="row-even"><td>B</td>
+<td>21</td>
+<td>31</td>
+<td>17</td>
+<td>69</td>
+</tr>
+<tr class="row-odd"><td>C</td>
+<td>45</td>
+<td>34</td>
+<td>49</td>
+<td>128</td>
+</tr>
+<tr class="row-even"><td>D</td>
+<td>13</td>
+<td>5</td>
+<td>20</td>
+<td>38</td>
+</tr>
+<tr class="row-odd"><td>Total</td>
+<td>94</td>
+<td>96</td>
+<td>119</td>
+<td>309</td>
+</tr>
+</tbody>
+</table>
+<p>Does the data present sufficient evidence to indicate that the type of furniture defect varies with the shift during which the piece of furniture is produced? Test at the 1% level of significance.​</p>
+<p><span class="math notranslate nohighlight">\(H_0:\)</span> type of defect is independent of shift​</p>
+<p><span class="math notranslate nohighlight">\(H_a:\)</span> type of defect depends on the shift</p>
+<p>Then calculate the expected cell counts. For Example</p>
+<div class="math notranslate nohighlight">
+\[ \begin{align}\begin{aligned}chi-sqr = 19.178 for df = 6 and p-value = 0.004\\\hat{E_{12}} = \frac{r_1c_2}{n} = \frac{74(96)}{309} = 22.99\end{aligned}\end{align} \]</div>
+<p>Reject <span class="math notranslate nohighlight">\(H_0:\)</span>. There is sufficient evidence to indicate that the proportion of defect types vary from shift to shift.​</p>
+</div>
+<div class="section" id="test-for-homogeneity">
+<h3>Test for Homogeneity<a class="headerlink" href="#test-for-homogeneity" title="Permalink to this headline">¶</a></h3>
+<p>Sometimes researchers design an experiment so that the number of experimental units falling in one set of  categories is fixed in advance.</p>
+<p>Example: An experimenter selects 900 patients who have been treated for flu prevention. She selects 300 from each of three types—no vaccine, one shot, and two shots.</p>
+<p>Each of the c columns (or r rows) whose totals have been fixed in advance is actually a single multinomial experiment.</p>
+<p>The chi-square test of independence with (r-1)(c-1) df is equivalent to a test of the equality of c (or r)  multinomial populations.</p>
 </div>
 </div>
 </div>
