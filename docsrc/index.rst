@@ -17,6 +17,7 @@ Welcome to Statistics Documentation!
    OtherDefinitions
    NormalTableTextBook
    TTableTextBook
+   ChiSquaredTextBook
 
     
 
