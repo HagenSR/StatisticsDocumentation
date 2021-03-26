@@ -1,7 +1,7 @@
 
 
 <!DOCTYPE html>
-<html class="writer-html4" lang="en" >
+<html class="writer-html5" lang="en" >
 <head>
   <meta charset="utf-8" />
   
@@ -30,19 +30,18 @@
   
     
       <script type="text/javascript" id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
-        <script type="text/javascript" src="_static/jquery.js"></script>
-        <script type="text/javascript" src="_static/underscore.js"></script>
-        <script type="text/javascript" src="_static/doctools.js"></script>
-        <script type="text/javascript" src="_static/language_data.js"></script>
-        <script type="text/javascript" src="_static/accordion.js"></script>
-        <script async="async" type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+        <script src="_static/jquery.js"></script>
+        <script src="_static/underscore.js"></script>
+        <script src="_static/doctools.js"></script>
+        <script src="_static/accordion.js"></script>
+        <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
     
     <script type="text/javascript" src="_static/js/theme.js"></script>
 
     
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
-    <link rel="next" title="Other Definitions" href="OtherDefinitions.html" />
+    <link rel="next" title="Simple Linear Regression" href="simpleLinearRegression.html" />
     <link rel="prev" title="Estimating" href="Estimation.html" />
     <link href="_static/style.css" rel="stylesheet" type="text/css">
 
@@ -187,6 +186,7 @@
 </li>
 </ul>
 </li>
+<li class="toctree-l1"><a class="reference internal" href="simpleLinearRegression.html">Simple Linear Regression</a></li>
 <li class="toctree-l1"><a class="reference internal" href="OtherDefinitions.html">Other Definitions</a></li>
 <li class="toctree-l1"><a class="reference internal" href="NormalTableTextBook.html">Normal Table from the Textbook</a></li>
 <li class="toctree-l1"><a class="reference internal" href="TTableTextBook.html">T Table from the Textbook</a></li>
@@ -266,8 +266,8 @@
 certainty unless we examine the entire population.​ We take a random sample and determine if there is evidence to support the hypothesis or not.​</p>
 <p>Consider a courtroom trial. The jury needs to decide between two possibilities:​</p>
 <ul class="simple">
-<li>The person is guilty​</li>
-<li>The person is not guilty​</li>
+<li><p>The person is guilty​</p></li>
+<li><p>The person is not guilty​</p></li>
 </ul>
 <p>To begin with, the person is assumed innocent. The prosecutor presents evidence trying to convince the jury to reject the original assumption.​</p>
 <div class="section" id="null-hypothosis">
@@ -313,26 +313,26 @@ is “innocent”.​</p>
 <div class="section" id="type-2-error">
 <h3>Type 2 Error<a class="headerlink" href="#type-2-error" title="Permalink to this headline">¶</a></h3>
 <p>Fail to reject the null hypothesis when it is actually false.​</p>
-<table border="1" class="docutils">
+<table class="docutils align-default">
 <colgroup>
-<col width="30%" />
-<col width="35%" />
-<col width="35%" />
+<col style="width: 30%" />
+<col style="width: 35%" />
+<col style="width: 35%" />
 </colgroup>
-<thead valign="bottom">
-<tr class="row-odd"><th class="head">X</th>
-<th class="head">Null Hypothesis True</th>
-<th class="head">Null Hypothesis False</th>
+<thead>
+<tr class="row-odd"><th class="head"><p>X</p></th>
+<th class="head"><p>Null Hypothesis True</p></th>
+<th class="head"><p>Null Hypothesis False</p></th>
 </tr>
 </thead>
-<tbody valign="top">
-<tr class="row-even"><td>Do not reject</td>
-<td>Correct decision</td>
-<td>Type II Error</td>
+<tbody>
+<tr class="row-even"><td><p>Do not reject</p></td>
+<td><p>Correct decision</p></td>
+<td><p>Type II Error</p></td>
 </tr>
-<tr class="row-odd"><td>Reject</td>
-<td>Type I Error</td>
-<td>Correct decision</td>
+<tr class="row-odd"><td><p>Reject</p></td>
+<td><p>Type I Error</p></td>
+<td><p>Correct decision</p></td>
 </tr>
 </tbody>
 </table>
@@ -392,11 +392,11 @@ is “innocent”.​</p>
 <h3>Making a decision<a class="headerlink" href="#making-a-decision" title="Permalink to this headline">¶</a></h3>
 <p>We will make a decision on the null hypothesis in one of two ways</p>
 <ol class="arabic simple">
-<li>Using the Test Statistic</li>
+<li><p>Using the Test Statistic</p></li>
 </ol>
 <p>We will reject <span class="math notranslate nohighlight">\(H_{0}\)</span> if the test statistic falls within the rejection region. Formulas for test statistics and how to find the rejection region will be defined for different types of tests</p>
 <ol class="arabic simple" start="2">
-<li>Using the P-Value</li>
+<li><p>Using the P-Value</p></li>
 </ol>
 <p>The probability of obtaining our calculated test statistic value, given that the null hypothesis is true, is the P-value. In other words, the p-value gices a measure of how likely it is to obtain
 the sample data if <span class="math notranslate nohighlight">\(H_{0}\)</span> is true. We will reject <span class="math notranslate nohighlight">\(H_{0}\)</span> if the p-value is less than <span class="math notranslate nohighlight">\(a\)</span> ie p-value &lt; <span class="math notranslate nohighlight">\(a\)</span> reject.</p>
@@ -426,9 +426,9 @@ should reject <span class="math notranslate nohighlight">\(H_{0}\)</span> .</p>
 <h3>Rejection Regions<a class="headerlink" href="#rejection-regions" title="Permalink to this headline">¶</a></h3>
 <p>The rejection region will vary depending on the alternative hypothesis.</p>
 <ol class="arabic simple">
-<li><span class="math notranslate nohighlight">\(H_{a}: \mu \ne \mu_{0}\)</span> : reject <span class="math notranslate nohighlight">\(H_{0}\)</span> for <span class="math notranslate nohighlight">\(|Z| &gt; Z_{a/2}\)</span></li>
-<li><span class="math notranslate nohighlight">\(H_{a}: \mu &gt; \mu_{0}\)</span> : Reject <span class="math notranslate nohighlight">\(H_{0}\)</span> for <span class="math notranslate nohighlight">\(Z &gt; Z_{a}\)</span></li>
-<li><span class="math notranslate nohighlight">\(H_{a}: \mu &lt; \mu_{0}\)</span> : Reject <span class="math notranslate nohighlight">\(H_{0}\)</span> for <span class="math notranslate nohighlight">\(Z &lt; -Z_{a}\)</span></li>
+<li><p><span class="math notranslate nohighlight">\(H_{a}: \mu \ne \mu_{0}\)</span> : reject <span class="math notranslate nohighlight">\(H_{0}\)</span> for <span class="math notranslate nohighlight">\(|Z| &gt; Z_{a/2}\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(H_{a}: \mu &gt; \mu_{0}\)</span> : Reject <span class="math notranslate nohighlight">\(H_{0}\)</span> for <span class="math notranslate nohighlight">\(Z &gt; Z_{a}\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(H_{a}: \mu &lt; \mu_{0}\)</span> : Reject <span class="math notranslate nohighlight">\(H_{0}\)</span> for <span class="math notranslate nohighlight">\(Z &lt; -Z_{a}\)</span></p></li>
 </ol>
 </div>
 <div class="section" id="example">
@@ -489,9 +489,9 @@ null hypothesis is still <span class="math notranslate nohighlight">\(H_{0}: \mu
 <h3>Rejection Regions<a class="headerlink" href="#id4" title="Permalink to this headline">¶</a></h3>
 <p>The rejection region will vary depending on the alternative hypothesis.</p>
 <ol class="arabic simple">
-<li><span class="math notranslate nohighlight">\(H_{a}: \mu \ne \mu_{0}\)</span> : reject <span class="math notranslate nohighlight">\(H_{0}\)</span> for <span class="math notranslate nohighlight">\(|T| &gt; t_{a/2}\)</span></li>
-<li><span class="math notranslate nohighlight">\(H_{a}: \mu &gt; \mu_{0}\)</span> : Reject <span class="math notranslate nohighlight">\(H_{0}\)</span> for <span class="math notranslate nohighlight">\(T &gt; t_{a}\)</span></li>
-<li><span class="math notranslate nohighlight">\(H_{a}: \mu &lt; \mu_{0}\)</span> : Reject <span class="math notranslate nohighlight">\(H_{0}\)</span> for <span class="math notranslate nohighlight">\(T &lt; -t_{a}\)</span></li>
+<li><p><span class="math notranslate nohighlight">\(H_{a}: \mu \ne \mu_{0}\)</span> : reject <span class="math notranslate nohighlight">\(H_{0}\)</span> for <span class="math notranslate nohighlight">\(|T| &gt; t_{a/2}\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(H_{a}: \mu &gt; \mu_{0}\)</span> : Reject <span class="math notranslate nohighlight">\(H_{0}\)</span> for <span class="math notranslate nohighlight">\(T &gt; t_{a}\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(H_{a}: \mu &lt; \mu_{0}\)</span> : Reject <span class="math notranslate nohighlight">\(H_{0}\)</span> for <span class="math notranslate nohighlight">\(T &lt; -t_{a}\)</span></p></li>
 </ol>
 </div>
 <div class="section" id="id5">
@@ -523,8 +523,8 @@ The second sample is size <span class="math notranslate nohighlight">\(n_{2}\)</
 <span class="math notranslate nohighlight">\(H_{0}: \mu_{1} - \mu{2} = d_{0}\)</span> . Where <span class="math notranslate nohighlight">\(d_{0}\)</span> is some hypothesized difference (usually zero).</p>
 <p>If <span class="math notranslate nohighlight">\(n_{1}\)</span> and <span class="math notranslate nohighlight">\(n_{2}\)</span> are both greater than thirty we can make one of two assumptions:</p>
 <ol class="arabic simple">
-<li><span class="math notranslate nohighlight">\(\sigma_{1}^2\)</span> and <span class="math notranslate nohighlight">\(\sigma_{2}^2\)</span> are known</li>
-<li>Or <span class="math notranslate nohighlight">\(s_{1}^2 \approx \sigma_{1}^2\)</span> and <span class="math notranslate nohighlight">\(s_{2}^2 \approx \sigma_{2}^2\)</span></li>
+<li><p><span class="math notranslate nohighlight">\(\sigma_{1}^2\)</span> and <span class="math notranslate nohighlight">\(\sigma_{2}^2\)</span> are known</p></li>
+<li><p>Or <span class="math notranslate nohighlight">\(s_{1}^2 \approx \sigma_{1}^2\)</span> and <span class="math notranslate nohighlight">\(s_{2}^2 \approx \sigma_{2}^2\)</span></p></li>
 </ol>
 <p>We can now use the standard normal distribution for our test statistic.</p>
 <p>If <span class="math notranslate nohighlight">\(n_{1}\)</span> and <span class="math notranslate nohighlight">\(n_{2}\)</span> are both greater than thirty, the test statistic used for the hypothesis test given by the null hypothesis:
@@ -537,9 +537,9 @@ The second sample is size <span class="math notranslate nohighlight">\(n_{2}\)</
 <h3>Rejection Regions<a class="headerlink" href="#id8" title="Permalink to this headline">¶</a></h3>
 <p>The rejection region will vary depending on the alternative hypothesis.</p>
 <ol class="arabic simple">
-<li><span class="math notranslate nohighlight">\(H_{a}: \mu_{1} - \mu_{2} \ne d_{0}\)</span> : reject <span class="math notranslate nohighlight">\(H_{0}\)</span> for <span class="math notranslate nohighlight">\(|Z| &gt; Z_{a/2}\)</span></li>
-<li><span class="math notranslate nohighlight">\(H_{a}: \mu_{1} - \mu_{2} &gt; d_{0}\)</span> : Reject <span class="math notranslate nohighlight">\(H_{0}\)</span> for <span class="math notranslate nohighlight">\(Z &gt; Z_{a}\)</span></li>
-<li><span class="math notranslate nohighlight">\(H_{a}: \mu_{1} - \mu_{2} &lt; d_{0}\)</span> : Reject <span class="math notranslate nohighlight">\(H_{0}\)</span> for <span class="math notranslate nohighlight">\(Z &lt; -Z_{a}\)</span></li>
+<li><p><span class="math notranslate nohighlight">\(H_{a}: \mu_{1} - \mu_{2} \ne d_{0}\)</span> : reject <span class="math notranslate nohighlight">\(H_{0}\)</span> for <span class="math notranslate nohighlight">\(|Z| &gt; Z_{a/2}\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(H_{a}: \mu_{1} - \mu_{2} &gt; d_{0}\)</span> : Reject <span class="math notranslate nohighlight">\(H_{0}\)</span> for <span class="math notranslate nohighlight">\(Z &gt; Z_{a}\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(H_{a}: \mu_{1} - \mu_{2} &lt; d_{0}\)</span> : Reject <span class="math notranslate nohighlight">\(H_{0}\)</span> for <span class="math notranslate nohighlight">\(Z &lt; -Z_{a}\)</span></p></li>
 </ol>
 </div>
 <div class="section" id="id9">
@@ -557,9 +557,9 @@ much more difficult to estimate. Computer software is usually used in those case
 <h3>Rejection Regions<a class="headerlink" href="#id10" title="Permalink to this headline">¶</a></h3>
 <p>For <span class="math notranslate nohighlight">\(n_{1}\)</span> and <span class="math notranslate nohighlight">\(n_{2}\)</span> less than thirty and population variances equal we have:</p>
 <ol class="arabic simple">
-<li><span class="math notranslate nohighlight">\(H_{a}: \mu_{1} - \mu_{2} \ne d_{0}\)</span> : reject <span class="math notranslate nohighlight">\(H_{0}\)</span> for <span class="math notranslate nohighlight">\(|T| &gt; t_{a/2}\)</span></li>
-<li><span class="math notranslate nohighlight">\(H_{a}: \mu_{1} - \mu_{2} &gt; d_{0}\)</span> : Reject <span class="math notranslate nohighlight">\(H_{0}\)</span> for <span class="math notranslate nohighlight">\(T &gt; t_{a}\)</span></li>
-<li><span class="math notranslate nohighlight">\(H_{a}: \mu_{1} - \mu_{2} &lt; d_{0}\)</span> : Reject <span class="math notranslate nohighlight">\(H_{0}\)</span> for <span class="math notranslate nohighlight">\(T &lt; -t_{a}\)</span></li>
+<li><p><span class="math notranslate nohighlight">\(H_{a}: \mu_{1} - \mu_{2} \ne d_{0}\)</span> : reject <span class="math notranslate nohighlight">\(H_{0}\)</span> for <span class="math notranslate nohighlight">\(|T| &gt; t_{a/2}\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(H_{a}: \mu_{1} - \mu_{2} &gt; d_{0}\)</span> : Reject <span class="math notranslate nohighlight">\(H_{0}\)</span> for <span class="math notranslate nohighlight">\(T &gt; t_{a}\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(H_{a}: \mu_{1} - \mu_{2} &lt; d_{0}\)</span> : Reject <span class="math notranslate nohighlight">\(H_{0}\)</span> for <span class="math notranslate nohighlight">\(T &lt; -t_{a}\)</span></p></li>
 </ol>
 </div>
 <div class="section" id="paired-observations">
@@ -575,9 +575,9 @@ For paired observations we are interested in the quantity: <span class="math not
 <h3>Rejection Regions<a class="headerlink" href="#id11" title="Permalink to this headline">¶</a></h3>
 <p>The rejection region will vary depending on the alternative hypothesis.</p>
 <ol class="arabic simple">
-<li><span class="math notranslate nohighlight">\(H_{a}: \mu_d \ne d_{0}\)</span> : reject <span class="math notranslate nohighlight">\(H_{0}\)</span> for <span class="math notranslate nohighlight">\(|T| &gt; t_{a/2}\)</span></li>
-<li><span class="math notranslate nohighlight">\(H_{a}: \mu_d &gt; d_{0}\)</span> : Reject <span class="math notranslate nohighlight">\(H_{0}\)</span> for <span class="math notranslate nohighlight">\(T &gt; t_{a}\)</span></li>
-<li><span class="math notranslate nohighlight">\(H_{a}: \mu_d &lt; d_{0}\)</span> : Reject <span class="math notranslate nohighlight">\(H_{0}\)</span> for <span class="math notranslate nohighlight">\(T &lt; -t_{a}\)</span></li>
+<li><p><span class="math notranslate nohighlight">\(H_{a}: \mu_d \ne d_{0}\)</span> : reject <span class="math notranslate nohighlight">\(H_{0}\)</span> for <span class="math notranslate nohighlight">\(|T| &gt; t_{a/2}\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(H_{a}: \mu_d &gt; d_{0}\)</span> : Reject <span class="math notranslate nohighlight">\(H_{0}\)</span> for <span class="math notranslate nohighlight">\(T &gt; t_{a}\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(H_{a}: \mu_d &lt; d_{0}\)</span> : Reject <span class="math notranslate nohighlight">\(H_{0}\)</span> for <span class="math notranslate nohighlight">\(T &lt; -t_{a}\)</span></p></li>
 </ol>
 </div>
 </div>
@@ -593,14 +593,14 @@ being produced.​ We will consider the problem of testing that the proportion i
 <h3>Rejection Regions<a class="headerlink" href="#id12" title="Permalink to this headline">¶</a></h3>
 <p>The rejection region will vary depending on the alternative hypothesis.</p>
 <ol class="arabic simple">
-<li><span class="math notranslate nohighlight">\(H_{a}: p \ne p_{0}\)</span> : reject <span class="math notranslate nohighlight">\(H_{0}\)</span> for <span class="math notranslate nohighlight">\(|Z| &gt; Z_{a/2}\)</span></li>
-<li><span class="math notranslate nohighlight">\(H_{a}: p &gt; p_{0}\)</span> : Reject <span class="math notranslate nohighlight">\(H_{0}\)</span> for <span class="math notranslate nohighlight">\(Z &gt; Z_{a}\)</span></li>
-<li><span class="math notranslate nohighlight">\(H_{a}: p &lt; p_{0}\)</span> : Reject <span class="math notranslate nohighlight">\(H_{0}\)</span> for <span class="math notranslate nohighlight">\(Z &lt; -Z_{a}\)</span></li>
+<li><p><span class="math notranslate nohighlight">\(H_{a}: p \ne p_{0}\)</span> : reject <span class="math notranslate nohighlight">\(H_{0}\)</span> for <span class="math notranslate nohighlight">\(|Z| &gt; Z_{a/2}\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(H_{a}: p &gt; p_{0}\)</span> : Reject <span class="math notranslate nohighlight">\(H_{0}\)</span> for <span class="math notranslate nohighlight">\(Z &gt; Z_{a}\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(H_{a}: p &lt; p_{0}\)</span> : Reject <span class="math notranslate nohighlight">\(H_{0}\)</span> for <span class="math notranslate nohighlight">\(Z &lt; -Z_{a}\)</span></p></li>
 </ol>
 <p><strong>Example</strong></p>
-<dl class="docutils">
-<dt>A commonly prescribed drug is believed to be only 60% effective. A random sample of 100 adults taking this drug show a 70% effective rate.</dt>
-<dd>Is this sufficient evidence to conclude that the drug is preforming better than originally thought?​</dd>
+<dl class="simple">
+<dt>A commonly prescribed drug is believed to be only 60% effective. A random sample of 100 adults taking this drug show a 70% effective rate.</dt><dd><p>Is this sufficient evidence to conclude that the drug is preforming better than originally thought?​</p>
+</dd>
 </dl>
 <p>Use 0.05 level of significance.</p>
 <div class="math notranslate nohighlight">
@@ -634,28 +634,28 @@ equal. <span class="math notranslate nohighlight">\(H_{0}: p_1 = p_2\)</span> Wh
 <h3>Rejection Regions<a class="headerlink" href="#id13" title="Permalink to this headline">¶</a></h3>
 <p>The rejection region will vary depending on the alternative hypothesis.</p>
 <ol class="arabic simple">
-<li><span class="math notranslate nohighlight">\(H_{a}: p_1 \ne p_{2}\)</span> : reject <span class="math notranslate nohighlight">\(H_{0}\)</span> for <span class="math notranslate nohighlight">\(|Z| &gt; Z_{a/2}\)</span></li>
-<li><span class="math notranslate nohighlight">\(H_{a}: p_1 &gt; p_{2}\)</span> : Reject <span class="math notranslate nohighlight">\(H_{0}\)</span> for <span class="math notranslate nohighlight">\(Z &gt; Z_{a}\)</span></li>
-<li><span class="math notranslate nohighlight">\(H_{a}: p_1 &lt; p_{2}\)</span> : Reject <span class="math notranslate nohighlight">\(H_{0}\)</span> for <span class="math notranslate nohighlight">\(Z &lt; -Z_{a}\)</span></li>
+<li><p><span class="math notranslate nohighlight">\(H_{a}: p_1 \ne p_{2}\)</span> : reject <span class="math notranslate nohighlight">\(H_{0}\)</span> for <span class="math notranslate nohighlight">\(|Z| &gt; Z_{a/2}\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(H_{a}: p_1 &gt; p_{2}\)</span> : Reject <span class="math notranslate nohighlight">\(H_{0}\)</span> for <span class="math notranslate nohighlight">\(Z &gt; Z_{a}\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(H_{a}: p_1 &lt; p_{2}\)</span> : Reject <span class="math notranslate nohighlight">\(H_{0}\)</span> for <span class="math notranslate nohighlight">\(Z &lt; -Z_{a}\)</span></p></li>
 </ol>
 <p><strong>Example</strong></p>
 <p>Use the information in the table below to test whether the first population has a higher probability of success than the second population at a level of 0.05.</p>
-<table border="1" class="docutils">
+<table class="docutils align-default">
 <colgroup>
-<col width="50%" />
-<col width="50%" />
+<col style="width: 50%" />
+<col style="width: 50%" />
 </colgroup>
-<thead valign="bottom">
-<tr class="row-odd"><th class="head">Sample 1</th>
-<th class="head">Sample 2</th>
+<thead>
+<tr class="row-odd"><th class="head"><p>Sample 1</p></th>
+<th class="head"><p>Sample 2</p></th>
 </tr>
 </thead>
-<tbody valign="top">
-<tr class="row-even"><td><span class="math notranslate nohighlight">\(n_1\)</span> = 200</td>
-<td><span class="math notranslate nohighlight">\(n_2\)</span> = 500</td>
+<tbody>
+<tr class="row-even"><td><p><span class="math notranslate nohighlight">\(n_1\)</span> = 200</p></td>
+<td><p><span class="math notranslate nohighlight">\(n_2\)</span> = 500</p></td>
 </tr>
-<tr class="row-odd"><td><span class="math notranslate nohighlight">\(x_1\)</span> = 120</td>
-<td><span class="math notranslate nohighlight">\(x_2\)</span> = 240</td>
+<tr class="row-odd"><td><p><span class="math notranslate nohighlight">\(x_1\)</span> = 120</p></td>
+<td><p><span class="math notranslate nohighlight">\(x_2\)</span> = 240</p></td>
 </tr>
 </tbody>
 </table>
@@ -674,11 +674,11 @@ equal. <span class="math notranslate nohighlight">\(H_{0}: p_1 = p_2\)</span> Wh
 </div>
 <div class="section" id="id14">
 <h3>p-value<a class="headerlink" href="#id14" title="Permalink to this headline">¶</a></h3>
-<dl class="docutils">
-<dt>P Value = P(Z &gt; 2.87)</dt>
-<dd>= 1 - P(Z &lt; 2.87)
+<dl class="simple">
+<dt>P Value = P(Z &gt; 2.87)</dt><dd><p>= 1 - P(Z &lt; 2.87)
 = 1 - 0.9979
-= 0.0021</dd>
+= 0.0021</p>
+</dd>
 </dl>
 <p>0.0021 &lt; 0.05</p>
 <p>Reject <span class="math notranslate nohighlight">\(H_0\)</span></p>
@@ -696,9 +696,9 @@ the formula:</p>
 <h3>Rejection Regions<a class="headerlink" href="#id15" title="Permalink to this headline">¶</a></h3>
 <p>The rejection region will vary depending on the alternative hypothesis.</p>
 <ol class="arabic simple">
-<li><span class="math notranslate nohighlight">\(H_{a}: \sigma^2 \ne \sigma_{0}^2\)</span> : reject <span class="math notranslate nohighlight">\(H_{0}\)</span> for <span class="math notranslate nohighlight">\(\chi^2 &lt; \chi^2_{1-\alpha/2}\)</span> or <span class="math notranslate nohighlight">\(\chi^2 &gt; \chi^2_{a/2}\)</span></li>
-<li><span class="math notranslate nohighlight">\(H_{a}: \sigma^2 &gt; \sigma_{0}^2\)</span> : Reject <span class="math notranslate nohighlight">\(H_{0}\)</span> for <span class="math notranslate nohighlight">\(\chi^2 &gt; \chi^2_{\alpha}\)</span></li>
-<li><span class="math notranslate nohighlight">\(H_{a}: \sigma^2 &lt; \sigma_{0}^2\)</span> : Reject <span class="math notranslate nohighlight">\(H_{0}\)</span> for <span class="math notranslate nohighlight">\(\chi^2 &lt; \chi^2_{1-\alpha}\)</span></li>
+<li><p><span class="math notranslate nohighlight">\(H_{a}: \sigma^2 \ne \sigma_{0}^2\)</span> : reject <span class="math notranslate nohighlight">\(H_{0}\)</span> for <span class="math notranslate nohighlight">\(\chi^2 &lt; \chi^2_{1-\alpha/2}\)</span> or <span class="math notranslate nohighlight">\(\chi^2 &gt; \chi^2_{a/2}\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(H_{a}: \sigma^2 &gt; \sigma_{0}^2\)</span> : Reject <span class="math notranslate nohighlight">\(H_{0}\)</span> for <span class="math notranslate nohighlight">\(\chi^2 &gt; \chi^2_{\alpha}\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(H_{a}: \sigma^2 &lt; \sigma_{0}^2\)</span> : Reject <span class="math notranslate nohighlight">\(H_{0}\)</span> for <span class="math notranslate nohighlight">\(\chi^2 &lt; \chi^2_{1-\alpha}\)</span></p></li>
 </ol>
 <p><strong>Example</strong></p>
 <p>A certain mechanical process claims to have a variance of 10 units <span class="math notranslate nohighlight">\(^2\)</span> . A sample of 12 is found to have a variance of 13.96. Test whether the variance
@@ -733,9 +733,9 @@ we are interested in testing if the two population variances are equal. Thus, ou
 <h3>Rejection Regions<a class="headerlink" href="#id17" title="Permalink to this headline">¶</a></h3>
 <p>The rejection region will vary depending on the alternative hypothesis.</p>
 <ol class="arabic simple">
-<li><span class="math notranslate nohighlight">\(H_{a}: \sigma^2_{1} \ne \sigma_{2}^2\)</span> : reject <span class="math notranslate nohighlight">\(H_{0}\)</span> for <span class="math notranslate nohighlight">\(F &gt; f_{\alpha/2}\)</span> or <span class="math notranslate nohighlight">\(F &lt; f_{1-\alpha/2}\)</span></li>
-<li><span class="math notranslate nohighlight">\(H_{a}: \sigma^2_1 &gt; \sigma_{2}^2\)</span> : Reject <span class="math notranslate nohighlight">\(H_{0}\)</span> for <span class="math notranslate nohighlight">\(F &gt; f_{\alpha}\)</span></li>
-<li><span class="math notranslate nohighlight">\(H_{a}: \sigma^2_1 &lt; \sigma_{2}^2\)</span> : Reject <span class="math notranslate nohighlight">\(H_{0}\)</span> for <span class="math notranslate nohighlight">\(F &lt; f_{1-\alpha}\)</span></li>
+<li><p><span class="math notranslate nohighlight">\(H_{a}: \sigma^2_{1} \ne \sigma_{2}^2\)</span> : reject <span class="math notranslate nohighlight">\(H_{0}\)</span> for <span class="math notranslate nohighlight">\(F &gt; f_{\alpha/2}\)</span> or <span class="math notranslate nohighlight">\(F &lt; f_{1-\alpha/2}\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(H_{a}: \sigma^2_1 &gt; \sigma_{2}^2\)</span> : Reject <span class="math notranslate nohighlight">\(H_{0}\)</span> for <span class="math notranslate nohighlight">\(F &gt; f_{\alpha}\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(H_{a}: \sigma^2_1 &lt; \sigma_{2}^2\)</span> : Reject <span class="math notranslate nohighlight">\(H_{0}\)</span> for <span class="math notranslate nohighlight">\(F &lt; f_{1-\alpha}\)</span></p></li>
 </ol>
 <p><strong>Example</strong></p>
 <p>An experiment was performed to compared the abrasive wear of two different laminated materials. It is believed that the two populations have equal variances.​
@@ -763,28 +763,28 @@ variance of 25.​</p>
 <div class="section" id="multinomial-experiment">
 <h3>Multinomial experiment<a class="headerlink" href="#multinomial-experiment" title="Permalink to this headline">¶</a></h3>
 <ol class="arabic simple">
-<li>The experiment consists of n identical trials.​</li>
-<li>Each trial results in one of k categories.​</li>
-<li>The probability that the outcome falls into a particular category i on a single trial is <span class="math notranslate nohighlight">\(p_i\)</span> and remains constant from trial to trial. The sum of all k probabilities, <span class="math notranslate nohighlight">\(p_1+p_2 +…+ p_k = 1\)</span>. ​</li>
-<li>The trials are independent</li>
-<li>We are interested in the number of outcomes in each category, <span class="math notranslate nohighlight">\(O_1, O_2, ..., O_k\)</span> with <span class="math notranslate nohighlight">\(O_1, O_2, ..., O_k = n\)</span></li>
+<li><p>The experiment consists of n identical trials.​</p></li>
+<li><p>Each trial results in one of k categories.​</p></li>
+<li><p>The probability that the outcome falls into a particular category i on a single trial is <span class="math notranslate nohighlight">\(p_i\)</span> and remains constant from trial to trial. The sum of all k probabilities, <span class="math notranslate nohighlight">\(p_1+p_2 +…+ p_k = 1\)</span>. ​</p></li>
+<li><p>The trials are independent</p></li>
+<li><p>We are interested in the number of outcomes in each category, <span class="math notranslate nohighlight">\(O_1, O_2, ..., O_k\)</span> with <span class="math notranslate nohighlight">\(O_1, O_2, ..., O_k = n\)</span></p></li>
 </ol>
 </div>
 <div class="section" id="the-binomial-experiment">
 <h3>The Binomial experiment<a class="headerlink" href="#the-binomial-experiment" title="Permalink to this headline">¶</a></h3>
 <ul class="simple">
-<li>A special case of the multinomial experiment with k = 2.</li>
-<li>Categories 1 and 2: success and failure​</li>
-<li>p1 and p2:    p and q​</li>
-<li>O1 and O2: x and n-x​</li>
-<li>We made inferences about p ​(and q = 1 - p)​</li>
+<li><p>A special case of the multinomial experiment with k = 2.</p></li>
+<li><p>Categories 1 and 2: success and failure​</p></li>
+<li><p>p1 and p2:    p and q​</p></li>
+<li><p>O1 and O2: x and n-x​</p></li>
+<li><p>We made inferences about p ​(and q = 1 - p)​</p></li>
 </ul>
 </div>
 <div class="section" id="pearson-s-chi-square-statistic">
 <h3>Pearson’s Chi-Square Statistic<a class="headerlink" href="#pearson-s-chi-square-statistic" title="Permalink to this headline">¶</a></h3>
 <ul class="simple">
-<li>We have some preconceived idea about the values of the pi and want to use sample information to see if we are correct.</li>
-<li>The expected number of times that outcome i will occur is <span class="math notranslate nohighlight">\(E_i = np_i\)</span> . If the observed cell counts, <span class="math notranslate nohighlight">\(O_i\)</span>, are too far from what we hypothesize under <span class="math notranslate nohighlight">\(H_0\)</span>, the more likely it is that <span class="math notranslate nohighlight">\(H_0\)</span> should be rejected. ​</li>
+<li><p>We have some preconceived idea about the values of the pi and want to use sample information to see if we are correct.</p></li>
+<li><p>The expected number of times that outcome i will occur is <span class="math notranslate nohighlight">\(E_i = np_i\)</span> . If the observed cell counts, <span class="math notranslate nohighlight">\(O_i\)</span>, are too far from what we hypothesize under <span class="math notranslate nohighlight">\(H_0\)</span>, the more likely it is that <span class="math notranslate nohighlight">\(H_0\)</span> should be rejected. ​</p></li>
 </ul>
 <p>We use the pearson chi-square statistic:</p>
 <div class="math notranslate nohighlight">
@@ -795,93 +795,93 @@ variance of 25.​</p>
 <div class="section" id="goodness-of-fit-test">
 <h3>Goodness of Fit test<a class="headerlink" href="#goodness-of-fit-test" title="Permalink to this headline">¶</a></h3>
 <ul class="simple">
-<li>A single categorical variable is measured, and exact numerical values are specified for each of the <span class="math notranslate nohighlight">\(p_i\)</span>.​</li>
-<li>Expected cell counts are <span class="math notranslate nohighlight">\(E_i = np_i\)</span></li>
-<li>Degrees of freedom: <span class="math notranslate nohighlight">\(df = k-1\)</span></li>
+<li><p>A single categorical variable is measured, and exact numerical values are specified for each of the <span class="math notranslate nohighlight">\(p_i\)</span>.​</p></li>
+<li><p>Expected cell counts are <span class="math notranslate nohighlight">\(E_i = np_i\)</span></p></li>
+<li><p>Degrees of freedom: <span class="math notranslate nohighlight">\(df = k-1\)</span></p></li>
 </ul>
 <p><strong>Example</strong></p>
 <p>Toss a die 300 times with the following results. Is the die fair or biased? ​</p>
-<table border="1" class="docutils">
+<table class="docutils align-default">
 <colgroup>
-<col width="15%" />
-<col width="14%" />
-<col width="14%" />
-<col width="14%" />
-<col width="14%" />
-<col width="14%" />
-<col width="14%" />
+<col style="width: 15%" />
+<col style="width: 14%" />
+<col style="width: 14%" />
+<col style="width: 14%" />
+<col style="width: 14%" />
+<col style="width: 14%" />
+<col style="width: 14%" />
 </colgroup>
-<thead valign="bottom">
-<tr class="row-odd"><th class="head">Upper Face</th>
-<th class="head">1</th>
-<th class="head">2</th>
-<th class="head">3</th>
-<th class="head">4</th>
-<th class="head">5</th>
-<th class="head">6</th>
+<thead>
+<tr class="row-odd"><th class="head"><p>Upper Face</p></th>
+<th class="head"><p>1</p></th>
+<th class="head"><p>2</p></th>
+<th class="head"><p>3</p></th>
+<th class="head"><p>4</p></th>
+<th class="head"><p>5</p></th>
+<th class="head"><p>6</p></th>
 </tr>
 </thead>
-<tbody valign="top">
-<tr class="row-even"><td># of times</td>
-<td>50</td>
-<td>39</td>
-<td>45</td>
-<td>62</td>
-<td>61</td>
-<td>43</td>
+<tbody>
+<tr class="row-even"><td><p># of times</p></td>
+<td><p>50</p></td>
+<td><p>39</p></td>
+<td><p>45</p></td>
+<td><p>62</p></td>
+<td><p>61</p></td>
+<td><p>43</p></td>
 </tr>
 </tbody>
 </table>
 <ul class="simple">
-<li>A multinomial experiment with k = 6 and O1 to O6 given in the table.</li>
-<li>We test at alpha = 0.05:</li>
+<li><p>A multinomial experiment with k = 6 and O1 to O6 given in the table.</p></li>
+<li><p>We test at alpha = 0.05:</p></li>
 </ul>
 <p><span class="math notranslate nohighlight">\(H_0: p_n = 1/6\)</span> (die is fair)
 <span class="math notranslate nohighlight">\(H_a:\)</span> at least one <span class="math notranslate nohighlight">\(p_i\)</span> is different from 1/6 (die is biased)</p>
 <p>The first step is to calculate the expected cell counts: <span class="math notranslate nohighlight">\(E_i = np_i = 300(1/6) = 50\)</span></p>
-<table border="1" class="docutils">
+<table class="docutils align-default">
 <colgroup>
-<col width="28%" />
-<col width="12%" />
-<col width="12%" />
-<col width="12%" />
-<col width="12%" />
-<col width="12%" />
-<col width="12%" />
+<col style="width: 28%" />
+<col style="width: 12%" />
+<col style="width: 12%" />
+<col style="width: 12%" />
+<col style="width: 12%" />
+<col style="width: 12%" />
+<col style="width: 12%" />
 </colgroup>
-<thead valign="bottom">
-<tr class="row-odd"><th class="head">Upper Face</th>
-<th class="head">1</th>
-<th class="head">2</th>
-<th class="head">3</th>
-<th class="head">4</th>
-<th class="head">5</th>
-<th class="head">6</th>
+<thead>
+<tr class="row-odd"><th class="head"><p>Upper Face</p></th>
+<th class="head"><p>1</p></th>
+<th class="head"><p>2</p></th>
+<th class="head"><p>3</p></th>
+<th class="head"><p>4</p></th>
+<th class="head"><p>5</p></th>
+<th class="head"><p>6</p></th>
 </tr>
 </thead>
-<tbody valign="top">
-<tr class="row-even"><td># of times <span class="math notranslate nohighlight">\(O_i\)</span></td>
-<td>50</td>
-<td>39</td>
-<td>45</td>
-<td>62</td>
-<td>61</td>
-<td>43</td>
+<tbody>
+<tr class="row-even"><td><p># of times <span class="math notranslate nohighlight">\(O_i\)</span></p></td>
+<td><p>50</p></td>
+<td><p>39</p></td>
+<td><p>45</p></td>
+<td><p>62</p></td>
+<td><p>61</p></td>
+<td><p>43</p></td>
 </tr>
-<tr class="row-odd"><td><span class="math notranslate nohighlight">\(E_i:\)</span></td>
-<td>50</td>
-<td>50</td>
-<td>50</td>
-<td>50</td>
-<td>50</td>
-<td>50</td>
+<tr class="row-odd"><td><p><span class="math notranslate nohighlight">\(E_i:\)</span></p></td>
+<td><p>50</p></td>
+<td><p>50</p></td>
+<td><p>50</p></td>
+<td><p>50</p></td>
+<td><p>50</p></td>
+<td><p>50</p></td>
 </tr>
 </tbody>
 </table>
 <p>Test statistic and rejection Region:</p>
-<dl class="docutils">
-<dt>..math::</dt>
-<dd>chi^2 = sum{frac{(O_i-E_i)^2}{E_i}} = frac{(50 - 50)^2}{50} + frac{(39 - 50)^2}{50} + … + frac{(43 - 50)^2}{50} = 9.2</dd>
+<dl class="simple">
+<dt>..math::</dt><dd><p>chi^2 = sum{frac{(O_i-E_i)^2}{E_i}} = frac{(50 - 50)^2}{50} + frac{(39 - 50)^2}{50} + … + frac{(43 - 50)^2}{50} = 9.2</p>
+</dd>
 </dl>
 <p>Reject <span class="math notranslate nohighlight">\(H_0\)</span> if <span class="math notranslate nohighlight">\(X^2\)</span> &gt; <span class="math notranslate nohighlight">\(\chi^2_0.05\)</span> = 11.07 with k-1 = 6-1 = 5 df</p>
 <p>We do not reject <span class="math notranslate nohighlight">\(H_0\)</span> . There is insufficient evidence to indicate that the die is biased.</p>
@@ -889,10 +889,10 @@ variance of 25.​</p>
 <div class="section" id="things-to-note">
 <h3>Things to note<a class="headerlink" href="#things-to-note" title="Permalink to this headline">¶</a></h3>
 <ul class="simple">
-<li>The test statistic, <span class="math notranslate nohighlight">\(X^2\)</span> has only an approximate chi-square distribution.</li>
-<li>For the approximation to be accurate, statisticians recommend <span class="math notranslate nohighlight">\(E_i \ge 5\)</span> for all cells</li>
-<li>Goodness of fit tests are different from previous tests since the experimenter uses <span class="math notranslate nohighlight">\(H_0\)</span> for the model he thinks is true. ​</li>
-<li>Be careful not to accept <span class="math notranslate nohighlight">\(H_0\)</span> (say the model is correct)</li>
+<li><p>The test statistic, <span class="math notranslate nohighlight">\(X^2\)</span> has only an approximate chi-square distribution.</p></li>
+<li><p>For the approximation to be accurate, statisticians recommend <span class="math notranslate nohighlight">\(E_i \ge 5\)</span> for all cells</p></li>
+<li><p>Goodness of fit tests are different from previous tests since the experimenter uses <span class="math notranslate nohighlight">\(H_0\)</span> for the model he thinks is true. ​</p></li>
+<li><p>Be careful not to accept <span class="math notranslate nohighlight">\(H_0\)</span> (say the model is correct)</p></li>
 </ul>
 </div>
 </div>
@@ -909,46 +909,46 @@ variance of 25.​</p>
 <div class="section" id="r-x-c-contigency-table">
 <h3>R x c Contigency Table<a class="headerlink" href="#r-x-c-contigency-table" title="Permalink to this headline">¶</a></h3>
 <p>The contingency table has r rows and c columns - rc total cells.</p>
-<table border="1" class="docutils">
+<table class="docutils align-default">
 <colgroup>
-<col width="15%" />
-<col width="21%" />
-<col width="21%" />
-<col width="21%" />
-<col width="21%" />
+<col style="width: 15%" />
+<col style="width: 21%" />
+<col style="width: 21%" />
+<col style="width: 21%" />
+<col style="width: 21%" />
 </colgroup>
-<thead valign="bottom">
-<tr class="row-odd"><th class="head">&#160;</th>
-<th class="head">&#160;</th>
-<th class="head">&#160;</th>
-<th class="head">&#160;</th>
-<th class="head">&#160;</th>
+<thead>
+<tr class="row-odd"><th class="head"></th>
+<th class="head"></th>
+<th class="head"></th>
+<th class="head"></th>
+<th class="head"></th>
 </tr>
 </thead>
-<tbody valign="top">
-<tr class="row-even"><td>1</td>
-<td><span class="math notranslate nohighlight">\(O_11\)</span></td>
-<td><span class="math notranslate nohighlight">\(O_12\)</span></td>
-<td>&#160;</td>
-<td><span class="math notranslate nohighlight">\(O_1c\)</span></td>
+<tbody>
+<tr class="row-even"><td><p>1</p></td>
+<td><p><span class="math notranslate nohighlight">\(O_11\)</span></p></td>
+<td><p><span class="math notranslate nohighlight">\(O_12\)</span></p></td>
+<td></td>
+<td><p><span class="math notranslate nohighlight">\(O_1c\)</span></p></td>
 </tr>
-<tr class="row-odd"><td>2</td>
-<td><span class="math notranslate nohighlight">\(O_21\)</span></td>
-<td><span class="math notranslate nohighlight">\(O_22\)</span></td>
-<td>&#160;</td>
-<td><span class="math notranslate nohighlight">\(O_2c\)</span></td>
+<tr class="row-odd"><td><p>2</p></td>
+<td><p><span class="math notranslate nohighlight">\(O_21\)</span></p></td>
+<td><p><span class="math notranslate nohighlight">\(O_22\)</span></p></td>
+<td></td>
+<td><p><span class="math notranslate nohighlight">\(O_2c\)</span></p></td>
 </tr>
-<tr class="row-even"><td>&#160;</td>
-<td>&#160;</td>
-<td>&#160;</td>
-<td>&#160;</td>
-<td>&#160;</td>
+<tr class="row-even"><td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
 </tr>
-<tr class="row-odd"><td>r</td>
-<td><span class="math notranslate nohighlight">\(O_r1\)</span></td>
-<td><span class="math notranslate nohighlight">\(O_r2\)</span></td>
-<td>&#160;</td>
-<td><span class="math notranslate nohighlight">\(O_rc\)</span></td>
+<tr class="row-odd"><td><p>r</p></td>
+<td><p><span class="math notranslate nohighlight">\(O_r1\)</span></p></td>
+<td><p><span class="math notranslate nohighlight">\(O_r2\)</span></p></td>
+<td></td>
+<td><p><span class="math notranslate nohighlight">\(O_rc\)</span></p></td>
 </tr>
 </tbody>
 </table>
@@ -975,55 +975,55 @@ If not, the variables are independent.</p>
 <p>The test statistic has an approcimate chi-square distribution with df = (r-1)(c-1)</p>
 <p><strong>Example</strong></p>
 <p>Furniture defects are classified according to type of defect and shift on which it was made.​</p>
-<table border="1" class="docutils">
+<table class="docutils align-default">
 <colgroup>
-<col width="20%" />
-<col width="17%" />
-<col width="17%" />
-<col width="17%" />
-<col width="28%" />
+<col style="width: 20%" />
+<col style="width: 17%" />
+<col style="width: 17%" />
+<col style="width: 17%" />
+<col style="width: 28%" />
 </colgroup>
-<thead valign="bottom">
-<tr class="row-odd"><th class="head">x</th>
-<th class="head" colspan="4">Shift</th>
+<thead>
+<tr class="row-odd"><th class="head"><p>x</p></th>
+<th class="head" colspan="4"><p>Shift</p></th>
 </tr>
-<tr class="row-even"><th class="head">Type</th>
-<th class="head">1</th>
-<th class="head">2</th>
-<th class="head">3</th>
-<th class="head">Total</th>
+<tr class="row-even"><th class="head"><p>Type</p></th>
+<th class="head"><p>1</p></th>
+<th class="head"><p>2</p></th>
+<th class="head"><p>3</p></th>
+<th class="head"><p>Total</p></th>
 </tr>
 </thead>
-<tbody valign="top">
-<tr class="row-odd"><td>A</td>
-<td>15</td>
-<td>26</td>
-<td>33</td>
-<td>74</td>
+<tbody>
+<tr class="row-odd"><td><p>A</p></td>
+<td><p>15</p></td>
+<td><p>26</p></td>
+<td><p>33</p></td>
+<td><p>74</p></td>
 </tr>
-<tr class="row-even"><td>B</td>
-<td>21</td>
-<td>31</td>
-<td>17</td>
-<td>69</td>
+<tr class="row-even"><td><p>B</p></td>
+<td><p>21</p></td>
+<td><p>31</p></td>
+<td><p>17</p></td>
+<td><p>69</p></td>
 </tr>
-<tr class="row-odd"><td>C</td>
-<td>45</td>
-<td>34</td>
-<td>49</td>
-<td>128</td>
+<tr class="row-odd"><td><p>C</p></td>
+<td><p>45</p></td>
+<td><p>34</p></td>
+<td><p>49</p></td>
+<td><p>128</p></td>
 </tr>
-<tr class="row-even"><td>D</td>
-<td>13</td>
-<td>5</td>
-<td>20</td>
-<td>38</td>
+<tr class="row-even"><td><p>D</p></td>
+<td><p>13</p></td>
+<td><p>5</p></td>
+<td><p>20</p></td>
+<td><p>38</p></td>
 </tr>
-<tr class="row-odd"><td>Total</td>
-<td>94</td>
-<td>96</td>
-<td>119</td>
-<td>309</td>
+<tr class="row-odd"><td><p>Total</p></td>
+<td><p>94</p></td>
+<td><p>96</p></td>
+<td><p>119</p></td>
+<td><p>309</p></td>
 </tr>
 </tbody>
 </table>
@@ -1031,8 +1031,9 @@ If not, the variables are independent.</p>
 <p><span class="math notranslate nohighlight">\(H_0:\)</span> type of defect is independent of shift​</p>
 <p><span class="math notranslate nohighlight">\(H_a:\)</span> type of defect depends on the shift</p>
 <p>Then calculate the expected cell counts. For Example</p>
+<p>chi-sqr = 19.178 for df = 6 and p-value = 0.004</p>
 <div class="math notranslate nohighlight">
-\[ \begin{align}\begin{aligned}chi-sqr = 19.178 for df = 6 and p-value = 0.004\\\hat{E_{12}} = \frac{r_1c_2}{n} = \frac{74(96)}{309} = 22.99\end{aligned}\end{align} \]</div>
+\[\hat{E_{12}} = \frac{r_1c_2}{n} = \frac{74(96)}{309} = 22.99\]</div>
 <p>Reject <span class="math notranslate nohighlight">\(H_0:\)</span>. There is sufficient evidence to indicate that the proportion of defect types vary from shift to shift.​</p>
 </div>
 <div class="section" id="test-for-homogeneity">
@@ -1041,6 +1042,7 @@ If not, the variables are independent.</p>
 <p>Example: An experimenter selects 900 patients who have been treated for flu prevention. She selects 300 from each of three types—no vaccine, one shot, and two shots.</p>
 <p>Each of the c columns (or r rows) whose totals have been fixed in advance is actually a single multinomial experiment.</p>
 <p>The chi-square test of independence with (r-1)(c-1) df is equivalent to a test of the equality of c (or r)  multinomial populations.</p>
+<p><strong>Honestly I couldn’t finish these slides they were a mess, Maybe I’ll come back to it later.</strong></p>
 </div>
 </div>
 </div>
@@ -1051,7 +1053,7 @@ If not, the variables are independent.</p>
           </div>
           <footer>
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
-        <a href="OtherDefinitions.html" class="btn btn-neutral float-right" title="Other Definitions" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+        <a href="simpleLinearRegression.html" class="btn btn-neutral float-right" title="Simple Linear Regression" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
         <a href="Estimation.html" class="btn btn-neutral float-left" title="Estimating" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
     </div>
 

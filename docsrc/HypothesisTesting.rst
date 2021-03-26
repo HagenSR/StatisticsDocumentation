@@ -865,9 +865,9 @@ Does the data present sufficient evidence to indicate that the type of furniture
 
 Then calculate the expected cell counts. For Example
 
-.. math:: 
+chi-sqr = 19.178 for df = 6 and p-value = 0.004
 
-    chi-sqr = 19.178 for df = 6 and p-value = 0.004
+.. math:: 
 
     \hat{E_{12}} = \frac{r_1c_2}{n} = \frac{74(96)}{309} = 22.99
 
@@ -883,3 +883,5 @@ Example: An experimenter selects 900 patients who have been treated for flu prev
 Each of the c columns (or r rows) whose totals have been fixed in advance is actually a single multinomial experiment.
 
 The chi-square test of independence with (r-1)(c-1) df is equivalent to a test of the equality of c (or r)  multinomial populations.
+
+**Honestly I couldn't finish these slides they were a mess, Maybe I'll come back to it later.**

@@ -14,6 +14,7 @@ Welcome to Statistics Documentation!
    Distributions
    Estimation
    HypothesisTesting
+   simpleLinearRegression
    OtherDefinitions
    NormalTableTextBook
    TTableTextBook

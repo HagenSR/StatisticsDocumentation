@@ -1,0 +1,518 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8" />
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  
+  <title>Simple Linear Regression &mdash; Statistics Documentation 9 documentation</title>
+  
+
+  
+  <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="_static/accordion.css" type="text/css" />
+
+  
+  
+
+  
+  
+
+  
+
+  
+  <!--[if lt IE 9]>
+    <script src="_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
+        <script src="_static/jquery.js"></script>
+        <script src="_static/underscore.js"></script>
+        <script src="_static/doctools.js"></script>
+        <script src="_static/accordion.js"></script>
+        <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    
+    <script type="text/javascript" src="_static/js/theme.js"></script>
+
+    
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link href="_static/style.css" rel="stylesheet" type="text/css">
+
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="index.html" class="icon icon-home"> Statistics Documentation
+          
+
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                Version 1.0
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <p class="caption"><span class="caption-text">Contents:</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="Formulas.html">Formulas</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Distributions.html">Distributions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Estimation.html">Estimating</a></li>
+<li class="toctree-l1"><a class="reference internal" href="HypothesisTesting.html">Hypothesis Testing</a></li>
+<li class="toctree-l1"><a class="reference internal" href="OtherDefinitions.html">Other Definitions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="NormalTableTextBook.html">Normal Table from the Textbook</a></li>
+<li class="toctree-l1"><a class="reference internal" href="TTableTextBook.html">T Table from the Textbook</a></li>
+<li class="toctree-l1"><a class="reference internal" href="ChiSquaredTextBook.html">Chi Squared from Text Book</a></li>
+</ul>
+
+            
+          
+        </div>
+        
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">Statistics Documentation</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="index.html" class="icon icon-home"></a> &raquo;</li>
+        
+      <li>Simple Linear Regression</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+          
+            <a href="_sources/simpleLinearRegulation.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="simple-linear-regression">
+<h1>Simple Linear Regression<a class="headerlink" href="#simple-linear-regression" title="Permalink to this headline">¶</a></h1>
+<p>Many applications of statistics are much more complex than:
+- Estimating a mean or variance
+- Testing if the population mean or variance is equal to some value
+- Testing if two means are equal</p>
+<p>Often we will use sample data to investigate the relationship between two or more variables. The ultimate goal is to create a model that can be used to predict the value of a single variable.</p>
+<div class="section" id="regression-analysis">
+<h2>Regression Analysis<a class="headerlink" href="#regression-analysis" title="Permalink to this headline">¶</a></h2>
+<p>The process of finding a mathematical model (or equation) that best fits the data is part of a statistical technique known as Regression Analysis.
+In regression analysis, the variable to be modeled or predicted is called the dependent variable, or response variable.</p>
+<p>Y = the dependent variable</p>
+<p>The variables that are used to model Y are called independent variables, or regressors.</p>
+<p><span class="math notranslate nohighlight">\(X_i:\)</span> = independent variable</p>
+<p>If we have multiple independent variables (<span class="math notranslate nohighlight">\(X_1, X_2, ... , X_k:\)</span>) the analysis of finding the best model is called multiple regression.
+We will start with a model where we have only one independent variable, X. With only one X, we have simple linear regression because the model will form a simple straight line equation.</p>
+<p>A reasonable form of a relationship between Y and X is the linear relationship:</p>
+<p><span class="math notranslate nohighlight">\(Y = β_0+β_1 𝑋\)</span></p>
+<p><span class="math notranslate nohighlight">\(β_0\)</span> is the intercept
+<span class="math notranslate nohighlight">\(β_1\)</span> is the slope
+This is called a deterministic model because if <span class="math notranslate nohighlight">\(β_0\)</span> and <span class="math notranslate nohighlight">\(β_1\)</span> are known for the population, then the value of X determines exactly the value of Y, there is no random or probabilistic component.</p>
+<p>In the real world, we will not be able to determine <span class="math notranslate nohighlight">\(β_0\)</span> and <span class="math notranslate nohighlight">\(β_1\)</span> exactly and there will be some components that cannot be measured or explained. Thus, there will be some random component in the equation.</p>
+<p><span class="math notranslate nohighlight">\(Y = β_0+β_1 𝑋 + 𝜀\)</span> which is called a probabilistic model.</p>
+<p>𝜀 is called random error.</p>
+</div>
+<div class="section" id="error">
+<h2>Error<a class="headerlink" href="#error" title="Permalink to this headline">¶</a></h2>
+<p>Random Error is assumed to have the following properties:</p>
+<ul class="simple">
+<li><p>E(𝜀) = 0</p></li>
+<li><p>Var(𝜀) = σ2 (homogenous variance assumption)</p></li>
+</ul>
+<a class="reference internal image-reference" href="_images/errorReg.png"><img alt="_images/errorReg.png" src="_images/errorReg.png" style="width: 400px; height: 300px;" /></a>
+</div>
+<div class="section" id="fitted-regression-line">
+<h2>Fitted Regression Line<a class="headerlink" href="#fitted-regression-line" title="Permalink to this headline">¶</a></h2>
+<p>We try to estimate the regression equation by obtaining sample values of X and Y. We use this sample information to estimate the values of  <span class="math notranslate nohighlight">\(β_0\)</span> and <span class="math notranslate nohighlight">\(β_1\)</span> with <span class="math notranslate nohighlight">\(b_0\)</span> and <span class="math notranslate nohighlight">\(b_1\)</span>. Since E(𝜀) = 0, we do not estimate error because it is expected to
+be zero over time. Our estimated or fitted regression line is given by:</p>
+<div class="math notranslate nohighlight">
+\[\hat{y} = b_0 + b_1 * X\]</div>
+<p>This is an estimate of the “true” regression line. When a large amount of data is available, we expect the fitted line to be close to the true regression line. We can never draw the true regression line because this would require
+that we sample the entire population.</p>
+<div class="section" id="estimating-parameters">
+<h3>Estimating Parameters<a class="headerlink" href="#estimating-parameters" title="Permalink to this headline">¶</a></h3>
+<p>How do we come up with values for  <span class="math notranslate nohighlight">\(b_0\)</span> and <span class="math notranslate nohighlight">\(b_1\)</span> ?</p>
+<p><strong>Example</strong></p>
+<p>Suppose an appliance store conducts a 5-month experiment to determine the effect of advertising on sales revenue.</p>
+<p><span class="math notranslate nohighlight">\(Y = β_0+β_1 𝑋 + 𝜀\)</span></p>
+<p>Y = sales revenue in thousands of dollars</p>
+<p>X = advertising expenditures in hundreds of dollars</p>
+<p>ε = random error</p>
+<p>Sample data is collected for different values of advertising expenditure. Sample data is of the form: {(Xi, Yi); i = 1, … n} We will use the sample data to estimate the true regression line with the fitted line <span class="math notranslate nohighlight">\(\hat{y} = b_0 + b_1 * X\)</span>
+This equation will allow us to compute predicted values of Y for the observed values of X.</p>
+</div>
+<div class="section" id="residual">
+<h3>Residual<a class="headerlink" href="#residual" title="Permalink to this headline">¶</a></h3>
+<p>Now, for each value of <span class="math notranslate nohighlight">\(X_i\)</span>, we have our sample value <span class="math notranslate nohighlight">\(y_i\)</span> and our predicted value, <span class="math notranslate nohighlight">\(\hat{y}_i\)</span>, obtained from the fitted line. The ith residual is defined to be the difference between the observed and predicted values.</p>
+<p>Residual: <span class="math notranslate nohighlight">\(e_i = y_i - \hat{y}_i\)</span>    for i = 1, 2, …, n</p>
+<p>If our fitted model closely matches the sample data, the residuals will be small and we will have a good fit.</p>
+<p>Thus, when finding our estimates, <span class="math notranslate nohighlight">\(b_0\)</span> and <span class="math notranslate nohighlight">\(b_1\)</span> , we wish to minimize the residuals. Since residuals can be positive or negative a common measure for looking at total residual value is called “Sum of Squares of the Errors” and is denoted SSE.</p>
+<p>SSE is found by summing the squared residuals. Instead of minimizing residuals directly, we will attempt to minimize SSE. This minimization procedure for estimating the parameters is called the Method of Least Squares.</p>
+</div>
+</div>
+<div class="section" id="method-of-least-squares">
+<h2>Method Of Least Squares<a class="headerlink" href="#method-of-least-squares" title="Permalink to this headline">¶</a></h2>
+<div class="math notranslate nohighlight">
+\[\sum{e_i^2} = \sum{(y_i - b_0 - b_1x_i)^2}\]</div>
+<p>In order to minimize SSE we differentiate SSE with respect to <span class="math notranslate nohighlight">\(b_0\)</span> and <span class="math notranslate nohighlight">\(b_1\)</span> . The result is</p>
+<div class="math notranslate nohighlight">
+\[b_1 = \frac{\sum{(x_i-\bar{x})(y_i-\bar{y})}}{\sum{(x_i-\bar{x})^2}}\]</div>
+<p>and</p>
+<div class="math notranslate nohighlight">
+\[b_0 = \bar{y} - b_1\bar{x}\]</div>
+<p><strong>Example</strong></p>
+<p>Suppose an appliance store conducts a 5-month experiment to determine the effect of advertising (X) on sales revenue (Y).
+Sample data is:</p>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 50%" />
+<col style="width: 50%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>X</p></th>
+<th class="head"><p>Y</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>1</p></td>
+<td><p>1</p></td>
+</tr>
+<tr class="row-odd"><td><p>2</p></td>
+<td><p>1</p></td>
+</tr>
+<tr class="row-even"><td><p>3</p></td>
+<td><p>2</p></td>
+</tr>
+<tr class="row-odd"><td><p>4</p></td>
+<td><p>2</p></td>
+</tr>
+<tr class="row-even"><td><p>5</p></td>
+<td><p>4</p></td>
+</tr>
+</tbody>
+</table>
+<p>Then</p>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 25%" />
+<col style="width: 25%" />
+<col style="width: 25%" />
+<col style="width: 25%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>X</p></th>
+<th class="head"><p>Y</p></th>
+<th class="head"><p>X^2</p></th>
+<th class="head"><p>XY</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>1</p></td>
+<td><p>1</p></td>
+<td><p>1</p></td>
+<td><p>1</p></td>
+</tr>
+<tr class="row-odd"><td><p>2</p></td>
+<td><p>1</p></td>
+<td><p>4</p></td>
+<td><p>2</p></td>
+</tr>
+<tr class="row-even"><td><p>3</p></td>
+<td><p>2</p></td>
+<td><p>9</p></td>
+<td><p>6</p></td>
+</tr>
+<tr class="row-odd"><td><p>4</p></td>
+<td><p>2</p></td>
+<td><p>16</p></td>
+<td><p>8</p></td>
+</tr>
+<tr class="row-even"><td><p>5</p></td>
+<td><p>4</p></td>
+<td><p>25</p></td>
+<td><p>20</p></td>
+</tr>
+<tr class="row-odd"><td><p><strong>15</strong></p></td>
+<td><p><strong>10</strong></p></td>
+<td><p><strong>55</strong></p></td>
+<td><p><strong>37</strong></p></td>
+</tr>
+</tbody>
+</table>
+<p><span class="math notranslate nohighlight">\(\bar{x} = 3\)</span></p>
+<p><span class="math notranslate nohighlight">\(\bar{y} = 2\)</span></p>
+<p><span class="math notranslate nohighlight">\(n = 5\)</span></p>
+<p>Then</p>
+<div class="math notranslate nohighlight">
+\[b_1 = \frac{\sum{(x_i-\bar{x})(y_i-\bar{y})}}{\sum{(x_i-\bar{x})^2}} = \frac{5(37)-(15)(10)}{5(55)-(15)^2} = 0.7\]</div>
+<div class="math notranslate nohighlight">
+\[b_0 = \bar{y} - b_1\bar{x} = 2-(0.7)3=-0.1\]</div>
+<p>Then the least Squares fitted line is <span class="math notranslate nohighlight">\(\hat{y} = -0.1 + 0.7x\)</span> . We can now calculate the Sum of Squares of the Errors (SSE)</p>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 25%" />
+<col style="width: 25%" />
+<col style="width: 25%" />
+<col style="width: 25%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>X</p></th>
+<th class="head"><p>Y</p></th>
+<th class="head"><p>yHat</p></th>
+<th class="head"><p>(y-yhat)^2</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>1</p></td>
+<td><p>1</p></td>
+<td><p>0.6</p></td>
+<td><p>0.16</p></td>
+</tr>
+<tr class="row-odd"><td><p>2</p></td>
+<td><p>1</p></td>
+<td><p>1.3</p></td>
+<td><p>0.09</p></td>
+</tr>
+<tr class="row-even"><td><p>3</p></td>
+<td><p>2</p></td>
+<td><p>2.0</p></td>
+<td><p>0</p></td>
+</tr>
+<tr class="row-odd"><td><p>4</p></td>
+<td><p>2</p></td>
+<td><p>2.7</p></td>
+<td><p>0.49</p></td>
+</tr>
+<tr class="row-even"><td><p>5</p></td>
+<td><p>4</p></td>
+<td><p>3.4</p></td>
+<td><p>0.36</p></td>
+</tr>
+</tbody>
+</table>
+<p>Then SSE = <span class="math notranslate nohighlight">\(\sum{(y_i - \hat{y_i})^2} = 1.1\)</span></p>
+</div>
+<div class="section" id="interpretations">
+<h2>Interpretations<a class="headerlink" href="#interpretations" title="Permalink to this headline">¶</a></h2>
+<p><span class="math notranslate nohighlight">\(β_0\)</span> = y-intercept of the line or the point at which the line intercepts the y-axis</p>
+<p><span class="math notranslate nohighlight">\(β_1\)</span> = slope of the line or the amount of increase (or decrease) in the mean of y for every 1-unit increase in x.</p>
+<p>In our example</p>
+<p><span class="math notranslate nohighlight">\(b_0\)</span> = -0.1 which is the point where the fitted line crosses the y-axis</p>
+<p><span class="math notranslate nohighlight">\(b_1\)</span> = 0.7 = the mean monthly sales revenue increases $700 for every $100 increase in monthly advertising expenditure. (since y is measured in units of $1,000 and x in units of $100)</p>
+<div class="section" id="what-is-good-about-least-squares">
+<h3>What is good about least squares?<a class="headerlink" href="#what-is-good-about-least-squares" title="Permalink to this headline">¶</a></h3>
+<p>It Minimizes the sum of squares of vertical deviations from the sample data points to the fitted line. There are other ways to measure closeness, like the sum of the absolute value of the residuals.</p>
+<div class="math notranslate nohighlight">
+\[\sum{|y_i - \hat{y_i}|}\]</div>
+<p>but all methods force the residuals to be small.</p>
+</div>
+<div class="section" id="properties-of-least-squares">
+<h3>Properties of least squares<a class="headerlink" href="#properties-of-least-squares" title="Permalink to this headline">¶</a></h3>
+<ul class="simple">
+<li><p>Estimates  b0 and b1 are based on given sample</p></li>
+<li><p>If the experiment is repeated over and over, the estimates b0 and b1 will differ from experiment to experiment</p></li>
+<li><p>The least square estimators are both UNBIASED estimators</p></li>
+<li><p><span class="math notranslate nohighlight">\(E(b_0) = β_0\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(E(b_1) = β_1\)</span></p></li>
+</ul>
+</div>
+</div>
+<div class="section" id="more-sum-of-squares-equations">
+<h2>More sum of squares equations<a class="headerlink" href="#more-sum-of-squares-equations" title="Permalink to this headline">¶</a></h2>
+<p>We have already defined SSE, sum of squares of error. Further sum of squares formulas will become necessary in future calculations:</p>
+<p><span class="math notranslate nohighlight">\(S_{xx}\)</span> = sum of squares of x = <span class="math notranslate nohighlight">\(\sum{x^2_i - n(\bar{x})^2}\)</span></p>
+<p><span class="math notranslate nohighlight">\(S_{yy}\)</span> = sum of squares of y = <span class="math notranslate nohighlight">\(\sum{y^2_i - n(\bar{y})^2}\)</span></p>
+<p><span class="math notranslate nohighlight">\(S_{xy}\)</span> = sum of squares of x and y = <span class="math notranslate nohighlight">\(\sum{x_iy_i - n\bar{y}\bar{x}}\)</span></p>
+<p>The following equalitites are also true</p>
+<p><span class="math notranslate nohighlight">\(b_1 = \frac{S_{xy}}{S_{xx}}\)</span></p>
+<p><span class="math notranslate nohighlight">\(SEE = S_{syy} - b_1S_{xy}\)</span></p>
+</div>
+<div class="section" id="model-assumptions">
+<h2>Model Assumptions<a class="headerlink" href="#model-assumptions" title="Permalink to this headline">¶</a></h2>
+<p>When we perform least squares regression we make the following assumptions about random error, ε</p>
+<ul class="simple">
+<li><dl class="simple">
+<dt>The mean of ε is 0</dt><dd><ul>
+<li><p>i.e. E(ε) = 0</p></li>
+</ul>
+</dd>
+</dl>
+</li>
+<li><dl class="simple">
+<dt>The variance of ε is constant for all x</dt><dd><ul>
+<li><p>Var(ε) = σ2</p></li>
+</ul>
+</dd>
+</dl>
+</li>
+<li><dl class="simple">
+<dt>The probability distribution of ε is normal</dt><dd><ul>
+<li><p>ε ~ Normal</p></li>
+</ul>
+</dd>
+</dl>
+</li>
+<li><p>The error terms are independent of one another</p></li>
+</ul>
+<div class="section" id="checking-model-assumptions">
+<h3>Checking model assumptions<a class="headerlink" href="#checking-model-assumptions" title="Permalink to this headline">¶</a></h3>
+<p>Graphical methods and statistical tests can be used to check the validity of our assumptions on error. We will use two graphs to check the first three assumptions. (Assumption of independence can also be verified with another graph. We will not be testing this in our class.)</p>
+</div>
+<div class="section" id="normal-probability-plot">
+<h3>Normal Probability plot<a class="headerlink" href="#normal-probability-plot" title="Permalink to this headline">¶</a></h3>
+<p>In a normal probability plot the residuals are graphed against the expected values of the residuals under the assumption of normality. If the normality assumption is valid, the plot should resemble a straight line, sloping upward to the right. If the assumption is not
+valid, you will often see the pattern fail in the tails of the graph, or create an obvious curve away from the straight line.</p>
+<a class="reference internal image-reference" href="_images/nnp.png"><img alt="_images/nnp.png" src="_images/nnp.png" style="width: 400px; height: 300px;" /></a>
+<p>Assumption of normality is valid</p>
+<a class="reference internal image-reference" href="_images/nnpBad.png"><img alt="_images/nnpBad.png" src="_images/nnpBad.png" style="width: 400px; height: 300px;" /></a>
+<p>Assumption of normality is invalid</p>
+</div>
+<div class="section" id="residuals-vs-fits">
+<h3>Residuals vs fits<a class="headerlink" href="#residuals-vs-fits" title="Permalink to this headline">¶</a></h3>
+<p>A graph that plots the residual values ( <span class="math notranslate nohighlight">\(e_i\)</span> ) versus the fitted values of the regression ( <span class="math notranslate nohighlight">\(\hat{y}\)</span> ) can be used to check if the expected value of error is zero and if the assumption of homogenous variance is valid. If the expected value of error is zero, the plot should have most of its values
+around zero. If the assumption of equal variances is valid there should be no distinct pattern in the plot; we should see “random scatter”.</p>
+<a class="reference internal image-reference" href="_images/resFits.png"><img alt="_images/resFits.png" src="_images/resFits.png" style="width: 400px; height: 300px;" /></a>
+<p>The figure above displays random scatter which has most of the values relatively around zero. We would conclude that the equal variance assumption and the assumption that the expected value of error is zero, are both valid.</p>
+<a class="reference internal image-reference" href="_images/resFitsBad.png"><img alt="_images/resFitsBad.png" src="_images/resFitsBad.png" style="width: 400px; height: 300px;" /></a>
+<p>Figure 2 appears to have most of the values around zero, so our first assumption is valid. However, the plot has a distinct triangular pattern. Any pattern suggests that the equal variance assumption is not valid.</p>
+</div>
+</div>
+<div class="section" id="estimation-of-model-error-variance">
+<h2>Estimation of Model Error variance<a class="headerlink" href="#estimation-of-model-error-variance" title="Permalink to this headline">¶</a></h2>
+<p>An unbiased estimator of <span class="math notranslate nohighlight">\(\sigma^2\)</span> is:</p>
+<div class="math notranslate nohighlight">
+\[S^2 = \frac{SSE}{n-2} = \frac{S_{yy} - b_1S_{xy}}{n-2}\]</div>
+<p>This is also called the mean square error (MSE)</p>
+<div class="section" id="estimated-standard-deviation">
+<h3>Estimated Standard deviation<a class="headerlink" href="#estimated-standard-deviation" title="Permalink to this headline">¶</a></h3>
+<p>The standard deviation, S, measures the spread of the distribution of Y about the fitted least squares line. We can expect 95% of the observed Y values to lie within 2S of their respective least square predicted values</p>
+</div>
+</div>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &#169; Copyright 2021-2022, NDSU ACM.
+
+    </p>
+  </div>
+    
+    
+    
+    Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    
+    provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>
