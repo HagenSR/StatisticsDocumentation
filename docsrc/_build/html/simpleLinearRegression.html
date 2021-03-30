@@ -124,6 +124,14 @@
 <li class="toctree-l3"><a class="reference internal" href="#estimated-standard-deviation">Estimated Standard deviation</a></li>
 </ul>
 </li>
+<li class="toctree-l2"><a class="reference internal" href="#inferences-concerning-regression-coefficients">Inferences Concerning Regression Coefficients</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#inferences-on-1">Inferences on  <span class="math notranslate nohighlight">\(𝛽_1\)</span></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#hypothesis-test-on-1">Hypothesis Test on <span class="math notranslate nohighlight">\(𝛽_1\)</span></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#inferences-on-0">Inferences on <span class="math notranslate nohighlight">\(𝛽_0\)</span></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#confidence-interval-for-0">Confidence Interval for <span class="math notranslate nohighlight">\(𝛽_0\)</span></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#hypothesis-test-on-0">Hypothesis Test on <span class="math notranslate nohighlight">\(𝛽_0\)</span></a></li>
+</ul>
+</li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="OtherDefinitions.html">Other Definitions</a></li>
@@ -496,6 +504,116 @@ around zero. If the assumption of equal variances is valid there should be no di
 <div class="section" id="estimated-standard-deviation">
 <h3>Estimated Standard deviation<a class="headerlink" href="#estimated-standard-deviation" title="Permalink to this headline">¶</a></h3>
 <p>The standard deviation, S, measures the spread of the distribution of Y about the fitted least squares line. We can expect 95% of the observed Y values to lie within 2S of their respective least square predicted values</p>
+</div>
+</div>
+<div class="section" id="inferences-concerning-regression-coefficients">
+<h2>Inferences Concerning Regression Coefficients<a class="headerlink" href="#inferences-concerning-regression-coefficients" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="inferences-on-1">
+<h3>Inferences on  <span class="math notranslate nohighlight">\(𝛽_1\)</span><a class="headerlink" href="#inferences-on-1" title="Permalink to this headline">¶</a></h3>
+<p>We can estimate the linear relationship between X and Y by computing values <span class="math notranslate nohighlight">\(b_0\)</span> and <span class="math notranslate nohighlight">\(b_1\)</span> as our estimates for intercept and slope. We could also be interested in drawing inferences about the slope and intercept themselves.
+What are possible values that the slope could take on? How useful is X in predicting Y?</p>
+<p>If our assumption of normality of error is valid, it follows that the Y values are also normally distributed, and thus so is 𝛽_1.
+From these assumptions we can create the statistic:</p>
+<div class="math notranslate nohighlight">
+\[T = \frac{β_1}{s/\sqrt{S_{XX}}}\]</div>
+<p>This statistic will follow a t-distribution with  v = n – 2 degrees of freedom.</p>
+<p>A 100(1 - 𝛼)% confidence interval for the parameter <span class="math notranslate nohighlight">\(𝛽_1\)</span> in the regression line is:</p>
+<div class="math notranslate nohighlight">
+\[b_1 \pm t_{\alpha/2}\frac{S}{\sqrt{S_{xx}}}\]</div>
+<p>Where <span class="math notranslate nohighlight">\(𝑡_{𝛼/2}\)</span> is a value from the t-distribution with v = n – 2 degrees of freedom.
+From this interval we can be 100(1 - 𝛼)% confident that the slope of the true population regression line lies in this interval.</p>
+<p>The Quantity:</p>
+<div class="math notranslate nohighlight">
+\[\frac{s}{\sqrt{S_{xx}}}\]</div>
+<p>Is called the standard error of <span class="math notranslate nohighlight">\(𝛽_1\)</span></p>
+<p><strong>Example</strong></p>
+<p>Recall the appliance store example where we wish to determine the effect of advertising (X) on sales revenue (Y) using a 5 month experiment.
+Previously we came up the a fitted regression line of <span class="math notranslate nohighlight">\(\hat{y}= -0.1 + 0.7x\)</span></p>
+<p>Our estimated value of slope was 0.7. Find a 95% confidence interval for slope.</p>
+<p>Using the data from the appliance store example</p>
+<p><span class="math notranslate nohighlight">\(S_{xx} = 10\)</span></p>
+<p><span class="math notranslate nohighlight">\(SEE = 1.1\)</span></p>
+<p><span class="math notranslate nohighlight">\(S^2 = \frac{SEE}{n-2} = \frac{1.1}{5-2} = 0.366667\)</span></p>
+<p>S = <span class="math notranslate nohighlight">\(\sqrt{S^2} = 0.6055\)</span></p>
+<p><span class="math notranslate nohighlight">\(b_1 = 0.7\)</span></p>
+<p><span class="math notranslate nohighlight">\(t_{\alpha/2} = t_{0.025} = 3.182 (V = 5-2 = 3)\)</span></p>
+<div class="math notranslate nohighlight">
+\[b_1 \pm t_{\alpha/2}\frac{S}{\sqrt{S_{xx}}}\]</div>
+<div class="math notranslate nohighlight">
+\[0.7 \pm 3.182(\frac{0.6055}{\sqrt{10}})\]</div>
+<div class="math notranslate nohighlight">
+\[0.7 \pm 0.609\]</div>
+<p>(0.091, 1.309)</p>
+<p>0.091 &lt; <span class="math notranslate nohighlight">\(𝛽_1\)</span> &lt; 1.309</p>
+<p>IE We are 95% sure that B1 is positive</p>
+</div>
+<div class="section" id="hypothesis-test-on-1">
+<h3>Hypothesis Test on <span class="math notranslate nohighlight">\(𝛽_1\)</span><a class="headerlink" href="#hypothesis-test-on-1" title="Permalink to this headline">¶</a></h3>
+<p>A common question once the regression analysis has been complete is “Does X truly influence Y?” If X does not influence Y (X is not useful in the prediction of Y), then the value of Y does not change regardless of the value of X.
+This implies that the slope of the line, 𝛽_1, is zero. So to test if X is influencing Y we use the hypotheses:</p>
+<p><span class="math notranslate nohighlight">\(𝛽_1 = 0\)</span>  vs <span class="math notranslate nohighlight">\(𝛽_1 = 0\)</span></p>
+<p>To test whether the slope equals zero we use the test statistic:</p>
+<div class="math notranslate nohighlight">
+\[T = \frac{b_1}{s/\sqrt{S_{XX}}}\]</div>
+<p>Which follows a t-distribution with v = n – 2. Since we are testing against a two-sided alternative (Ha: 𝛽_1 ≠ 0), we will reject the null hypothesis if:</p>
+<div class="math notranslate nohighlight">
+\[|T| &gt; t_{\alpha/2}\]</div>
+<p>Interpreting the results of this hypothesis test. If we reject H0: 𝛽_1 = 0, then we conclude that the relationship between X an Y is linear and that X does contribute information to the prediction of Y. (The linear model is useful).
+If we do not reject H0: 𝛽_1 = 0, there is no linear relationship between X and Y. Changing X has little impact on changes in Y. (X does not contribute information to the prediction of Y)</p>
+<p><strong>Example</strong></p>
+<p>Use the appliance store example and test if X contributes significant information to the prediction of Y at a 0.05 level of significance.
+From the previous example:</p>
+<p>n = 5</p>
+<p><span class="math notranslate nohighlight">\(𝛽_{xx} = 10\)</span></p>
+<p><span class="math notranslate nohighlight">\(S = 0.6055\)</span></p>
+<p><span class="math notranslate nohighlight">\(b_1 = 0.7\)</span></p>
+<p><span class="math notranslate nohighlight">\(H_0: 𝛽_1 = 0\)</span></p>
+<p><span class="math notranslate nohighlight">\(H_0: 𝛽_1 \ne 0\)</span></p>
+<div class="math notranslate nohighlight">
+\[T = \frac{b_1}{s/\sqrt{S_{xx}}} = \frac{0.7}{0.6055/\sqrt{10}} = 3.66\]</div>
+<p>Critical value: <span class="math notranslate nohighlight">\(t_{\alpha/2} = t_{0.025} = 3.182\)</span> (v=3)</p>
+<p>Reject <span class="math notranslate nohighlight">\(H_0\)</span> if <a href="#id1"><span class="problematic" id="id2">|T|</span></a> &gt; 3.182</p>
+<p>3.66 &gt; 3.182</p>
+<p>Reject H0. There is sufficient evidence, at the 0.05 level, that advertising expenditure contributes information to predicting sales revenue.</p>
+<p>Note:
+If the confidence interval for 𝛽_1 does not contain zero we can conclude that the true value of 𝛽_1 is not zero and we can reject the null hypothesis H0: 𝛽_1 = 0.</p>
+</div>
+<div class="section" id="inferences-on-0">
+<h3>Inferences on <span class="math notranslate nohighlight">\(𝛽_0\)</span><a class="headerlink" href="#inferences-on-0" title="Permalink to this headline">¶</a></h3>
+<p>We are often more interested in inferences about slope than those on the y-intercept, but it is possible to create confidence intervals and hypothesis tests for 𝛽_0. These inferences are based on the statistic:</p>
+<div class="math notranslate nohighlight">
+\[T = \frac{𝛽_{0}}{s\sqrt{\sum{x^2_i/(nS_{xx})}}}\]</div>
+<p>Which follows a t-distribution with v = n – 2.</p>
+</div>
+<div class="section" id="confidence-interval-for-0">
+<h3>Confidence Interval for <span class="math notranslate nohighlight">\(𝛽_0\)</span><a class="headerlink" href="#confidence-interval-for-0" title="Permalink to this headline">¶</a></h3>
+<p>A 100(1 - 𝛼)% confidence interval for the parameter 𝛽_0 in the regression line is:</p>
+<div class="math notranslate nohighlight">
+\[b_0 \pm t_{a/2} \frac{S\sqrt{\sum{x^2_i}}}{\sqrt{nS_{xx}}}\]</div>
+<p>Where 𝑡_(𝛼/2) is a value from the t-distribution with v = n – 2 degrees of freedom.
+From this interval we can be 100(1 - 𝛼)% confident that the intercept of the true population regression line lies in this interval.</p>
+</div>
+<div class="section" id="hypothesis-test-on-0">
+<h3>Hypothesis Test on <span class="math notranslate nohighlight">\(𝛽_0\)</span><a class="headerlink" href="#hypothesis-test-on-0" title="Permalink to this headline">¶</a></h3>
+<p>When testing the hypotheses <span class="math notranslate nohighlight">\(𝛽_1 = 0\)</span>  vs <span class="math notranslate nohighlight">\(𝛽_1 = 0\)</span> at the :math:`` level of significance, the test statistic is:</p>
+<div class="math notranslate nohighlight">
+\[T = \frac{b_0}{S\sqrt{\sum{x^2_i/(nS_{xx})}}}\]</div>
+<p>We will reject <span class="math notranslate nohighlight">\(H_0\)</span> if <a href="#id3"><span class="problematic" id="id4">|T|</span></a> &gt; <span class="math notranslate nohighlight">\(t_\alpha/2\)</span> with <span class="math notranslate nohighlight">\(t_\alpha/2\)</span> from a t-distribution with v = n - 2.</p>
+<p><strong>Example</strong></p>
+<p>Create a 95% confidence interval for 𝛽_0 from the appliance store example.</p>
+<p>n = 5</p>
+<p><span class="math notranslate nohighlight">\(b_0\)</span> = -0.1</p>
+<p>S_{xx} = 10</p>
+<p><span class="math notranslate nohighlight">\(\sum{x^2_i}\)</span> = 55</p>
+<p>S = 0.6055</p>
+<p><span class="math notranslate nohighlight">\(t_{\alpha/2} = 3.182\)</span> (v=3)</p>
+<div class="math notranslate nohighlight">
+\[b_0 \pm t_{a/2} \frac{S\sqrt{\sum{x^2_i}}}{\sqrt{nS_{xx}}}\]</div>
+<div class="math notranslate nohighlight">
+\[-0.1 \pm 3.182 \frac{0.6055\sqrt{55}}{\sqrt{5(10)}}\]</div>
+<div class="math notranslate nohighlight">
+\[-0.1 \pm 2.02\]</div>
+<p>-2.12 &lt; <span class="math notranslate nohighlight">\(𝛽_0\)</span> &lt; 1.92</p>
 </div>
 </div>
 </div>

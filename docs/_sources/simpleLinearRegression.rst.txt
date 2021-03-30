@@ -296,4 +296,209 @@ Estimated Standard deviation
 
 The standard deviation, S, measures the spread of the distribution of Y about the fitted least squares line. We can expect 95% of the observed Y values to lie within 2S of their respective least square predicted values 
 
+
+Inferences Concerning Regression Coefficients
+===============================================
+
+Inferences on  :math:`𝛽_1`
+----------------------------
+
+We can estimate the linear relationship between X and Y by computing values :math:`b_0` and :math:`b_1` as our estimates for intercept and slope. We could also be interested in drawing inferences about the slope and intercept themselves.
+What are possible values that the slope could take on? How useful is X in predicting Y?
+
+If our assumption of normality of error is valid, it follows that the Y values are also normally distributed, and thus so is 𝛽_1.
+From these assumptions we can create the statistic:
+
+.. math::
+
+   T = \frac{β_1}{s/\sqrt{S_{XX}}}
+
+This statistic will follow a t-distribution with  v = n – 2 degrees of freedom.
+
+A 100(1 - 𝛼)% confidence interval for the parameter :math:`𝛽_1` in the regression line is:
+
+.. math::
+
+   b_1 \pm t_{\alpha/2}\frac{S}{\sqrt{S_{xx}}}
+
+Where :math:`𝑡_{𝛼/2}` is a value from the t-distribution with v = n – 2 degrees of freedom.
+From this interval we can be 100(1 - 𝛼)% confident that the slope of the true population regression line lies in this interval.
+
+The Quantity:
+
+.. math::
+
+   \frac{s}{\sqrt{S_{xx}}}
+
+Is called the standard error of :math:`𝛽_1`
+
+**Example**
+
+Recall the appliance store example where we wish to determine the effect of advertising (X) on sales revenue (Y) using a 5 month experiment.
+Previously we came up the a fitted regression line of :math:`\hat{y}= -0.1 + 0.7x`
+
+Our estimated value of slope was 0.7. Find a 95% confidence interval for slope.
+
+Using the data from the appliance store example
+
+:math:`S_{xx} = 10` 
+
+:math:`SEE = 1.1`
+
+:math:`S^2 = \frac{SEE}{n-2} = \frac{1.1}{5-2} = 0.366667`
+
+S = :math:`\sqrt{S^2} = 0.6055`           
+
+:math:`b_1 = 0.7`       
+
+:math:`t_{\alpha/2} = t_{0.025} = 3.182 (V = 5-2 = 3)`
+
+.. math::
+
+   b_1 \pm t_{\alpha/2}\frac{S}{\sqrt{S_{xx}}}
+
+.. math::
+
+   0.7 \pm 3.182(\frac{0.6055}{\sqrt{10}})
+
+.. math::
+
+   0.7 \pm 0.609
+
+(0.091, 1.309)
+
+0.091 < :math:`𝛽_1` < 1.309
+
+IE We are 95% sure that B1 is positive
+
+Hypothesis Test on :math:`𝛽_1`
+--------------------------------
+
+A common question once the regression analysis has been complete is “Does X truly influence Y?” If X does not influence Y (X is not useful in the prediction of Y), then the value of Y does not change regardless of the value of X. 
+This implies that the slope of the line, 𝛽_1, is zero. So to test if X is influencing Y we use the hypotheses:
+
+:math:`𝛽_1 = 0`  vs :math:`𝛽_1 = 0`
+
+To test whether the slope equals zero we use the test statistic:
+
+.. math::
+
+   T = \frac{b_1}{s/\sqrt{S_{XX}}}
+
+Which follows a t-distribution with v = n – 2. Since we are testing against a two-sided alternative (Ha: 𝛽_1 ≠ 0), we will reject the null hypothesis if:
+   
+.. math::
+
+   |T| > t_{\alpha/2}
+
+Interpreting the results of this hypothesis test. If we reject H0: 𝛽_1 = 0, then we conclude that the relationship between X an Y is linear and that X does contribute information to the prediction of Y. (The linear model is useful).
+If we do not reject H0: 𝛽_1 = 0, there is no linear relationship between X and Y. Changing X has little impact on changes in Y. (X does not contribute information to the prediction of Y)
+
+**Example**
+
+Use the appliance store example and test if X contributes significant information to the prediction of Y at a 0.05 level of significance.
+From the previous example:
+
+n = 5     
+
+:math:`𝛽_{xx} = 10`       
+
+:math:`S = 0.6055`      
+
+:math:`b_1 = 0.7`     
+
+:math:`H_0: 𝛽_1 = 0`             
+
+:math:`H_0: 𝛽_1 \ne 0`
+
+.. math::
+
+   T = \frac{b_1}{s/\sqrt{S_{xx}}} = \frac{0.7}{0.6055/\sqrt{10}} = 3.66
+
+Critical value: :math:`t_{\alpha/2} = t_{0.025} = 3.182` (v=3)
+
+Reject :math:`H_0` if |T| > 3.182
+
+3.66 > 3.182
+
+Reject H0. There is sufficient evidence, at the 0.05 level, that advertising expenditure contributes information to predicting sales revenue.
+
+Note:
+If the confidence interval for 𝛽_1 does not contain zero we can conclude that the true value of 𝛽_1 is not zero and we can reject the null hypothesis H0: 𝛽_1 = 0.
+
+Inferences on :math:`𝛽_0`
+---------------------------
+
+We are often more interested in inferences about slope than those on the y-intercept, but it is possible to create confidence intervals and hypothesis tests for 𝛽_0. These inferences are based on the statistic:
+
+.. math:: 
+
+   T = \frac{𝛽_{0}}{s\sqrt{\sum{x^2_i/(nS_{xx})}}}
+
+Which follows a t-distribution with v = n – 2.
+
+Confidence Interval for :math:`𝛽_0`
+------------------------------------
+
+A 100(1 - 𝛼)% confidence interval for the parameter 𝛽_0 in the regression line is:
+
+.. math::
+
+   b_0 \pm t_{a/2} \frac{S\sqrt{\sum{x^2_i}}}{\sqrt{nS_{xx}}}
+
+Where 𝑡_(𝛼/2) is a value from the t-distribution with v = n – 2 degrees of freedom.
+From this interval we can be 100(1 - 𝛼)% confident that the intercept of the true population regression line lies in this interval.
+
+Hypothesis Test on :math:`𝛽_0`
+-------------------------------
+
+When testing the hypotheses :math:`𝛽_1 = 0`  vs :math:`𝛽_1 = 0` at the :math:`` level of significance, the test statistic is: 
+
+.. math::
+
+   T = \frac{b_0}{S\sqrt{\sum{x^2_i/(nS_{xx})}}}
+
+We will reject :math:`H_0` if |T| > :math:`t_\alpha/2` with :math:`t_\alpha/2` from a t-distribution with v = n - 2.
+
+**Example**
+
+Create a 95% confidence interval for 𝛽_0 from the appliance store example.
+
+n = 5
+
+:math:`b_0` = -0.1
+
+S_{xx} = 10
+
+:math:`\sum{x^2_i}` = 55
+
+S = 0.6055
+
+:math:`t_{\alpha/2} = 3.182` (v=3)
+
+.. math::
+
+   b_0 \pm t_{a/2} \frac{S\sqrt{\sum{x^2_i}}}{\sqrt{nS_{xx}}}
+
+.. math::
+
+   -0.1 \pm 3.182 \frac{0.6055\sqrt{55}}{\sqrt{5(10)}}
+
+.. math::
+
+   -0.1 \pm 2.02
+
+-2.12 < :math:`𝛽_0` < 1.92
+
+
+
+
+
+
+
+
+
+
+
+
    
