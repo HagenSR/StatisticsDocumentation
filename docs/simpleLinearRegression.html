@@ -107,14 +107,12 @@
 <li class="toctree-l3"><a class="reference internal" href="#residual">Residual</a></li>
 </ul>
 </li>
-<li class="toctree-l2"><a class="reference internal" href="#method-of-least-squares">Method Of Least Squares</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#interpretations">Interpretations</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#method-of-least-squares">Method Of Least Squares</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#interpretations">Interpretations</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#what-is-good-about-least-squares">What is good about least squares?</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#properties-of-least-squares">Properties of least squares</a></li>
-</ul>
-</li>
-<li class="toctree-l2"><a class="reference internal" href="#more-sum-of-squares-equations">More sum of squares equations</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#model-assumptions">Model Assumptions</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#more-sum-of-squares-equations">More sum of squares equations</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#model-assumptions">Model Assumptions</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#checking-model-assumptions">Checking model assumptions</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#normal-probability-plot">Normal Probability plot</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#residuals-vs-fits">Residuals vs fits</a></li>
@@ -127,9 +125,22 @@
 <li class="toctree-l2"><a class="reference internal" href="#inferences-concerning-regression-coefficients">Inferences Concerning Regression Coefficients</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="#inferences-on-1">Inferences on  <span class="math notranslate nohighlight">\(𝛽_1\)</span></a></li>
 <li class="toctree-l3"><a class="reference internal" href="#hypothesis-test-on-1">Hypothesis Test on <span class="math notranslate nohighlight">\(𝛽_1\)</span></a></li>
-<li class="toctree-l3"><a class="reference internal" href="#inferences-on-0">Inferences on <span class="math notranslate nohighlight">\(𝛽_0\)</span></a></li>
 <li class="toctree-l3"><a class="reference internal" href="#confidence-interval-for-0">Confidence Interval for <span class="math notranslate nohighlight">\(𝛽_0\)</span></a></li>
 <li class="toctree-l3"><a class="reference internal" href="#hypothesis-test-on-0">Hypothesis Test on <span class="math notranslate nohighlight">\(𝛽_0\)</span></a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#coefficient-of-determination">Coefficient of determination</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#interpreting-r2">Interpreting R2</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#coefficient-of-correlation">Coefficient of Correlation</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#id1">Interpretations</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#estimation-and-prediction">Estimation and Prediction</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#estimation">Estimation</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#prediction">Prediction</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#prediction-interval-for-y">Prediction Interval for Y</a></li>
 </ul>
 </li>
 </ul>
@@ -409,14 +420,14 @@ Sample data is:</p>
 </tbody>
 </table>
 <p>Then SSE = <span class="math notranslate nohighlight">\(\sum{(y_i - \hat{y_i})^2} = 1.1\)</span></p>
-</div>
 <div class="section" id="interpretations">
-<h2>Interpretations<a class="headerlink" href="#interpretations" title="Permalink to this headline">¶</a></h2>
+<h3>Interpretations<a class="headerlink" href="#interpretations" title="Permalink to this headline">¶</a></h3>
 <p><span class="math notranslate nohighlight">\(β_0\)</span> = y-intercept of the line or the point at which the line intercepts the y-axis</p>
 <p><span class="math notranslate nohighlight">\(β_1\)</span> = slope of the line or the amount of increase (or decrease) in the mean of y for every 1-unit increase in x.</p>
 <p>In our example</p>
 <p><span class="math notranslate nohighlight">\(b_0\)</span> = -0.1 which is the point where the fitted line crosses the y-axis</p>
 <p><span class="math notranslate nohighlight">\(b_1\)</span> = 0.7 = the mean monthly sales revenue increases $700 for every $100 increase in monthly advertising expenditure. (since y is measured in units of $1,000 and x in units of $100)</p>
+</div>
 <div class="section" id="what-is-good-about-least-squares">
 <h3>What is good about least squares?<a class="headerlink" href="#what-is-good-about-least-squares" title="Permalink to this headline">¶</a></h3>
 <p>It Minimizes the sum of squares of vertical deviations from the sample data points to the fitted line. There are other ways to measure closeness, like the sum of the absolute value of the residuals.</p>
@@ -434,9 +445,8 @@ Sample data is:</p>
 <li><p><span class="math notranslate nohighlight">\(E(b_1) = β_1\)</span></p></li>
 </ul>
 </div>
-</div>
 <div class="section" id="more-sum-of-squares-equations">
-<h2>More sum of squares equations<a class="headerlink" href="#more-sum-of-squares-equations" title="Permalink to this headline">¶</a></h2>
+<h3>More sum of squares equations<a class="headerlink" href="#more-sum-of-squares-equations" title="Permalink to this headline">¶</a></h3>
 <p>We have already defined SSE, sum of squares of error. Further sum of squares formulas will become necessary in future calculations:</p>
 <p><span class="math notranslate nohighlight">\(S_{xx}\)</span> = sum of squares of x = <span class="math notranslate nohighlight">\(\sum{x^2_i - n(\bar{x})^2}\)</span></p>
 <p><span class="math notranslate nohighlight">\(S_{yy}\)</span> = sum of squares of y = <span class="math notranslate nohighlight">\(\sum{y^2_i - n(\bar{y})^2}\)</span></p>
@@ -446,7 +456,7 @@ Sample data is:</p>
 <p><span class="math notranslate nohighlight">\(SEE = S_{syy} - b_1S_{xy}\)</span></p>
 </div>
 <div class="section" id="model-assumptions">
-<h2>Model Assumptions<a class="headerlink" href="#model-assumptions" title="Permalink to this headline">¶</a></h2>
+<h3>Model Assumptions<a class="headerlink" href="#model-assumptions" title="Permalink to this headline">¶</a></h3>
 <p>When we perform least squares regression we make the following assumptions about random error, ε</p>
 <ul class="simple">
 <li><dl class="simple">
@@ -472,6 +482,7 @@ Sample data is:</p>
 </li>
 <li><p>The error terms are independent of one another</p></li>
 </ul>
+</div>
 <div class="section" id="checking-model-assumptions">
 <h3>Checking model assumptions<a class="headerlink" href="#checking-model-assumptions" title="Permalink to this headline">¶</a></h3>
 <p>Graphical methods and statistical tests can be used to check the validity of our assumptions on error. We will use two graphs to check the first three assumptions. (Assumption of independence can also be verified with another graph. We will not be testing this in our class.)</p>
@@ -555,11 +566,11 @@ This implies that the slope of the line, 𝛽_1, is zero. So to test if X is inf
 <p>To test whether the slope equals zero we use the test statistic:</p>
 <div class="math notranslate nohighlight">
 \[T = \frac{b_1}{s/\sqrt{S_{XX}}}\]</div>
-<p>Which follows a t-distribution with v = n – 2. Since we are testing against a two-sided alternative (Ha: 𝛽_1 ≠ 0), we will reject the null hypothesis if:</p>
+<p>Which follows a t-distribution with v = n – 2. Since we are testing against a two-sided alternative ( <span class="math notranslate nohighlight">\(Ha: 𝛽_1\)</span> ≠ 0), we will reject the null hypothesis if:</p>
 <div class="math notranslate nohighlight">
 \[|T| &gt; t_{\alpha/2}\]</div>
-<p>Interpreting the results of this hypothesis test. If we reject H0: 𝛽_1 = 0, then we conclude that the relationship between X an Y is linear and that X does contribute information to the prediction of Y. (The linear model is useful).
-If we do not reject H0: 𝛽_1 = 0, there is no linear relationship between X and Y. Changing X has little impact on changes in Y. (X does not contribute information to the prediction of Y)</p>
+<p>Interpreting the results of this hypothesis test. If we reject <span class="math notranslate nohighlight">\(H0: 𝛽_1\)</span> = 0, then we conclude that the relationship between X an Y is linear and that X does contribute information to the prediction of Y. (The linear model is useful).
+If we do not reject <span class="math notranslate nohighlight">\(𝛽_1\)</span> = 0, there is no linear relationship between X and Y. Changing X has little impact on changes in Y. (X does not contribute information to the prediction of Y)</p>
 <p><strong>Example</strong></p>
 <p>Use the appliance store example and test if X contributes significant information to the prediction of Y at a 0.05 level of significance.
 From the previous example:</p>
@@ -572,14 +583,12 @@ From the previous example:</p>
 <div class="math notranslate nohighlight">
 \[T = \frac{b_1}{s/\sqrt{S_{xx}}} = \frac{0.7}{0.6055/\sqrt{10}} = 3.66\]</div>
 <p>Critical value: <span class="math notranslate nohighlight">\(t_{\alpha/2} = t_{0.025} = 3.182\)</span> (v=3)</p>
-<p>Reject <span class="math notranslate nohighlight">\(H_0\)</span> if <a href="#id1"><span class="problematic" id="id2">|T|</span></a> &gt; 3.182</p>
+<p>Reject <span class="math notranslate nohighlight">\(H_0\)</span> if <a href="#id2"><span class="problematic" id="id3">|T|</span></a> &gt; 3.182</p>
 <p>3.66 &gt; 3.182</p>
 <p>Reject H0. There is sufficient evidence, at the 0.05 level, that advertising expenditure contributes information to predicting sales revenue.</p>
 <p>Note:
-If the confidence interval for 𝛽_1 does not contain zero we can conclude that the true value of 𝛽_1 is not zero and we can reject the null hypothesis H0: 𝛽_1 = 0.</p>
-</div>
-<div class="section" id="inferences-on-0">
-<h3>Inferences on <span class="math notranslate nohighlight">\(𝛽_0\)</span><a class="headerlink" href="#inferences-on-0" title="Permalink to this headline">¶</a></h3>
+If the confidence interval for 𝛽_1 does not contain zero we can conclude that the true value of 𝛽_1 is not zero and we can reject the null hypothesis <span class="math notranslate nohighlight">\(𝛽_1\)</span> = 0.</p>
+<p>Inferences on <span class="math notranslate nohighlight">\(𝛽_0\)</span></p>
 <p>We are often more interested in inferences about slope than those on the y-intercept, but it is possible to create confidence intervals and hypothesis tests for 𝛽_0. These inferences are based on the statistic:</p>
 <div class="math notranslate nohighlight">
 \[T = \frac{𝛽_{0}}{s\sqrt{\sum{x^2_i/(nS_{xx})}}}\]</div>
@@ -587,7 +596,7 @@ If the confidence interval for 𝛽_1 does not contain zero we can conclude that
 </div>
 <div class="section" id="confidence-interval-for-0">
 <h3>Confidence Interval for <span class="math notranslate nohighlight">\(𝛽_0\)</span><a class="headerlink" href="#confidence-interval-for-0" title="Permalink to this headline">¶</a></h3>
-<p>A 100(1 - 𝛼)% confidence interval for the parameter 𝛽_0 in the regression line is:</p>
+<p>A 100(1 - 𝛼)% confidence interval for the parameter <span class="math notranslate nohighlight">\(𝛽_0\)</span> in the regression line is:</p>
 <div class="math notranslate nohighlight">
 \[b_0 \pm t_{a/2} \frac{S\sqrt{\sum{x^2_i}}}{\sqrt{nS_{xx}}}\]</div>
 <p>Where 𝑡_(𝛼/2) is a value from the t-distribution with v = n – 2 degrees of freedom.
@@ -598,9 +607,9 @@ From this interval we can be 100(1 - 𝛼)% confident that the intercept of the 
 <p>When testing the hypotheses <span class="math notranslate nohighlight">\(𝛽_1 = 0\)</span>  vs <span class="math notranslate nohighlight">\(𝛽_1 = 0\)</span> at the :math:`` level of significance, the test statistic is:</p>
 <div class="math notranslate nohighlight">
 \[T = \frac{b_0}{S\sqrt{\sum{x^2_i/(nS_{xx})}}}\]</div>
-<p>We will reject <span class="math notranslate nohighlight">\(H_0\)</span> if <a href="#id3"><span class="problematic" id="id4">|T|</span></a> &gt; <span class="math notranslate nohighlight">\(t_\alpha/2\)</span> with <span class="math notranslate nohighlight">\(t_\alpha/2\)</span> from a t-distribution with v = n - 2.</p>
+<p>We will reject <span class="math notranslate nohighlight">\(H_0\)</span> if <a href="#id4"><span class="problematic" id="id5">|T|</span></a> &gt; <span class="math notranslate nohighlight">\(t_\alpha/2\)</span> with <span class="math notranslate nohighlight">\(t_\alpha/2\)</span> from a t-distribution with v = n - 2.</p>
 <p><strong>Example</strong></p>
-<p>Create a 95% confidence interval for 𝛽_0 from the appliance store example.</p>
+<p>Create a 95% confidence interval for <span class="math notranslate nohighlight">\(𝛽_0\)</span> from the appliance store example.</p>
 <p>n = 5</p>
 <p><span class="math notranslate nohighlight">\(b_0\)</span> = -0.1</p>
 <p>S_{xx} = 10</p>
@@ -614,6 +623,172 @@ From this interval we can be 100(1 - 𝛼)% confident that the intercept of the 
 <div class="math notranslate nohighlight">
 \[-0.1 \pm 2.02\]</div>
 <p>-2.12 &lt; <span class="math notranslate nohighlight">\(𝛽_0\)</span> &lt; 1.92</p>
+</div>
+</div>
+<div class="section" id="coefficient-of-determination">
+<h2>Coefficient of determination<a class="headerlink" href="#coefficient-of-determination" title="Permalink to this headline">¶</a></h2>
+<p>If the independent variable X is useful in predicting Y (we reject H0: 𝛽_1= 0), then we will want to know how well the model fits. The quality of fit is measured by the proportion of the
+variability explained by the fitted model. Variance due to error is unexplained variation. Thus, we wish to measure how much SSE has been reduced by using X as a predictor of Y.</p>
+<p>The total corrected sum of squares is denoted SST and is equal to what we have already defined to be Syy.</p>
+<div class="math notranslate nohighlight">
+\[SST = \sum{(y_i - \hat{y})^2}\]</div>
+<p>This quantity defines the total amount of variation present in the data.</p>
+<p>The coefficient of determination denoted R2, measures the proportion of variation explained by the model.</p>
+<div class="math notranslate nohighlight">
+\[R^2 = 1-\frac{SSE}{SST}\]</div>
+<p>Since SSE is the variation that is unexplained, if SSE = 0, all of the variation is explained and we would have a perfect fit. Then R2 = 1</p>
+<p>If X contributes no information in the prediction of Y then no variation is explain and SSE = SST. Then R2 = 0. If R2 is large (close to one), the model explains a large portion of the variation; we have a good fit.
+If R2 is small (close to zero), the model only explains a small portion of the variation; we have a poor fit.</p>
+<div class="section" id="interpreting-r2">
+<h3>Interpreting R2<a class="headerlink" href="#interpreting-r2" title="Permalink to this headline">¶</a></h3>
+<p>R2 is often quoted due to its simplicity. Some scientific phenomena leads to higher precisions than other. R2 is not good to use when comparing competing models for the same data set.
+R2 can be artificially inflated by inclusion of additional data points or inclusion of additional model terms (more independent variables). This is called overfitting.</p>
+<p><strong>Example</strong></p>
+<p>Suppose an appliance store conducts a 5-month experiment to determine the effect of advertising (X) on sales revenue (Y).</p>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 50%" />
+<col style="width: 50%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>X</p></th>
+<th class="head"><p>Y</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>1</p></td>
+<td><p>1</p></td>
+</tr>
+<tr class="row-odd"><td><p>2</p></td>
+<td><p>1</p></td>
+</tr>
+<tr class="row-even"><td><p>3</p></td>
+<td><p>2</p></td>
+</tr>
+<tr class="row-odd"><td><p>4</p></td>
+<td><p>2</p></td>
+</tr>
+<tr class="row-even"><td><p>5</p></td>
+<td><p>4</p></td>
+</tr>
+</tbody>
+</table>
+<p>And the fitted least squares line is: <span class="math notranslate nohighlight">\(\hat{y} = -0.1 + 0.7x\)</span> and SSE = 1.1</p>
+<p><span class="math notranslate nohighlight">\(\bar{y} = \frac{10}{5} = 2\)</span></p>
+<p><span class="math notranslate nohighlight">\(\sum{y^2_i} = 26\)</span></p>
+<p>SST = <span class="math notranslate nohighlight">\(\sum{y^2_i} - n(\bar{y})^2 = 26 - 5(2^2)\)</span></p>
+<p><span class="math notranslate nohighlight">\(R^2 = 1 - \frac{SSE}{SST} = 1 - \frac{1.1}{6}\)</span> = 0.817</p>
+<p>About 82% of the sample variation in Y is explained by using X in the straight line model.</p>
+</div>
+</div>
+<div class="section" id="coefficient-of-correlation">
+<h2>Coefficient of Correlation<a class="headerlink" href="#coefficient-of-correlation" title="Permalink to this headline">¶</a></h2>
+<p>Previously we have discussed the coefficient of determination (R2) which measures the amount of variation in Y that is explained by the model. Correlation implies a relationship or association between two variables.
+The coefficient of correlation is a measure of strength of the linear relationship between X and Y.</p>
+<p>The population correlation coefficient is denoted as 𝜌   (Greek letter rho) We estimate this value with the sample correlation coefficient</p>
+<div class="math notranslate nohighlight">
+\[r = \frac{S_{xy}}{\sqrt{S_{xx}S_{yy}}} = b_1\sqrt{\frac{S_{xx}}{S_{yy}}}\]</div>
+<p>Properties
+1. r will have the same sign as <span class="math notranslate nohighlight">\(b_1\)</span>
+2. <span class="math notranslate nohighlight">\(-1 \ge r \ge 1\)</span></p>
+<div class="section" id="id1">
+<h3>Interpretations<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h3>
+<ol class="arabic simple">
+<li><p>If r = 0 there is no linear relationship between X and Y.</p></li>
+<li><p>If r = 1 or -1 then all of the points lie exactly on the least squares line. (Prefect linear fit)</p></li>
+<li><p>If r is close to 1 or -1 there is a strong linear relationship.</p></li>
+<li><p>If r is positive then Y increases as X increases.</p></li>
+<li><p>If r is negative then Y decreases as X increases.</p></li>
+</ol>
+<a class="reference internal image-reference" href="_images/noCorrelationR.png"><img alt="_images/noCorrelationR.png" src="_images/noCorrelationR.png" style="width: 400px; height: 300px;" /></a>
+<p>No Correlation. r = 0</p>
+<a class="reference internal image-reference" href="_images/perfectLinearR.png"><img alt="_images/perfectLinearR.png" src="_images/perfectLinearR.png" style="width: 400px; height: 300px;" /></a>
+<p>Perfect linear relationship r = 1</p>
+<a class="reference internal image-reference" href="_images/strongPositiveR.png"><img alt="_images/strongPositiveR.png" src="_images/strongPositiveR.png" style="width: 400px; height: 300px;" /></a>
+<p>Strong Positive correlation, r = 0.931</p>
+<a class="reference internal image-reference" href="_images/weakNegativeR.png"><img alt="_images/weakNegativeR.png" src="_images/weakNegativeR.png" style="width: 400px; height: 300px;" /></a>
+<p>Weaker negative correlation, r = -0.67</p>
+<p><strong>Example</strong></p>
+<p>An appliance store conducts a 5-month experiment to determine the effect of advertising (X) on sales revenue (Y). From previous work:</p>
+<p><span class="math notranslate nohighlight">\(S_{xy} = 7\)</span></p>
+<p><span class="math notranslate nohighlight">\(S_{xx} = 10\)</span></p>
+<p><span class="math notranslate nohighlight">\(S_{yy} = 6\)</span></p>
+<p>Find an estimate for the coefficient of correlation.</p>
+<div class="math notranslate nohighlight">
+\[r = \frac{S_{xy}}{\sqrt{S_{xx}S_{yy}}} = \frac{7}{\sqrt{(10)(6)}} = 0.904\]</div>
+<p>There is a strong positive linear correlation between X and Y.</p>
+<p>Also note that <span class="math notranslate nohighlight">\(R^2 = (r)^2 = 0.904^2 = 0.817\)</span></p>
+</div>
+</div>
+<div class="section" id="estimation-and-prediction">
+<h2>Estimation and Prediction<a class="headerlink" href="#estimation-and-prediction" title="Permalink to this headline">¶</a></h2>
+<p>The fitted line can be used for two purposes:
+- Estimating the average value of Y for a given value of X. (estimating E(Y))
+- Predicting a particular value of Y for a given value of X. (predicting y0)</p>
+<p>Note: when estimating or predicting we are doing so for a certain value of X. This value of X does not have to be in the sample data.</p>
+<div class="section" id="estimation">
+<h3>Estimation<a class="headerlink" href="#estimation" title="Permalink to this headline">¶</a></h3>
+<p>Suppose we wish to construct a confidence interval for the mean response of Y at a specific value of X. (confidence interval for E(Y) at X = x0) The best estimate we have for E(Y) is by plugging in x0 into our fitted line.</p>
+<div class="math notranslate nohighlight">
+\[\hat{y}_0 = b_0 + b_1x_0\]</div>
+<p>A 100(1 – α)% confidence interval for the mean response E(Y) at a given X = x0 is:</p>
+<div class="math notranslate nohighlight">
+\[\hat{y}_0 \pm t_{\alpha/2}S\sqrt{\frac{1}{n}+\frac{(x_0 - \bar{x})^2}{S_{xx}}}\]</div>
+<p>Where <span class="math notranslate nohighlight">\(t_{\alpha/2}\)</span> is a value from the t-distribution with v = n – 2.</p>
+<p><strong>Example</strong></p>
+<p>Use the data from the appliance store example to create a 95% confidence interval for the mean response of Y when X = 5.</p>
+<p>From Previous work we know</p>
+<p><span class="math notranslate nohighlight">\(\hat{y} = -0.1 + 0.7x\)</span></p>
+<p>S = 0.6055</p>
+<p><span class="math notranslate nohighlight">\(S_{xx}\)</span> = 10</p>
+<p><span class="math notranslate nohighlight">\(\bar{x}\)</span> = 3</p>
+<p>n = 5</p>
+<p><span class="math notranslate nohighlight">\(t_{\alpha/2}\)</span> = <span class="math notranslate nohighlight">\(t_{0.025}\)</span> = 3.182 (v = 5-2 = 3)</p>
+<p>So</p>
+<div class="math notranslate nohighlight">
+\[\hat{y}_0 = b_0 + b_1x_0 = -0.1 + 0.7(5) = 3.4\]</div>
+<div class="math notranslate nohighlight">
+\[3.4 \pm 3.182(0.6055)\sqrt{\frac{1}{5}+\frac{(5-3)^2}{10}}\]</div>
+<div class="math notranslate nohighlight">
+\[3.4 \pm 1.492 = (1.908, 4.892)\]</div>
+</div>
+<div class="section" id="prediction">
+<h3>Prediction<a class="headerlink" href="#prediction" title="Permalink to this headline">¶</a></h3>
+<p>We are interested in predicting a specific value of Y instead of just obtaining an estimate for the mean value. Particular values of Y are more difficult to predict and thus require a
+wider range of values in the interval. There is some additional error in the prediction because of the deviation of Y from the line of means. The error in using the fitted line to
+estimate the line of means The error caused by deviation of y from the line of means, measure by <span class="math notranslate nohighlight">\(σ^2\)</span></p>
+</div>
+<div class="section" id="prediction-interval-for-y">
+<h3>Prediction Interval for Y<a class="headerlink" href="#prediction-interval-for-y" title="Permalink to this headline">¶</a></h3>
+<p>A 100(1 – α)% prediction interval for a single response y0 at a given X = x0 is:</p>
+<div class="math notranslate nohighlight">
+\[\hat{y}_0 \pm t_{\alpha/2}S\sqrt{1 + \frac{1}{n} + \frac{(x_0 - \bar{x})^2}{S_{xx}}}\]</div>
+<p><strong>Example</strong></p>
+<p>Using the same information from example 1, we can create a prediction interval for y0 when X = 5, in the appliance store problem.</p>
+<div class="math notranslate nohighlight">
+\[3.4 \pm 3.182(0.6055)\sqrt{1 + \frac{1}{5}+\frac{(5-3)^2}{10}}\]</div>
+<div class="math notranslate nohighlight">
+\[3.4 \pm 2.437 = (0.963, 5.837)\]</div>
+<p>Interpretations of confidence and prediction intervals:</p>
+<ul class="simple">
+<li><dl class="simple">
+<dt>The confidence interval interpretation is the same as the one we studied earlier in ch.9</dt><dd><ul>
+<li><p>We are 100(1 – α)% confidence that the true mean response is within the interval</p></li>
+</ul>
+</dd>
+</dl>
+</li>
+<li><p>The prediction interval represents an interval that has a probability of (1 – α) of containing a future value of y0 when X = x0</p></li>
+</ul>
+<p>Confidence vs. Prediction Intervals</p>
+<ul class="simple">
+<li><p>Confidence bands are narrower than the prediction bands for every value of X.</p></li>
+<li><p>Predictions are always more variable than the estimates of the mean value.</p></li>
+<li><p>The bands will be wider as the value of x0 gets farther from 𝑥 ̅.</p></li>
+<li><p>In practice, estimation and prediction are more accurate when x0 is near the center of the range of the x-values.</p></li>
+</ul>
+<a class="reference internal image-reference" href="_images/confidenceBands.png"><img alt="_images/confidenceBands.png" src="_images/confidenceBands.png" style="width: 400px; height: 300px;" /></a>
+<p>Confidence Bands</p>
 </div>
 </div>
 </div>
