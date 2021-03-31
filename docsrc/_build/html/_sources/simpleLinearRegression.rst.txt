@@ -490,6 +490,186 @@ S = 0.6055
 
 -2.12 < :math:`𝛽_0` < 1.92
 
+Coefficient of Correlation
+===========================
+
+Previously we have discussed the coefficient of determination (R2) which measures the amount of variation in Y that is explained by the model. Correlation implies a relationship or association between two variables.
+The coefficient of correlation is a measure of strength of the linear relationship between X and Y. 
+
+The population correlation coefficient is denoted as 𝜌   (Greek letter rho) We estimate this value with the sample correlation coefficient
+
+.. math::
+
+   r = \frac{S_{xy}}{\sqrt{S_{xx}S_{yy}}} = b_1\sqrt{\frac{S_{xx}}{S_{yy}}}
+
+Properties
+1. r will have the same sign as :math:`b_1`
+2. :math:`-1 \ge r \ge 1`
+
+Interpretations
+----------------
+
+1. If r = 0 there is no linear relationship between X and Y.
+2. If r = 1 or -1 then all of the points lie exactly on the least squares line. (Prefect linear fit)
+3. If r is close to 1 or -1 there is a strong linear relationship.
+4. If r is positive then Y increases as X increases.
+5. If r is negative then Y decreases as X increases.
+
+
+.. image:: _static/images/noCorrelationR.png
+   :width: 400
+   :height: 300
+
+No Correlation. r = 0
+
+.. image:: _static/images/perfectLinearR.png
+   :width: 400
+   :height: 300
+
+Perfect linear relationship r = 1
+
+.. image:: _static/images/strongPositiveR.png
+   :width: 400
+   :height: 300
+
+Strong Positive correlation, r = 0.931
+
+.. image:: _static/images/weakNegativeR.png
+   :width: 400
+   :height: 300
+
+Weaker negative correlation, r = -0.67
+
+**Example**
+
+An appliance store conducts a 5-month experiment to determine the effect of advertising (X) on sales revenue (Y). From previous work:
+
+:math:`S_{xy} = 7`
+
+:math:`S_{xx} = 10`
+
+:math:`S_{yy} = 6`
+
+Find an estimate for the coefficient of correlation.
+
+.. math::
+
+   r = \frac{S_{xy}}{\sqrt{S_{xx}S_{yy}}} = \frac{7}{\sqrt{(10)(6)}} = 0.904
+
+There is a strong positive linear correlation between X and Y.
+
+Also note that :math:`R^2 = (r)^2 = 0.904^2 = 0.817`
+
+Estimation and Prediction
+==========================
+
+The fitted line can be used for two purposes:
+- Estimating the average value of Y for a given value of X. (estimating E(Y))
+- Predicting a particular value of Y for a given value of X. (predicting y0)
+
+Note: when estimating or predicting we are doing so for a certain value of X. This value of X does not have to be in the sample data.
+
+Estimation
+-----------
+
+Suppose we wish to construct a confidence interval for the mean response of Y at a specific value of X. (confidence interval for E(Y) at X = x0) The best estimate we have for E(Y) is by plugging in x0 into our fitted line.
+
+.. math::
+
+   \hat{y}_0 = b_0 + b_1x_0
+
+A 100(1 – α)% confidence interval for the mean response E(Y) at a given X = x0 is:
+
+.. math::
+
+   \hat{y}_0 \pm t_{\alpha/2}S\sqrt{\frac{1}{n}+\frac{(x_0 - \bar{x})^2}{S_{xx}}}
+
+Where :math:`t_{\alpha/2}` is a value from the t-distribution with v = n – 2.
+
+**Example**
+
+Use the data from the appliance store example to create a 95% confidence interval for the mean response of Y when X = 5.
+
+From Previous work we know
+
+:math:`\hat{y} = -0.1 + 0.7x`
+
+S = 0.6055
+
+:math:`S_{xx}` = 10
+
+:math:`\bar{x}` = 3
+
+n = 5
+
+:math:`t_{\alpha/2}` = :math:`t_{0.025}` = 3.182 (v = 5-2 = 3)
+
+So 
+
+.. math::
+
+   \hat{y}_0 = b_0 + b_1x_0 = -0.1 + 0.7(5) = 3.4
+
+.. math::
+
+   3.4 \pm 3.182(0.6055)\sqrt{\frac{1}{5}+\frac{(5-3)^2}{10}}
+
+.. math::
+
+   3.4 \pm 1.492 = (1.908, 4.892)
+
+Prediction
+------------
+
+We are interested in predicting a specific value of Y instead of just obtaining an estimate for the mean value. Particular values of Y are more difficult to predict and thus require a 
+wider range of values in the interval. There is some additional error in the prediction because of the deviation of Y from the line of means. The error in using the fitted line to
+estimate the line of means The error caused by deviation of y from the line of means, measure by :math:`σ^2` 
+
+Prediction Interval for Y
+--------------------------
+
+A 100(1 – α)% prediction interval for a single response y0 at a given X = x0 is:
+
+.. math::
+
+   \hat{y}_0 \pm t_{\alpha/2}S\sqrt{1 + \frac{1}{n} + \frac{(x_0 - \bar{x})^2}{S_{xx}}}
+
+**Example**
+
+Using the same information from example 1, we can create a prediction interval for y0 when X = 5, in the appliance store problem.
+
+.. math::
+
+   3.4 \pm 3.182(0.6055)\sqrt{1 + \frac{1}{5}+\frac{(5-3)^2}{10}}
+
+.. math::
+
+   3.4 \pm 2.437 = (0.963, 5.837)
+
+Interpretations of confidence and prediction intervals:
+
+- The confidence interval interpretation is the same as the one we studied earlier in ch.9
+   - We are 100(1 – α)% confidence that the true mean response is within the interval
+- The prediction interval represents an interval that has a probability of (1 – α) of containing a future value of y0 when X = x0
+
+Confidence vs. Prediction Intervals
+
+- Confidence bands are narrower than the prediction bands for every value of X.
+- Predictions are always more variable than the estimates of the mean value.
+- The bands will be wider as the value of x0 gets farther from 𝑥 ̅.
+- In practice, estimation and prediction are more accurate when x0 is near the center of the range of the x-values.
+
+.. image:: _static/images/confidenceBands.png
+   :width: 400
+   :height: 300
+
+Confidence Bands
+
+
+
+
+
+
 
 
 

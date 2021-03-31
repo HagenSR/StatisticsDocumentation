@@ -132,6 +132,16 @@
 <li class="toctree-l3"><a class="reference internal" href="#hypothesis-test-on-0">Hypothesis Test on <span class="math notranslate nohighlight">\(𝛽_0\)</span></a></li>
 </ul>
 </li>
+<li class="toctree-l2"><a class="reference internal" href="#coefficient-of-correlation">Coefficient of Correlation</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#id1">Interpretations</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#estimation-and-prediction">Estimation and Prediction</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#estimation">Estimation</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#prediction">Prediction</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#prediction-interval-for-y">Prediction Interval for Y</a></li>
+</ul>
+</li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="OtherDefinitions.html">Other Definitions</a></li>
@@ -572,7 +582,7 @@ From the previous example:</p>
 <div class="math notranslate nohighlight">
 \[T = \frac{b_1}{s/\sqrt{S_{xx}}} = \frac{0.7}{0.6055/\sqrt{10}} = 3.66\]</div>
 <p>Critical value: <span class="math notranslate nohighlight">\(t_{\alpha/2} = t_{0.025} = 3.182\)</span> (v=3)</p>
-<p>Reject <span class="math notranslate nohighlight">\(H_0\)</span> if <a href="#id1"><span class="problematic" id="id2">|T|</span></a> &gt; 3.182</p>
+<p>Reject <span class="math notranslate nohighlight">\(H_0\)</span> if <a href="#id2"><span class="problematic" id="id3">|T|</span></a> &gt; 3.182</p>
 <p>3.66 &gt; 3.182</p>
 <p>Reject H0. There is sufficient evidence, at the 0.05 level, that advertising expenditure contributes information to predicting sales revenue.</p>
 <p>Note:
@@ -598,7 +608,7 @@ From this interval we can be 100(1 - 𝛼)% confident that the intercept of the 
 <p>When testing the hypotheses <span class="math notranslate nohighlight">\(𝛽_1 = 0\)</span>  vs <span class="math notranslate nohighlight">\(𝛽_1 = 0\)</span> at the :math:`` level of significance, the test statistic is:</p>
 <div class="math notranslate nohighlight">
 \[T = \frac{b_0}{S\sqrt{\sum{x^2_i/(nS_{xx})}}}\]</div>
-<p>We will reject <span class="math notranslate nohighlight">\(H_0\)</span> if <a href="#id3"><span class="problematic" id="id4">|T|</span></a> &gt; <span class="math notranslate nohighlight">\(t_\alpha/2\)</span> with <span class="math notranslate nohighlight">\(t_\alpha/2\)</span> from a t-distribution with v = n - 2.</p>
+<p>We will reject <span class="math notranslate nohighlight">\(H_0\)</span> if <a href="#id4"><span class="problematic" id="id5">|T|</span></a> &gt; <span class="math notranslate nohighlight">\(t_\alpha/2\)</span> with <span class="math notranslate nohighlight">\(t_\alpha/2\)</span> from a t-distribution with v = n - 2.</p>
 <p><strong>Example</strong></p>
 <p>Create a 95% confidence interval for 𝛽_0 from the appliance store example.</p>
 <p>n = 5</p>
@@ -614,6 +624,116 @@ From this interval we can be 100(1 - 𝛼)% confident that the intercept of the 
 <div class="math notranslate nohighlight">
 \[-0.1 \pm 2.02\]</div>
 <p>-2.12 &lt; <span class="math notranslate nohighlight">\(𝛽_0\)</span> &lt; 1.92</p>
+</div>
+</div>
+<div class="section" id="coefficient-of-correlation">
+<h2>Coefficient of Correlation<a class="headerlink" href="#coefficient-of-correlation" title="Permalink to this headline">¶</a></h2>
+<p>Previously we have discussed the coefficient of determination (R2) which measures the amount of variation in Y that is explained by the model. Correlation implies a relationship or association between two variables.
+The coefficient of correlation is a measure of strength of the linear relationship between X and Y.</p>
+<p>The population correlation coefficient is denoted as 𝜌   (Greek letter rho) We estimate this value with the sample correlation coefficient</p>
+<div class="math notranslate nohighlight">
+\[r = \frac{S_{xy}}{\sqrt{S_{xx}S_{yy}}} = b_1\sqrt{\frac{S_{xx}}{S_{yy}}}\]</div>
+<p>Properties
+1. r will have the same sign as <span class="math notranslate nohighlight">\(b_1\)</span>
+2. <span class="math notranslate nohighlight">\(-1 \ge r \ge 1\)</span></p>
+<div class="section" id="id1">
+<h3>Interpretations<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h3>
+<ol class="arabic simple">
+<li><p>If r = 0 there is no linear relationship between X and Y.</p></li>
+<li><p>If r = 1 or -1 then all of the points lie exactly on the least squares line. (Prefect linear fit)</p></li>
+<li><p>If r is close to 1 or -1 there is a strong linear relationship.</p></li>
+<li><p>If r is positive then Y increases as X increases.</p></li>
+<li><p>If r is negative then Y decreases as X increases.</p></li>
+</ol>
+<a class="reference internal image-reference" href="_images/noCorrelationR.png"><img alt="_images/noCorrelationR.png" src="_images/noCorrelationR.png" style="width: 400px; height: 300px;" /></a>
+<p>No Correlation. r = 0</p>
+<a class="reference internal image-reference" href="_images/perfectLinearR.png"><img alt="_images/perfectLinearR.png" src="_images/perfectLinearR.png" style="width: 400px; height: 300px;" /></a>
+<p>Perfect linear relationship r = 1</p>
+<a class="reference internal image-reference" href="_images/strongPositiveR.png"><img alt="_images/strongPositiveR.png" src="_images/strongPositiveR.png" style="width: 400px; height: 300px;" /></a>
+<p>Strong Positive correlation, r = 0.931</p>
+<a class="reference internal image-reference" href="_images/weakNegativeR.png"><img alt="_images/weakNegativeR.png" src="_images/weakNegativeR.png" style="width: 400px; height: 300px;" /></a>
+<p>Weaker negative correlation, r = -0.67</p>
+<p><strong>Example</strong></p>
+<p>An appliance store conducts a 5-month experiment to determine the effect of advertising (X) on sales revenue (Y). From previous work:</p>
+<p><span class="math notranslate nohighlight">\(S_{xy} = 7\)</span></p>
+<p><span class="math notranslate nohighlight">\(S_{xx} = 10\)</span></p>
+<p><span class="math notranslate nohighlight">\(S_{yy} = 6\)</span></p>
+<p>Find an estimate for the coefficient of correlation.</p>
+<div class="math notranslate nohighlight">
+\[r = \frac{S_{xy}}{\sqrt{S_{xx}S_{yy}}} = \frac{7}{\sqrt{(10)(6)}} = 0.904\]</div>
+<p>There is a strong positive linear correlation between X and Y.</p>
+<p>Also note that <span class="math notranslate nohighlight">\(R^2 = (r)^2 = 0.904^2 = 0.817\)</span></p>
+</div>
+</div>
+<div class="section" id="estimation-and-prediction">
+<h2>Estimation and Prediction<a class="headerlink" href="#estimation-and-prediction" title="Permalink to this headline">¶</a></h2>
+<p>The fitted line can be used for two purposes:
+- Estimating the average value of Y for a given value of X. (estimating E(Y))
+- Predicting a particular value of Y for a given value of X. (predicting y0)</p>
+<p>Note: when estimating or predicting we are doing so for a certain value of X. This value of X does not have to be in the sample data.</p>
+<div class="section" id="estimation">
+<h3>Estimation<a class="headerlink" href="#estimation" title="Permalink to this headline">¶</a></h3>
+<p>Suppose we wish to construct a confidence interval for the mean response of Y at a specific value of X. (confidence interval for E(Y) at X = x0) The best estimate we have for E(Y) is by plugging in x0 into our fitted line.</p>
+<div class="math notranslate nohighlight">
+\[\hat{y}_0 = b_0 + b_1x_0\]</div>
+<p>A 100(1 – α)% confidence interval for the mean response E(Y) at a given X = x0 is:</p>
+<div class="math notranslate nohighlight">
+\[\hat{y}_0 \pm t_{\alpha/2}S\sqrt{\frac{1}{n}+\frac{(x_0 - \bar{x})^2}{S_{xx}}}\]</div>
+<p>Where <span class="math notranslate nohighlight">\(t_{\alpha/2}\)</span> is a value from the t-distribution with v = n – 2.</p>
+<p><strong>Example</strong></p>
+<p>Use the data from the appliance store example to create a 95% confidence interval for the mean response of Y when X = 5.</p>
+<p>From Previous work we know</p>
+<p><span class="math notranslate nohighlight">\(\hat{y} = -0.1 + 0.7x\)</span></p>
+<p>S = 0.6055</p>
+<p><span class="math notranslate nohighlight">\(S_{xx}\)</span> = 10</p>
+<p><span class="math notranslate nohighlight">\(\bar{x}\)</span> = 3</p>
+<p>n = 5</p>
+<p><span class="math notranslate nohighlight">\(t_{\alpha/2}\)</span> = <span class="math notranslate nohighlight">\(t_{0.025}\)</span> = 3.182 (v = 5-2 = 3)</p>
+<p>So</p>
+<div class="math notranslate nohighlight">
+\[\hat{y}_0 = b_0 + b_1x_0 = -0.1 + 0.7(5) = 3.4\]</div>
+<div class="math notranslate nohighlight">
+\[3.4 \pm 3.182(0.6055)\sqrt{\frac{1}{5}+\frac{(5-3)^2}{10}}\]</div>
+<div class="math notranslate nohighlight">
+\[3.4 \pm 1.492 = (1.908, 4.892)\]</div>
+</div>
+<div class="section" id="prediction">
+<h3>Prediction<a class="headerlink" href="#prediction" title="Permalink to this headline">¶</a></h3>
+<p>We are interested in predicting a specific value of Y instead of just obtaining an estimate for the mean value. Particular values of Y are more difficult to predict and thus require a
+wider range of values in the interval. There is some additional error in the prediction because of the deviation of Y from the line of means. The error in using the fitted line to
+estimate the line of means The error caused by deviation of y from the line of means, measure by <span class="math notranslate nohighlight">\(σ^2\)</span></p>
+</div>
+<div class="section" id="prediction-interval-for-y">
+<h3>Prediction Interval for Y<a class="headerlink" href="#prediction-interval-for-y" title="Permalink to this headline">¶</a></h3>
+<p>A 100(1 – α)% prediction interval for a single response y0 at a given X = x0 is:</p>
+<div class="math notranslate nohighlight">
+\[\hat{y}_0 \pm t_{\alpha/2}S\sqrt{1 + \frac{1}{n} + \frac{(x_0 - \bar{x})^2}{S_{xx}}}\]</div>
+<p><strong>Example</strong></p>
+<p>Using the same information from example 1, we can create a prediction interval for y0 when X = 5, in the appliance store problem.</p>
+<div class="math notranslate nohighlight">
+\[3.4 \pm 3.182(0.6055)\sqrt{1 + \frac{1}{5}+\frac{(5-3)^2}{10}}\]</div>
+<div class="math notranslate nohighlight">
+\[3.4 \pm 2.437 = (0.963, 5.837)\]</div>
+<p>Interpretations of confidence and prediction intervals:</p>
+<ul class="simple">
+<li><dl class="simple">
+<dt>The confidence interval interpretation is the same as the one we studied earlier in ch.9</dt><dd><ul>
+<li><p>We are 100(1 – α)% confidence that the true mean response is within the interval</p></li>
+</ul>
+</dd>
+</dl>
+</li>
+<li><p>The prediction interval represents an interval that has a probability of (1 – α) of containing a future value of y0 when X = x0</p></li>
+</ul>
+<p>Confidence vs. Prediction Intervals</p>
+<ul class="simple">
+<li><p>Confidence bands are narrower than the prediction bands for every value of X.</p></li>
+<li><p>Predictions are always more variable than the estimates of the mean value.</p></li>
+<li><p>The bands will be wider as the value of x0 gets farther from 𝑥 ̅.</p></li>
+<li><p>In practice, estimation and prediction are more accurate when x0 is near the center of the range of the x-values.</p></li>
+</ul>
+<a class="reference internal image-reference" href="_images/confidenceBands.png"><img alt="_images/confidenceBands.png" src="_images/confidenceBands.png" style="width: 400px; height: 300px;" /></a>
+<p>Confidence Bands</p>
 </div>
 </div>
 </div>
