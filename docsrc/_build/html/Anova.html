@@ -1,0 +1,410 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8" />
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  
+  <title>ANOVA &mdash; Statistics Documentation 9 documentation</title>
+  
+
+  
+  <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="_static/accordion.css" type="text/css" />
+
+  
+  
+
+  
+  
+
+  
+
+  
+  <!--[if lt IE 9]>
+    <script src="_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
+        <script src="_static/jquery.js"></script>
+        <script src="_static/underscore.js"></script>
+        <script src="_static/doctools.js"></script>
+        <script src="_static/accordion.js"></script>
+        <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    
+    <script type="text/javascript" src="_static/js/theme.js"></script>
+
+    
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="Regression" href="Regression.html" />
+    <link rel="prev" title="Simple Linear Regression" href="simpleLinearRegression.html" />
+    <link href="_static/style.css" rel="stylesheet" type="text/css">
+
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="index.html" class="icon icon-home"> Statistics Documentation
+          
+
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                Version 1.0
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <p class="caption"><span class="caption-text">Contents:</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="Formulas.html">Formulas</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Distributions.html">Distributions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Estimation.html">Estimating</a></li>
+<li class="toctree-l1"><a class="reference internal" href="HypothesisTesting.html">Hypothesis Testing</a></li>
+<li class="toctree-l1"><a class="reference internal" href="simpleLinearRegression.html">Simple Linear Regression</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">ANOVA</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#explanation-of-variation">Explanation of variation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#regression-identity">Regression Identity</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#anova-table">Anova Table</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#mean-squares">Mean Squares</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#f-value">F value</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#the-f-test">The F Test</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="Regression.html">Regression</a></li>
+<li class="toctree-l1"><a class="reference internal" href="OtherDefinitions.html">Other Definitions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="NormalTableTextBook.html">Normal Table from the Textbook</a></li>
+<li class="toctree-l1"><a class="reference internal" href="TTableTextBook.html">T Table from the Textbook</a></li>
+<li class="toctree-l1"><a class="reference internal" href="ChiSquaredTextBook.html">Chi Squared from Text Book</a></li>
+</ul>
+
+            
+          
+        </div>
+        
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">Statistics Documentation</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="index.html" class="icon icon-home"></a> &raquo;</li>
+        
+      <li>ANOVA</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+          
+            <a href="_sources/Anova.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="anova">
+<h1>ANOVA<a class="headerlink" href="#anova" title="Permalink to this headline">¶</a></h1>
+<p>Analysis of Variance (ANOVA) is a procedure whereby the total variation in the dependent variable, Y, is subdivided into meaningful components that are then observed and treated in a systematic fashion.</p>
+<p>Total variation in Y = SST = Syy</p>
+<div class="section" id="explanation-of-variation">
+<h2>Explanation of variation<a class="headerlink" href="#explanation-of-variation" title="Permalink to this headline">¶</a></h2>
+<p>We wish to divide the total variation in Y into meaningful subdivisions.</p>
+<p>SSE = SST – b1Sxy
+SST = b1Sxy + SSE</p>
+<p>SSE measures the error variation, or the variation in Y that is not explained by the model.
+The quantity b1Sxy measures the variation in Y that is explained by the model.</p>
+</div>
+<div class="section" id="regression-identity">
+<h2>Regression Identity<a class="headerlink" href="#regression-identity" title="Permalink to this headline">¶</a></h2>
+<p>The regression identity is:</p>
+<p>SST = SSR + SSE</p>
+<p>Where</p>
+<p>SST = total variation in Y</p>
+<p>SSR = b1Sxy = variation explained by using X in the model</p>
+<p>SSE = leftover variation not explained by X</p>
+<p>Now we have another formula for calculating the coefficient of determination.</p>
+<p>R2 = 𝑆𝑆𝑅/𝑆𝑆𝑇</p>
+<p>Previously we had:</p>
+<p>R2 = 1−𝑆𝑆𝐸/𝑆𝑆𝑇</p>
+</div>
+<div class="section" id="anova-table">
+<h2>Anova Table<a class="headerlink" href="#anova-table" title="Permalink to this headline">¶</a></h2>
+<p>The division of variation is usually displayed in an Analysis of Variation table.</p>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 20%" />
+<col style="width: 20%" />
+<col style="width: 20%" />
+<col style="width: 20%" />
+<col style="width: 20%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Source</p></th>
+<th class="head"><p>DF</p></th>
+<th class="head"><p>SS</p></th>
+<th class="head"><p>MS</p></th>
+<th class="head"><p>F</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>Regression</p></td>
+<td><p>1(number of vars)</p></td>
+<td><p>SSR</p></td>
+<td><p>MSR</p></td>
+<td><p>MSR/MSE</p></td>
+</tr>
+<tr class="row-odd"><td><p>ERROR</p></td>
+<td><p>n-2</p></td>
+<td><p>SSE</p></td>
+<td><p>MSE</p></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p>TOTAL</p></td>
+<td><p>n-1</p></td>
+<td><p>SST</p></td>
+<td></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<p>We have divided the total variation into two sources: Regression and Error.</p>
+<p>Each source has its own degrees of freedom.
+Error has (n – 2) degrees of freedom because two parameters, 𝛽_0 and 𝛽_1, are estimated when we created a fitted regression line.
+Regression has (1) degree of freedom because we are only using one independent variable, X, in our creation of the fitted regression line.</p>
+<p>The regression identity states:
+SST = SSR + SSE
+The total variation can be found as a sum of the two divisions of variation. The degrees of freedom for the total variation can be found similarly.
+1 + (n – 2) = (n – 1)
+Thus the total degrees of freedom for the analysis is (n – 1).</p>
+</div>
+<div class="section" id="mean-squares">
+<h2>Mean Squares<a class="headerlink" href="#mean-squares" title="Permalink to this headline">¶</a></h2>
+<p>If we divide each source of variation by its associated degrees of freedom we get an estimate of the variation in the experiment.
+These estimates are called mean squares (MS).
+MSR = 𝑆𝑆𝑅/1
+MSE = 𝑆𝑆𝐸/(𝑛−2) = s^2</p>
+</div>
+<div class="section" id="f-value">
+<h2>F value<a class="headerlink" href="#f-value" title="Permalink to this headline">¶</a></h2>
+<p>The F-value given in the last column of the ANOVA table is found by taking MSR divided by MSE.
+This value is a statistic that will follow an       F-distribution with v1 = 1, and v2 = (n – 2) degrees of freedom.</p>
+<div class="section" id="the-f-test">
+<h3>The F Test<a class="headerlink" href="#the-f-test" title="Permalink to this headline">¶</a></h3>
+<p>H0: The model is not useful in predicting Y
+Ha: The model is useful in predicting Y
+(OR H0: 𝛽_1= 0   vs. Ha: 𝛽_1 ≠ 0 )</p>
+<p>Test statistic: 𝐹=𝑀𝑆𝑅/𝑀𝑆𝐸
+Critical value: fα(1, n - 2)
+Reject H0 if F &gt; fα</p>
+<p>(For simple linear regression, this test is equivalent to the T-test for H0: 𝛽_1= 0)</p>
+<p><strong>Example</strong></p>
+<p>Fill out an ANOVA table for the appliance store example data. Perform an F-test to determine if the model is useful at the 0.05 level.</p>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 50%" />
+<col style="width: 50%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>X</p></th>
+<th class="head"><p>Y</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>1</p></td>
+<td><p>1</p></td>
+</tr>
+<tr class="row-odd"><td><p>2</p></td>
+<td><p>1</p></td>
+</tr>
+<tr class="row-even"><td><p>3</p></td>
+<td><p>2</p></td>
+</tr>
+<tr class="row-odd"><td><p>4</p></td>
+<td><p>2</p></td>
+</tr>
+<tr class="row-even"><td><p>5</p></td>
+<td><p>4</p></td>
+</tr>
+</tbody>
+</table>
+<p>SSE = 1.1
+SST = 6</p>
+<p>Then</p>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 20%" />
+<col style="width: 20%" />
+<col style="width: 20%" />
+<col style="width: 20%" />
+<col style="width: 20%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Source</p></th>
+<th class="head"><p>DF</p></th>
+<th class="head"><p>SS</p></th>
+<th class="head"><p>MS</p></th>
+<th class="head"><p>F</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>Regression</p></td>
+<td><p>1</p></td>
+<td><p>4.9</p></td>
+<td><p>4.9</p></td>
+<td><p>13.36</p></td>
+</tr>
+<tr class="row-odd"><td><p>ERROR</p></td>
+<td><p>3</p></td>
+<td><p>1.1</p></td>
+<td><p>0.3667</p></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p>TOTAL</p></td>
+<td><p>4</p></td>
+<td><p>6</p></td>
+<td></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<p>H0: The model is not useful in predicting Y</p>
+<p>Ha: The model is useful in predicting Y</p>
+<p>Test statistic: F = 13.36</p>
+<p>Critical value: f0.05(1, 3) = 10.1</p>
+<p>Reject H0 if F &gt; 10.1</p>
+<p>13.36 &gt; 10.1</p>
+<p>Reject H0. At the 0.05 level we conclude that X is useful in predicting Y. (advertising expenditure is useful in predicting sales revenue)</p>
+</div>
+</div>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+        <a href="Regression.html" class="btn btn-neutral float-right" title="Regression" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+        <a href="simpleLinearRegression.html" class="btn btn-neutral float-left" title="Simple Linear Regression" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &#169; Copyright 2021-2022, NDSU ACM.
+
+    </p>
+  </div>
+    
+    
+    
+    Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    
+    provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>

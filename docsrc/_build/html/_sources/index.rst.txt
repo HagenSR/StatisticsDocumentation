@@ -15,6 +15,8 @@ Welcome to Statistics Documentation!
    Estimation
    HypothesisTesting
    simpleLinearRegression
+   Anova
+   Regression
    OtherDefinitions
    NormalTableTextBook
    TTableTextBook

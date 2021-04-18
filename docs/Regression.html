@@ -1,0 +1,706 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8" />
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  
+  <title>Regression &mdash; Statistics Documentation 9 documentation</title>
+  
+
+  
+  <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="_static/accordion.css" type="text/css" />
+
+  
+  
+
+  
+  
+
+  
+
+  
+  <!--[if lt IE 9]>
+    <script src="_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
+        <script src="_static/jquery.js"></script>
+        <script src="_static/underscore.js"></script>
+        <script src="_static/doctools.js"></script>
+        <script src="_static/accordion.js"></script>
+        <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    
+    <script type="text/javascript" src="_static/js/theme.js"></script>
+
+    
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="Other Definitions" href="OtherDefinitions.html" />
+    <link rel="prev" title="ANOVA" href="Anova.html" />
+    <link href="_static/style.css" rel="stylesheet" type="text/css">
+
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="index.html" class="icon icon-home"> Statistics Documentation
+          
+
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                Version 1.0
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <p class="caption"><span class="caption-text">Contents:</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="Formulas.html">Formulas</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Distributions.html">Distributions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Estimation.html">Estimating</a></li>
+<li class="toctree-l1"><a class="reference internal" href="HypothesisTesting.html">Hypothesis Testing</a></li>
+<li class="toctree-l1"><a class="reference internal" href="simpleLinearRegression.html">Simple Linear Regression</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Anova.html">ANOVA</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Regression</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#formulas">Formulas</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#minitab-output">Minitab output</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#prediction-equation">Prediction equation</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#note-on-r-2">Note on R^2</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#multiple-regression">Multiple Regression</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#general-linear-model">General Linear model</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#estimating-the-coefficients">Estimating the coefficients</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#regression-assumptions">Regression assumptions</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#diagnostic-tools">Diagnostic Tools</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#analysis-of-variance">Analysis of Variance</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#multi-regression-anova-table">Multi Regression ANOVA table</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#testing-model-usefullness">Testing Model Usefullness</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#f-test">F test</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#measuring-the-strength-of-the-relationship">Measuring the Strength of the Relationship</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#testing-individual-regression-coefficients">Testing Individual Regression coefficients</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#confidence-intervals-for-regression-coefficients">Confidence Intervals for Regression Coefficients</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#analyzing-the-model">Analyzing the Model</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#adjusted-r-2">Adjusted R^2</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#adjusted-multiple-coefficient-of-determination-adj-r2">Adjusted Multiple Coefficient of Determination (adj R2)</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="OtherDefinitions.html">Other Definitions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="NormalTableTextBook.html">Normal Table from the Textbook</a></li>
+<li class="toctree-l1"><a class="reference internal" href="TTableTextBook.html">T Table from the Textbook</a></li>
+<li class="toctree-l1"><a class="reference internal" href="ChiSquaredTextBook.html">Chi Squared from Text Book</a></li>
+</ul>
+
+            
+          
+        </div>
+        
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">Statistics Documentation</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="index.html" class="icon icon-home"></a> &raquo;</li>
+        
+      <li>Regression</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+          
+            <a href="_sources/Regression.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="regression">
+<h1>Regression<a class="headerlink" href="#regression" title="Permalink to this headline">¶</a></h1>
+<p>If β0 = 0 we can take it out of the model. This would mean that the y-intercept is zero.
+In the simple linear model, we are left with   y = β1X + ε
+Thus we have a straight line that passes through the origin.</p>
+<div class="section" id="formulas">
+<h2>Formulas<a class="headerlink" href="#formulas" title="Permalink to this headline">¶</a></h2>
+<p>If we don’t have β0 in the model, our formulas for calculating quantities involved with simple linear regression will change.
+Our original least squares formula for solving for b1 is:</p>
+<div class="math notranslate nohighlight">
+\[b_1 = \frac{𝑆𝑆_{𝑥𝑦}}{𝑆𝑆_{𝑥𝑥}}  = \frac{\sum{xy-n\bar{x}\bar{y}}}{\sum{x^2-n\bar{x}^2}}\]</div>
+<p>But if we take β0 out of the model, we estimate β1 with a new formula:</p>
+<div class="math notranslate nohighlight">
+\[b_1 = \frac{\sum{xy}}{\sum{x^2}}\]</div>
+<p>Taking the y-intercept out of the equation may not produce a better model.
+We would try regression through the origin if we saw that the p-value for β0 was not significant.</p>
+<p><strong>Example</strong></p>
+<p>X = the number of salespeople on the floor</p>
+<p>Y =  the daily sales in thousands of dollars</p>
+<p>Sample Data:</p>
+<p>X = {5, 6, 7, 8, 9, 10}</p>
+<p>Y = {7, 8, 9, 12, 15, 20}</p>
+<p>Now let’s look at the regression through the origin.
+The regression model is: <span class="math notranslate nohighlight">\(y = β_1X + ε\)</span></p>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 50%" />
+<col style="width: 50%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>X</p></th>
+<th class="head"><p>Y</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>5</p></td>
+<td><p>7</p></td>
+</tr>
+<tr class="row-odd"><td><p>6</p></td>
+<td><p>8</p></td>
+</tr>
+<tr class="row-even"><td><p>7</p></td>
+<td><p>9</p></td>
+</tr>
+<tr class="row-odd"><td><p>8</p></td>
+<td><p>12</p></td>
+</tr>
+<tr class="row-even"><td><p>9</p></td>
+<td><p>15</p></td>
+</tr>
+<tr class="row-odd"><td><p>10</p></td>
+<td><p>20</p></td>
+</tr>
+</tbody>
+</table>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 25%" />
+<col style="width: 25%" />
+<col style="width: 25%" />
+<col style="width: 25%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>X</p></th>
+<th class="head"><p>Y</p></th>
+<th class="head"><p>XY</p></th>
+<th class="head"><p>X^2</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>5</p></td>
+<td><p>7</p></td>
+<td><p>35</p></td>
+<td><p>25</p></td>
+</tr>
+<tr class="row-odd"><td><p>6</p></td>
+<td><p>8</p></td>
+<td><p>48</p></td>
+<td><p>36</p></td>
+</tr>
+<tr class="row-even"><td><p>7</p></td>
+<td><p>9</p></td>
+<td><p>63</p></td>
+<td><p>49</p></td>
+</tr>
+<tr class="row-odd"><td><p>8</p></td>
+<td><p>12</p></td>
+<td><p>96</p></td>
+<td><p>64</p></td>
+</tr>
+<tr class="row-even"><td><p>9</p></td>
+<td><p>15</p></td>
+<td><p>135</p></td>
+<td><p>81</p></td>
+</tr>
+<tr class="row-odd"><td><p>10</p></td>
+<td><p>20</p></td>
+<td><p>200
+577</p></td>
+<td><p>100
+355</p></td>
+</tr>
+</tbody>
+</table>
+<p><span class="math notranslate nohighlight">\(\frac{\sum{xy}}{\sum{x^2}} = \frac{577}{355} = 1.62535\)</span></p>
+</div>
+<div class="section" id="minitab-output">
+<h2>Minitab output<a class="headerlink" href="#minitab-output" title="Permalink to this headline">¶</a></h2>
+<a class="reference internal image-reference" href="_images/minitab1.png"><img alt="_images/minitab1.png" src="_images/minitab1.png" style="width: 400px; height: 300px;" /></a>
+<p>Degrees of freedom for error and total have increased by 1 compared to our regular simple linear model.
+The sums of squares have all increased (not by a constant amount).</p>
+<a class="reference internal image-reference" href="_images/minitab2.png"><img alt="_images/minitab2.png" src="_images/minitab2.png" style="width: 400px; height: 300px;" /></a>
+<p>There is no longer a Constant term to estimate under ‘Coefficients’</p>
+<div class="section" id="prediction-equation">
+<h3>Prediction equation<a class="headerlink" href="#prediction-equation" title="Permalink to this headline">¶</a></h3>
+<p>From the Minitab output we can find the prediction equation for our model through the origin:</p>
+<div class="math notranslate nohighlight">
+\[\hat{y}= 1.625X\]</div>
+<p>We could find a confidence interval for β1 as we have done before, but now SEβ1 is different from the original simple linear model.</p>
+</div>
+</div>
+<div class="section" id="note-on-r-2">
+<h2>Note on R^2<a class="headerlink" href="#note-on-r-2" title="Permalink to this headline">¶</a></h2>
+<p>In the full simple linear model for the department store example we found:</p>
+<p>model: <span class="math notranslate nohighlight">\(y = β_0 + β_1X + ε\)</span></p>
+<p>r2 = 0.9212</p>
+<p>In the regression through the origin we have:</p>
+<p>model: <span class="math notranslate nohighlight">\(y = β_1X + ε\)</span></p>
+<p>r2 = 0.9739</p>
+<div class="section" id="multiple-regression">
+<h3>Multiple Regression<a class="headerlink" href="#multiple-regression" title="Permalink to this headline">¶</a></h3>
+<p>Multiple Regression is an extension of simple linear regression that allows for more than one independent variable    (X1, X2, …, Xk)
+By using multiple independent variables we should get a better explanation for the variation in Y, and thus be able to make more accurate predictions.</p>
+<p><strong>Example</strong></p>
+<p>Let Y be the monthly sales revenue for a company. This might be a function of several variables:</p>
+<p>X1 – advertising expenditure</p>
+<p>X2 – time of year</p>
+<p>X3 – size of inventory</p>
+<p>We want to predict Y using knowledge of X1, X2, and X3.</p>
+<p>Questions we might ask include:</p>
+<ul class="simple">
+<li><p>How well does the model fit?</p></li>
+<li><p>How strong is the relationship between Y and the predictor variables?</p></li>
+<li><p>Have any assumptions been violated?</p></li>
+<li><p>How good are the estimates and predictions?</p></li>
+</ul>
+<p>We collect information using n observations on the response Y and the independent variables X1, …, Xk</p>
+</div>
+</div>
+<div class="section" id="general-linear-model">
+<h2>General Linear model<a class="headerlink" href="#general-linear-model" title="Permalink to this headline">¶</a></h2>
+<p>The contribution of each X_𝑖 to the model is determined by β_𝑖. (Each variable will have an associated β value)
+So the General Linear Model for multiple regression is of the form:</p>
+<div class="math notranslate nohighlight">
+\[Y = β_0 + β_1 X_1 + β_2 X_2 + … + β_𝑘 X_𝑘 + ε\]</div>
+<ul class="simple">
+<li><p>Y is the response (dependent) variable that we want to predict</p></li>
+<li><p>β_0 〖, β〗_1, β_2, …, β_𝑘 are regression coefficients</p></li>
+<li><p>X_1, X_2, …, X_𝑘 are independent predictor variables</p></li>
+<li><p>ε is random error</p></li>
+</ul>
+<p>Each regression coefficient, β_𝑖, is estimated by bi from the sample data using the method of least squares. The estimated response is:</p>
+<div class="math notranslate nohighlight">
+\[\hat{𝑦} = b_0 + b_1X_1 + … + b_kX_k\]</div>
+<div class="math notranslate nohighlight">
+\[SSE = \sum{e_i^2} = \sum{(y_i - \hat{y_i})^2}\]</div>
+<p>Which is equivalent to</p>
+<div class="math notranslate nohighlight">
+\[SSE = \sum{(y_i - b_0 - b_1x_{1i} - ... - b_kx_{ki}}\]</div>
+<p>Differentiating SSE with respect to b0, b1, …, bk and equating to zero we generate the set of   (k + 1) normal equations for multiple linear regression.</p>
+<a class="reference internal image-reference" href="_images/longEquations.png"><img alt="_images/longEquations.png" src="_images/longEquations.png" style="width: 400px; height: 300px;" /></a>
+<p>Didn’t want to write out the above</p>
+</div>
+<div class="section" id="estimating-the-coefficients">
+<h2>Estimating the coefficients<a class="headerlink" href="#estimating-the-coefficients" title="Permalink to this headline">¶</a></h2>
+<p>We can then solve for b0, b1, …, bk by solving the system of normal equations.
+Most often, statistical software is used to solve these equations.
+We will look at the method of matrix algebra to solve the system of equations.</p>
+<a class="reference internal image-reference" href="_images/matricies.png"><img alt="_images/matricies.png" src="_images/matricies.png" style="width: 400px; height: 300px;" /></a>
+<p>Then to solve for the least squares estimates we have:
+SSE = (y – Xb)’(y – Xb)</p>
+<p>where b is the vector containing the estimated coefficients</p>
+<p>To minimize SSE we take the derivative and set equal to zero</p>
+<p>𝑑/𝑑𝒃 𝑆𝑆𝐸=0</p>
+<p>This will produce the equation:</p>
+<p>(X’X)b = X’y</p>
+<p>Now solving for b we get:</p>
+<p>b = (X’X)-1X’y</p>
+<div class="section" id="regression-assumptions">
+<h3>Regression assumptions<a class="headerlink" href="#regression-assumptions" title="Permalink to this headline">¶</a></h3>
+<p>Remember that the results of a regression analysis are only valid when the necessary assumptions have been satisfied.
+Assumptions:</p>
+<ul class="simple">
+<li><p>ε are independent</p></li>
+<li><p>ε have a mean of zero</p></li>
+<li><p>ε have a common variance σ2</p></li>
+<li><p>ε follow a normal distribution</p></li>
+</ul>
+</div>
+</div>
+<div class="section" id="diagnostic-tools">
+<h2>Diagnostic Tools<a class="headerlink" href="#diagnostic-tools" title="Permalink to this headline">¶</a></h2>
+<p>The same tools are used for multiple regression as those discussed for simple linear regression to check the normality assumption and the assumption of equal variances.</p>
+<ul class="simple">
+<li><dl class="simple">
+<dt>Normal probability plot of residuals</dt><dd><ul>
+<li><p>Should be a straight line with an upward slope</p></li>
+</ul>
+</dd>
+</dl>
+</li>
+<li><dl class="simple">
+<dt>Residuals versus Fit</dt><dd><ul>
+<li><p>Should be randomly scattered around zero</p></li>
+</ul>
+</dd>
+</dl>
+</li>
+</ul>
+</div>
+<div class="section" id="analysis-of-variance">
+<h2>Analysis of Variance<a class="headerlink" href="#analysis-of-variance" title="Permalink to this headline">¶</a></h2>
+<p>The total variation in the experiment is measured by the total sum of squares SST.
+The total SS is divided into two parts:</p>
+<ol class="arabic simple">
+<li><p>SSR (sum of squares for regression) measures the variation explained by using the regression equation.</p></li>
+<li><p>SSE (sum of squares for error) measures the leftover variation not explained by the independent variables.</p></li>
+</ol>
+</div>
+<div class="section" id="multi-regression-anova-table">
+<h2>Multi Regression ANOVA table<a class="headerlink" href="#multi-regression-anova-table" title="Permalink to this headline">¶</a></h2>
+<p>The ANOVA table for multiple regression has the general form:</p>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 20%" />
+<col style="width: 20%" />
+<col style="width: 20%" />
+<col style="width: 20%" />
+<col style="width: 20%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Source</p></th>
+<th class="head"><p>DF</p></th>
+<th class="head"><p>SS</p></th>
+<th class="head"><p>MS</p></th>
+<th class="head"><p>F</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>Regression</p></td>
+<td><p>K(number of vars)</p></td>
+<td><p>SSR</p></td>
+<td><p>MSR</p></td>
+<td><p>MSR/MSE</p></td>
+</tr>
+<tr class="row-odd"><td><p>ERROR</p></td>
+<td><p>n-(k+1)</p></td>
+<td><p>SSE</p></td>
+<td><p>MSE = S^2</p></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p>TOTAL</p></td>
+<td><p>n-1</p></td>
+<td><p>SST</p></td>
+<td></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<p>Notice that the degrees of freedom for Total is still (n – 1), this is the same as simple linear regression.</p>
+<p>The degrees of freedom for Regression is k because our model as k independent variables.  <span class="math notranslate nohighlight">\(Y = β_0 + β_1 X_1 + β_2 X_2 + … + β_𝑘 X_𝑘 + ε\)</span></p>
+<p>The degrees of freedom for Error is [n – (k + 1)]
+Error df is always n minus the number of beta’s that have been estimated in the model.</p>
+<p>The Mean Square (MS) values are calculated as with a simple linear regression: the sum of squares divided by its degrees of freedom.</p>
+<div class="math notranslate nohighlight">
+\[MSR = \frac{SSR}{k}\]</div>
+<div class="math notranslate nohighlight">
+\[MSE = \frac{SSE}{n-(k+1)} = S^2\]</div>
+</div>
+<div class="section" id="testing-model-usefullness">
+<h2>Testing Model Usefullness<a class="headerlink" href="#testing-model-usefullness" title="Permalink to this headline">¶</a></h2>
+<p>Similar to simple linear regression, the F value in the ANOVA table is used to test the model’s usefulness.
+If the model is useful (the Xi values contribute information to Y) then MSR will be large compared to MSE.
+If the model is not useful then the value of Y does not change regardless of the value of the independent variables. This implies that the regression coefficients are all zero.    (β_1 = β_2 = … = β_𝑘 = 0)</p>
+<p>H0: the model is not useful in predicting Y</p>
+<p>Ha: the model is useful in predicting Y</p>
+<p>Or</p>
+<p>H0: β_1 = β_2 = … = β_𝑘 = 0</p>
+<p>Ha: at least one β_𝑖≠ 0</p>
+<p>Test statistic:   F = 𝑀𝑆𝑅/𝑀𝑆𝐸</p>
+<p>Reject H0 if F &gt; 𝑓_𝛼(k, (n – k - 1))</p>
+<div class="section" id="f-test">
+<h3>F test<a class="headerlink" href="#f-test" title="Permalink to this headline">¶</a></h3>
+<p>If we can reject H0 then we can conclude there is enough evidence to say that the model is useful.</p>
+<p>If we cannot reject H0 then we can conclude that there is not enough evidence to say that the model is useful.</p>
+<p><strong>Example</strong></p>
+<p>A collector of grandfather clocks believes that the price received for a clock at auction depends on both age of the clocks and the number of bidders at the auction.</p>
+<p>Y = price of clock at auction
+X1 = age of clock
+X2 = number of bidders</p>
+<p>The model is: <span class="math notranslate nohighlight">\(Y = β_0 + β_1 X_1 + β_2 X_2 + ε\)</span></p>
+<p>Data is collected on 28 clocks. The prediction equation is found to be:  <span class="math notranslate nohighlight">\(\hat{y} = -1339 + 12.7X_1 + 86X_2\)</span> . Is this model useful?</p>
+<p>The ANOVA table is</p>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 20%" />
+<col style="width: 20%" />
+<col style="width: 20%" />
+<col style="width: 20%" />
+<col style="width: 20%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Source</p></th>
+<th class="head"><p>DF</p></th>
+<th class="head"><p>SS</p></th>
+<th class="head"><p>MS</p></th>
+<th class="head"><p>F</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>Regression</p></td>
+<td><p>2</p></td>
+<td><p>4283</p></td>
+<td><p>2141.5</p></td>
+<td><p>?</p></td>
+</tr>
+<tr class="row-odd"><td><p>ERROR</p></td>
+<td><p>25</p></td>
+<td><p>516</p></td>
+<td><p>20.64</p></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p>TOTAL</p></td>
+<td><p>27</p></td>
+<td><p>4799</p></td>
+<td></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<p>H0: β_1 = β_2 = 0</p>
+<p>Ha: at least one β_𝑖≠ 0</p>
+<p>Test statistic:   <span class="math notranslate nohighlight">\(F = \frac{𝑀𝑆𝑅}{𝑀𝑆𝐸}= \frac{2141.5}{20.64} = 103.75\)</span></p>
+<p>Critical value:  <span class="math notranslate nohighlight">\(𝑓_𝛼(2, 25) = 3.39\)</span></p>
+<p>103.75 &gt; 3.39</p>
+<p>Reject H0, there is evidence that the model is useful in predicting the price of grandfather clocks.</p>
+</div>
+</div>
+<div class="section" id="measuring-the-strength-of-the-relationship">
+<h2>Measuring the Strength of the Relationship<a class="headerlink" href="#measuring-the-strength-of-the-relationship" title="Permalink to this headline">¶</a></h2>
+<p>If the independent variables are useful in predicting Y you will want to know how well the model fits.
+We measure the amount of variation which is being explained by the model.
+Multiple Coefficient of Determination</p>
+<div class="math notranslate nohighlight">
+\[R^2 = \frac{SSR}{SST} = 1-\frac{SSE}{SST}\]</div>
+<p><strong>Example</strong></p>
+<p>In the previous example we found:</p>
+<p>SST = 4799</p>
+<p>SSR = 4283</p>
+<p>SSE = 516</p>
+<p>R2 = 4283/4799 = 0.892</p>
+<p>89.2% of the variation in the Y values is explained by using the independent variables in the model.</p>
+</div>
+<div class="section" id="testing-individual-regression-coefficients">
+<h2>Testing Individual Regression coefficients<a class="headerlink" href="#testing-individual-regression-coefficients" title="Permalink to this headline">¶</a></h2>
+<p>Is a particular independent variable useful in the model, in the presence of all the other independent variables?
+The F test will test all independent variables at once.
+The T test will test the variables one at a time.</p>
+<p>H0: β_𝑖=0
+Ha: β_𝑖≠0</p>
+<p>Test statistic:  T = <span class="math notranslate nohighlight">\(\frac{b_1}{SE(b_i)}\)</span></p>
+<p>(where SE is the standard error for the coefficient β_𝑖)</p>
+<p>Critical value:   <span class="math notranslate nohighlight">\(𝑡_(𝛼/2)\)</span>      (v = n – k – 1)</p>
+<p>Reject H0 if <a href="#id1"><span class="problematic" id="id2">|T|</span></a> &gt; <span class="math notranslate nohighlight">\(𝑡_(𝛼/2)\)</span></p>
+<p>Each β_𝑖 determines the contribution of each X_𝑖 to the model.
+If we do not reject H0 then there is not evidence that β_𝑖 is different than zero.
+We would conclude that Xi is not significant in the model.
+Perhaps the model could be refit without Xi</p>
+</div>
+<div class="section" id="confidence-intervals-for-regression-coefficients">
+<h2>Confidence Intervals for Regression Coefficients<a class="headerlink" href="#confidence-intervals-for-regression-coefficients" title="Permalink to this headline">¶</a></h2>
+<p>Perhaps we are interested in what values a particular coefficient could possibly take on and not just the point estimate, bi.
+We can construct a confidence interval for each β_𝑖 parameter:</p>
+<div class="math notranslate nohighlight">
+\[b_i \pm t_{a/2}SE(b_i)\]</div>
+<p>Where T has v = n – k – 1 degrees of freedom</p>
+</div>
+<div class="section" id="analyzing-the-model">
+<h2>Analyzing the Model<a class="headerlink" href="#analyzing-the-model" title="Permalink to this headline">¶</a></h2>
+<p>Once you have created a multiple regression model containing all of the independent variables that you think will be useful, you can begin analyzing the model by:</p>
+<ul class="simple">
+<li><p>Perform an overall F test to see if the model is useful.</p></li>
+<li><p>How much variation is explained by the model? (Find R2)</p></li>
+<li><p>Perform individual T tests to determine if any independent variables can be removed.</p></li>
+<li><p>Create confidence intervals for the significant coefficients.</p></li>
+</ul>
+<div class="section" id="adjusted-r-2">
+<h3>Adjusted R^2<a class="headerlink" href="#adjusted-r-2" title="Permalink to this headline">¶</a></h3>
+<p>R2 gives a measure for how much variation in the y-values is explained by the model, so a higher R2 would suggest a better model.
+However, whenever we add an independent variable to the regression model, R2 will always increase; even if the added variable is not significant to the model.
+To fairly compare two models, it is better to use a measure that has been adjusted using degrees of freedom.</p>
+<div class="math notranslate nohighlight">
+\[adj R^2 = 1 - \frac{(n-1)SSE}{[n-(k+1)]SST} = 1-\frac{MSE}{SST/(n-1)}\]</div>
+</div>
+</div>
+<div class="section" id="adjusted-multiple-coefficient-of-determination-adj-r2">
+<h2>Adjusted Multiple Coefficient of Determination (adj R2)<a class="headerlink" href="#adjusted-multiple-coefficient-of-determination-adj-r2" title="Permalink to this headline">¶</a></h2>
+<p>Adj R2 now takes into account the sample size and the number of β  parameters in the model.
+Notice that adj R2 &lt; R2
+Despite their utility adj R2 and R2 are only sample statistics. We cannot judge the usefulness of the model based solely on these values. That is why we have the statistical F-test for model utility.</p>
+<p><strong>Example</strong></p>
+<p>Calculate R2 and adj R2 for the model displayed by the ANOVA table given below:</p>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 25%" />
+<col style="width: 25%" />
+<col style="width: 25%" />
+<col style="width: 25%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Source</p></th>
+<th class="head"><p>DF</p></th>
+<th class="head"><p>SS</p></th>
+<th class="head"><p>MS</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>Regression</p></td>
+<td><p>2</p></td>
+<td><p>4283</p></td>
+<td><p>2141.5</p></td>
+</tr>
+<tr class="row-odd"><td><p>ERROR</p></td>
+<td><p>25</p></td>
+<td><p>516</p></td>
+<td><p>20.64</p></td>
+</tr>
+<tr class="row-even"><td><p>TOTAL</p></td>
+<td><p>27</p></td>
+<td><p>4799</p></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<div class="math notranslate nohighlight">
+\[R^2 = \frac{SSR}{SST} = \frac{4283}{4799} = 0.892\]</div>
+<div class="math notranslate nohighlight">
+\[adj R^2 = 1-\frac{MSE}{SST/(n-1)} = 1 - \frac{(27)516}{(25)4799} = 0.884\]</div>
+</div>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+        <a href="OtherDefinitions.html" class="btn btn-neutral float-right" title="Other Definitions" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+        <a href="Anova.html" class="btn btn-neutral float-left" title="ANOVA" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &#169; Copyright 2021-2022, NDSU ACM.
+
+    </p>
+  </div>
+    
+    
+    
+    Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    
+    provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>

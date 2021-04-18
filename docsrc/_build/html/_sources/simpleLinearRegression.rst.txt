@@ -176,7 +176,7 @@ Then the least Squares fitted line is :math:`\hat{y} = -0.1 + 0.7x` . We can now
 Then SSE = :math:`\sum{(y_i - \hat{y_i})^2} = 1.1`
 
 Interpretations
-================
+----------------
 
 :math:`β_0` = y-intercept of the line or the point at which the line intercepts the y-axis
 
@@ -209,7 +209,7 @@ Properties of least squares
 - :math:`E(b_1) = β_1`
 
 More sum of squares equations
-==============================
+------------------------------
 
 We have already defined SSE, sum of squares of error. Further sum of squares formulas will become necessary in future calculations:
 
@@ -227,7 +227,7 @@ The following equalitites are also true
 
 
 Model Assumptions
-==================
+------------------
 
 When we perform least squares regression we make the following assumptions about random error, ε
 
@@ -385,14 +385,14 @@ To test whether the slope equals zero we use the test statistic:
 
    T = \frac{b_1}{s/\sqrt{S_{XX}}}
 
-Which follows a t-distribution with v = n – 2. Since we are testing against a two-sided alternative (Ha: 𝛽_1 ≠ 0), we will reject the null hypothesis if:
+Which follows a t-distribution with v = n – 2. Since we are testing against a two-sided alternative ( :math:`Ha: 𝛽_1` ≠ 0), we will reject the null hypothesis if:
    
 .. math::
 
    |T| > t_{\alpha/2}
 
-Interpreting the results of this hypothesis test. If we reject H0: 𝛽_1 = 0, then we conclude that the relationship between X an Y is linear and that X does contribute information to the prediction of Y. (The linear model is useful).
-If we do not reject H0: 𝛽_1 = 0, there is no linear relationship between X and Y. Changing X has little impact on changes in Y. (X does not contribute information to the prediction of Y)
+Interpreting the results of this hypothesis test. If we reject :math:`H0: 𝛽_1` = 0, then we conclude that the relationship between X an Y is linear and that X does contribute information to the prediction of Y. (The linear model is useful).
+If we do not reject :math:`𝛽_1` = 0, there is no linear relationship between X and Y. Changing X has little impact on changes in Y. (X does not contribute information to the prediction of Y)
 
 **Example**
 
@@ -424,10 +424,9 @@ Reject :math:`H_0` if |T| > 3.182
 Reject H0. There is sufficient evidence, at the 0.05 level, that advertising expenditure contributes information to predicting sales revenue.
 
 Note:
-If the confidence interval for 𝛽_1 does not contain zero we can conclude that the true value of 𝛽_1 is not zero and we can reject the null hypothesis H0: 𝛽_1 = 0.
+If the confidence interval for 𝛽_1 does not contain zero we can conclude that the true value of 𝛽_1 is not zero and we can reject the null hypothesis :math:`𝛽_1` = 0.
 
 Inferences on :math:`𝛽_0`
----------------------------
 
 We are often more interested in inferences about slope than those on the y-intercept, but it is possible to create confidence intervals and hypothesis tests for 𝛽_0. These inferences are based on the statistic:
 
@@ -440,7 +439,7 @@ Which follows a t-distribution with v = n – 2.
 Confidence Interval for :math:`𝛽_0`
 ------------------------------------
 
-A 100(1 - 𝛼)% confidence interval for the parameter 𝛽_0 in the regression line is:
+A 100(1 - 𝛼)% confidence interval for the parameter :math:`𝛽_0` in the regression line is:
 
 .. math::
 
@@ -462,7 +461,7 @@ We will reject :math:`H_0` if |T| > :math:`t_\alpha/2` with :math:`t_\alpha/2` f
 
 **Example**
 
-Create a 95% confidence interval for 𝛽_0 from the appliance store example.
+Create a 95% confidence interval for :math:`𝛽_0` from the appliance store example.
 
 n = 5
 
@@ -489,6 +488,64 @@ S = 0.6055
    -0.1 \pm 2.02
 
 -2.12 < :math:`𝛽_0` < 1.92
+
+Coefficient of determination
+=============================
+
+If the independent variable X is useful in predicting Y (we reject H0: 𝛽_1= 0), then we will want to know how well the model fits. The quality of fit is measured by the proportion of the 
+variability explained by the fitted model. Variance due to error is unexplained variation. Thus, we wish to measure how much SSE has been reduced by using X as a predictor of Y.
+
+The total corrected sum of squares is denoted SST and is equal to what we have already defined to be Syy.
+
+.. math::
+
+   SST = \sum{(y_i - \hat{y})^2}
+
+This quantity defines the total amount of variation present in the data.
+
+The coefficient of determination denoted R2, measures the proportion of variation explained by the model.
+
+.. math::
+
+   R^2 = 1-\frac{SSE}{SST}
+
+Since SSE is the variation that is unexplained, if SSE = 0, all of the variation is explained and we would have a perfect fit. Then R2 = 1
+
+If X contributes no information in the prediction of Y then no variation is explain and SSE = SST. Then R2 = 0. If R2 is large (close to one), the model explains a large portion of the variation; we have a good fit.
+If R2 is small (close to zero), the model only explains a small portion of the variation; we have a poor fit.
+
+Interpreting R2
+----------------
+
+R2 is often quoted due to its simplicity. Some scientific phenomena leads to higher precisions than other. R2 is not good to use when comparing competing models for the same data set.
+R2 can be artificially inflated by inclusion of additional data points or inclusion of additional model terms (more independent variables). This is called overfitting.
+
+**Example**
+
+Suppose an appliance store conducts a 5-month experiment to determine the effect of advertising (X) on sales revenue (Y).
+
+============ ============
+    X             Y
+============ ============
+   1               1
+   2               1
+   3               2
+   4               2
+   5               4
+============ ============
+
+And the fitted least squares line is: :math:`\hat{y} = -0.1 + 0.7x` and SSE = 1.1
+
+:math:`\bar{y} = \frac{10}{5} = 2`
+
+:math:`\sum{y^2_i} = 26`
+
+SST = :math:`\sum{y^2_i} - n(\bar{y})^2 = 26 - 5(2^2)`
+
+:math:`R^2 = 1 - \frac{SSE}{SST} = 1 - \frac{1.1}{6}` = 0.817
+
+About 82% of the sample variation in Y is explained by using X in the straight line model.
+
 
 Coefficient of Correlation
 ===========================
