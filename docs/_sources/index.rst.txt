@@ -17,6 +17,7 @@ Welcome to Statistics Documentation!
    simpleLinearRegression
    Anova
    Regression
+   QualitativeVariables
    OtherDefinitions
    NormalTableTextBook
    TTableTextBook

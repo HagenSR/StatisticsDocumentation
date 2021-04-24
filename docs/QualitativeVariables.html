@@ -1,0 +1,521 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8" />
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  
+  <title>Models with Qualitative variables &mdash; Statistics Documentation 9 documentation</title>
+  
+
+  
+  <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="_static/accordion.css" type="text/css" />
+
+  
+  
+
+  
+  
+
+  
+
+  
+  <!--[if lt IE 9]>
+    <script src="_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
+        <script src="_static/jquery.js"></script>
+        <script src="_static/underscore.js"></script>
+        <script src="_static/doctools.js"></script>
+        <script src="_static/accordion.js"></script>
+        <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    
+    <script type="text/javascript" src="_static/js/theme.js"></script>
+
+    
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="Other Definitions" href="OtherDefinitions.html" />
+    <link rel="prev" title="Regression" href="Regression.html" />
+    <link href="_static/style.css" rel="stylesheet" type="text/css">
+
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="index.html" class="icon icon-home"> Statistics Documentation
+          
+
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                Version 1.0
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <p class="caption"><span class="caption-text">Contents:</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="Formulas.html">Formulas</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Distributions.html">Distributions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Estimation.html">Estimating</a></li>
+<li class="toctree-l1"><a class="reference internal" href="HypothesisTesting.html">Hypothesis Testing</a></li>
+<li class="toctree-l1"><a class="reference internal" href="simpleLinearRegression.html">Simple Linear Regression</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Anova.html">ANOVA</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Regression.html">Regression</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Models with Qualitative variables</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#using-indicator-variables">Using Indicator variables</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#varying-slope-with-indicator-categories">Varying Slope with Indicator Categories</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#test-for-parallelism">Test For Parallelism</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#the-partial-f-test">The Partial F Test</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#conclusions">Conclusions</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="OtherDefinitions.html">Other Definitions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="NormalTableTextBook.html">Normal Table from the Textbook</a></li>
+<li class="toctree-l1"><a class="reference internal" href="TTableTextBook.html">T Table from the Textbook</a></li>
+<li class="toctree-l1"><a class="reference internal" href="ChiSquaredTextBook.html">Chi Squared from Text Book</a></li>
+</ul>
+
+            
+          
+        </div>
+        
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">Statistics Documentation</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="index.html" class="icon icon-home"></a> &raquo;</li>
+        
+      <li>Models with Qualitative variables</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+          
+            <a href="_sources/QualitativeVariables.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="models-with-qualitative-variables">
+<h1>Models with Qualitative variables<a class="headerlink" href="#models-with-qualitative-variables" title="Permalink to this headline">¶</a></h1>
+<p>Qualitative variables are variables that cannot be measured numerically.
+These variables are often called categorical because they have different categories.
+i.e. gender, eye color, marital status</p>
+<p>Multiple regression requires that the response Y be a quantitative variable (measured numerically).
+Independent variables can be either quantitative or qualitative.
+Qualitative variables are entered into a regression model through the use of dummy variables (or indicator variables).</p>
+<div class="section" id="using-indicator-variables">
+<h2>Using Indicator variables<a class="headerlink" href="#using-indicator-variables" title="Permalink to this headline">¶</a></h2>
+<p>If a qualitative variable involves r categories, or levels, then (r – 1) indicator variables should be added to the regression model.</p>
+<p><strong>Example</strong></p>
+<p>Data was collected on 12 assistant professors (6 male and 6 female). Their salaries, years of experience, and gender were recorded. We wish to create a
+model to predict salary based on experience and gender.</p>
+<p>Y = Salary</p>
+<p>X_1 = Years of Experience</p>
+<p>Need to create dummy variables for gender.</p>
+<p>Gender has two categories, thus we need (2 – 1) = 1 dummy variable.</p>
+<p>Z1 = {(1, 𝑚𝑎𝑙𝑒 | 0, 𝑓𝑒𝑚𝑎𝑙𝑒)}</p>
+<p>Our model can now be written as:</p>
+<div class="math notranslate nohighlight">
+\[𝑌=𝛽_0+𝛽_1 𝑋_1+𝛽_2 𝑍_1+𝜀\]</div>
+<p>Expected Value of Y:</p>
+<p>For males:</p>
+<div class="math notranslate nohighlight">
+\[ \begin{align}\begin{aligned}E(Y) = 𝛽_0+𝛽_1 𝑋_1+𝛽_2 (1)\\= (𝛽_0+𝛽_2)+𝛽_1 𝑋_1\end{aligned}\end{align} \]</div>
+<p>For females:</p>
+<div class="math notranslate nohighlight">
+\[ \begin{align}\begin{aligned}E(Y) = 𝛽_0+𝛽_1 𝑋_1+𝛽_2 (0)\\= 𝛽_0+𝛽_1 𝑋_1\end{aligned}\end{align} \]</div>
+<p><strong>Example - Two Categories</strong></p>
+<p>A model with categorical variables essentially involves a change in the intercept as we change from one category to another.</p>
+<a class="reference internal image-reference" href="_images/twoCat.png"><img alt="_images/twoCat.png" src="_images/twoCat.png" style="width: 400px; height: 300px;" /></a>
+<p><strong>Example – Three Categories</strong></p>
+<p>An employer plans to use a multiple regression model to predict annual sales (in $1000) for members of her sales staff. She wants to include a categorical variable to indicate an individual’s highest level of education.
+The possible categories are: high school degree, some college, college degree.</p>
+<p>Indicator Variables:
+Since we have 3 categories we need 2 indicator variables.</p>
+<p>Z1 = {(1, 𝑠𝑜𝑚𝑒 𝑐𝑜𝑙𝑙𝑒𝑔𝑒 | 0, 𝑜𝑡ℎ𝑒𝑟𝑤𝑖𝑠𝑒)}</p>
+<p>Z2 = {(1, 𝑐𝑜𝑙𝑙𝑒𝑔𝑒 𝑑𝑒𝑔𝑟𝑒𝑒 | 0, 𝑜𝑡ℎ𝑒𝑟𝑤𝑖𝑠𝑒)}</p>
+<p>Another way to visualise this relationship is with a table</p>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 48%" />
+<col style="width: 26%" />
+<col style="width: 26%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Cat</p></th>
+<th class="head"><p>Z_1</p></th>
+<th class="head"><p>Z_2</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>Highschool Degree</p></td>
+<td><p>0</p></td>
+<td><p>0</p></td>
+</tr>
+<tr class="row-odd"><td><p>Some college</p></td>
+<td><p>1</p></td>
+<td><p>0</p></td>
+</tr>
+<tr class="row-even"><td><p>College Degree</p></td>
+<td><p>0</p></td>
+<td><p>1</p></td>
+</tr>
+</tbody>
+</table>
+<p>If there are no other variables, our model would be:</p>
+<div class="math notranslate nohighlight">
+\[𝑌=𝛽_0+𝛽_1 𝑍_1+𝛽_2 𝑍_2+𝜀\]</div>
+<p>The change in the intercept is seen below</p>
+<a class="reference internal image-reference" href="_images/threeCat.png"><img alt="_images/threeCat.png" src="_images/threeCat.png" style="width: 400px; height: 300px;" /></a>
+<p>Suppose regression results show a coefficient of 8.2 for Z1 and 12.7 for Z2.
+How can we interpret these estimated coefficient values?</p>
+<p>The category “high school degree” has both of the indicator variables take on a value of zero.
+This means that high school degree serves as a base to which the other categories can be compared.</p>
+<div class="math notranslate nohighlight">
+\[\hat{𝑦} = 𝑏_0+𝑏_1 𝑧_1+𝑏_2 𝑧_2\]</div>
+<p>For high school degree:</p>
+<div class="math notranslate nohighlight">
+\[\hat{𝑦} = 𝑏_0+𝑏_1 (0)+𝑏_2 (0) = b0\]</div>
+<p>For some college:</p>
+<div class="math notranslate nohighlight">
+\[\hat{𝑦} = 𝑏_0+𝑏_1 (1)+𝑏_2 (0) = b0 + b1\]</div>
+<p>The difference between having “some college” and having “high school degree” is (b0 + b1) – b0 = b1</p>
+<p>In our example b1 = 8.2</p>
+<p>We can associate having “some college” with an added $8,200 in annual sales when compared to having only a “high school degree”</p>
+<p>(This is only based on sample data and our results are only estimates)</p>
+<p>For college degree:</p>
+<div class="math notranslate nohighlight">
+\[\hat{𝑦} = 𝑏_0+𝑏_1 (0)+𝑏_2 (1) = b0 + b2\]</div>
+<p>The difference between having “college degree” and having “high school degree” is (b0 + b2) – b0 = b2 = 12.7
+We can associate having a “college degree” with an added $12,700 in annual sales when compared to having only a “high school degree”</p>
+<p>The difference between having “college degree” and having “some college” is</p>
+<p>(b0 + b2) – (b0 + b1) = (b2 – b1)</p>
+<p>= 12.7 – 8.2</p>
+<p>= 4.5</p>
+<p>We can associate having a “college degree” with an added $4,500 in annual sales when compared to having only “some college”</p>
+<div class="section" id="varying-slope-with-indicator-categories">
+<h3>Varying Slope with Indicator Categories<a class="headerlink" href="#varying-slope-with-indicator-categories" title="Permalink to this headline">¶</a></h3>
+<p>The way we created our model with categorical variables is by simply adding them in as another factor. This suggests that the slopes are constant across categories.
+This is not always going to be the case.
+We can account for the possibility of varying slopes by including the product (or interaction) terms between indicator terms and continuous variables.</p>
+<p>Let’s look at the example dealing with professor’s salary.</p>
+<p>Previously our model was:</p>
+<div class="math notranslate nohighlight">
+\[𝑌=𝛽_0+𝛽_1 𝑋_1+𝛽_2 𝑍_1+𝜀\]</div>
+<p>Where:</p>
+<p>Y = Salary</p>
+<p>X1 = Years of Experience</p>
+<p>Z1 = 1 for males; 0 for females</p>
+<p>If we think the slope could be different for males and females we would add the interaction term: X1*Z1</p>
+<p>Our model then becomes:</p>
+<div class="math notranslate nohighlight">
+\[𝑌=𝛽_0+𝛽_1 𝑋_1+𝛽_2 𝑍_1+𝛽_3 𝑋_1 𝑍_1+𝜀\]</div>
+<p>This interaction term allows the two independent variables to interact.</p>
+<p>This allows the relationship between Salary and Years of Experience to behave differently for men and women.</p>
+<p>When the faculty member is a woman:</p>
+<div class="math notranslate nohighlight">
+\[ \begin{align}\begin{aligned}E(Y) = 𝛽_0+𝛽_1 𝑋_1+𝛽_2 (0)+𝛽_3 𝑋_1 (0)\\=𝛽_0+𝛽_1 𝑋_1\end{aligned}\end{align} \]</div>
+<p>This is a straight line with slope = 𝛽_1 and intercept = 𝛽_0</p>
+<p>When the faculty member is a man:</p>
+<div class="math notranslate nohighlight">
+\[ \begin{align}\begin{aligned}E(Y) = 𝛽_0+𝛽_1 𝑋_1+𝛽_2 (1)+𝛽_3 𝑋_1 (1)\\=(𝛽_0+𝛽_2)+(𝛽_1+𝛽_3)𝑋_1\end{aligned}\end{align} \]</div>
+<p>This is a straight line with slope = (𝛽_1+𝛽_3)  and intercept = (𝛽_0+𝛽_2)</p>
+<a class="reference internal image-reference" href="_images/changingSlope.png"><img alt="_images/changingSlope.png" src="_images/changingSlope.png" style="width: 400px; height: 300px;" /></a>
+</div>
+</div>
+<div class="section" id="test-for-parallelism">
+<h2>Test For Parallelism<a class="headerlink" href="#test-for-parallelism" title="Permalink to this headline">¶</a></h2>
+<p>We can test for the condition of parallelism by testing if the interaction term is significant in the model.
+If the interaction term is not significant, the slopes would be the same for all of the categories (the lines would be parallel).</p>
+<p>In the previous example the coefficient of the interaction term was 𝛽_3, so our test for parallelism would be:</p>
+<p>H0: <span class="math notranslate nohighlight">\(𝛽_3\)</span> = 0    (slopes are the same)</p>
+<p>Ha: <span class="math notranslate nohighlight">\(𝛽_3\)</span> ≠ 0    (slopes are different)</p>
+<p>Test statistic: <span class="math notranslate nohighlight">\(T = \frac{𝑏_3}{(𝑆𝐸(𝑏_3))}\)</span></p>
+<p>Critical value: 𝑡_(𝛼/2)  (with v = n – k – 1)</p>
+<p>If we reject H0, we conclude that there is evidence that the interaction term is significant in the model. (There is evidence that the slopes are different).</p>
+<div class="section" id="the-partial-f-test">
+<h3>The Partial F Test<a class="headerlink" href="#the-partial-f-test" title="Permalink to this headline">¶</a></h3>
+<p>Given a model with 3 or more independent variables, we can test if portions of the model are significant (when taken together).</p>
+<p>For example, given the model:</p>
+<div class="math notranslate nohighlight">
+\[Y = β_0 + β_1X_1 + β_2X_2 + β_3X_3 + β_4X_4 + ε\]</div>
+<p>We can test if X_3 and X_4 are significant to the model when taken together.</p>
+<p>Testing if X_3 and X_4 are significant to the model when taken together is not the same as testing each variable individually with a T-test.</p>
+<p>What we are trying to test is:</p>
+<p><span class="math notranslate nohighlight">\(H0 : β_3 = β_4 = 0\)</span></p>
+<p><span class="math notranslate nohighlight">\(H_a\)</span> : at least one <span class="math notranslate nohighlight">\(β_i ≠ 0\)</span></p>
+<p>This test will be  similar to the F-test because we are trying to test more than one variable at a time.
+We will call this the Partial F-test since we are only testing some of the parameters.</p>
+<p>When testing a subset of variables we are essentially comparing two different models:
+Full model contains all of the independent variables.
+Reduced model does not have the variables that you are trying to test.</p>
+<p><strong>Example</strong></p>
+<p>We have created a model to predict Y using four independent variables ( <span class="math notranslate nohighlight">\(X_1, X_2, X_3, X_4\)</span> ). We want to test if X3 and X4 are significant to the model when taken together.</p>
+<p>Full model:</p>
+<div class="math notranslate nohighlight">
+\[Y = β_0 + β_1X_1 + β_2X_2 + β_3X_3 + β_4X_4 + ε\]</div>
+<p>Reduced Model:</p>
+<div class="math notranslate nohighlight">
+\[Y = β_0 + β_1X_1 + β_2X_2 + ε\]</div>
+<p>We then run regressions on both models (full and reduced) to get the necessary information for the Partial F-test</p>
+<p>To perform a partial F-test we calculate:</p>
+<div class="math notranslate nohighlight">
+\[𝐹^∗=\frac{\frac{(𝑆𝑆𝐸_𝑅−𝑆𝑆𝐸_𝐹)}{(𝑘_𝐹−𝑘_𝑅)}}{(𝑀𝑆𝐸_𝐹)}\]</div>
+<p>R signifies that the values are coming from the Reduced model.</p>
+<p>F signifies Full model.</p>
+<p><span class="math notranslate nohighlight">\(𝑘_𝐹−𝑘_𝑅\)</span> = the number of betas being tested</p>
+<p>We can reject <span class="math notranslate nohighlight">\(H_0\)</span> if <span class="math notranslate nohighlight">\(F* &gt; f_𝛼\)</span></p>
+<p>With <span class="math notranslate nohighlight">\(v_1 = (k_F – k_R) and v_2 = [n – (k_F + 1)]\)</span> .</p>
+<p>The numerator degrees of freedom is the number of betas being tested.</p>
+<p>The denominator degrees of freedom is the degrees of freedom for error from the full model.</p>
+</div>
+</div>
+<div class="section" id="conclusions">
+<h2>Conclusions<a class="headerlink" href="#conclusions" title="Permalink to this headline">¶</a></h2>
+<p>If we reject <span class="math notranslate nohighlight">\(H_0\)</span> then the variables are significant when taken together, and should not be removed from the model. (the full model should be used)</p>
+<p>If we do not reject <span class="math notranslate nohighlight">\(H_0\)</span> then the variables are not significant when taken together and the variables tested can be removed from the model. (the reduced model should be used)</p>
+<p><strong>Example</strong></p>
+<p>A multiple linear regression was performed to fit a model with 8 independent variables.</p>
+<div class="math notranslate nohighlight">
+\[ \begin{align}\begin{aligned}Y = β_0 + β_1X_1 + β_2X_2 + β_3X_3 + β_4X_4 + β_5X_5\\+ β_6X_6+ β_7X_7+ β_8X_8+ ε\end{aligned}\end{align} \]</div>
+<p>The sample size is n = 25.</p>
+<p>We believe variables X_2, X_3, X_6, and X_7 are not significant in the model when taken together.</p>
+<p>Perform a partial F-test.</p>
+<dl class="simple">
+<dt>Full Model</dt><dd><dl class="simple">
+<dt>Y = β_0 + β_1X_1 + β_2X_2 + β_3X_3 + β_4X_4 + β_5X_5</dt><dd><ul class="simple">
+<li><p>β_6X_6+ β_7X_7+ β_8X_8+ ε</p></li>
+</ul>
+</dd>
+</dl>
+</dd>
+</dl>
+<p>ANOVA</p>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 20%" />
+<col style="width: 20%" />
+<col style="width: 20%" />
+<col style="width: 20%" />
+<col style="width: 20%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Source</p></th>
+<th class="head"><p>DF</p></th>
+<th class="head"><p>SS</p></th>
+<th class="head"><p>MS</p></th>
+<th class="head"><p>F</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>Regression</p></td>
+<td><p>8</p></td>
+<td><p>528</p></td>
+<td><p>66</p></td>
+<td><p>4.14</p></td>
+</tr>
+<tr class="row-odd"><td><p>ERROR</p></td>
+<td><p>16</p></td>
+<td><p>255</p></td>
+<td><p>15.9375</p></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p>TOTAL</p></td>
+<td><p>24</p></td>
+<td><p>783</p></td>
+<td></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<p>Reduced model:</p>
+<div class="math notranslate nohighlight">
+\[Y = β_0 + β_1X_1 + β_4X_4 + β_5X_5 + β_8X_8+ ε\]</div>
+<p>ANOVA</p>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 20%" />
+<col style="width: 20%" />
+<col style="width: 20%" />
+<col style="width: 20%" />
+<col style="width: 20%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Source</p></th>
+<th class="head"><p>DF</p></th>
+<th class="head"><p>SS</p></th>
+<th class="head"><p>MS</p></th>
+<th class="head"><p>F</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>Regression</p></td>
+<td><p>4</p></td>
+<td><p>456</p></td>
+<td><p>144</p></td>
+<td><p>6.97</p></td>
+</tr>
+<tr class="row-odd"><td><p>ERROR</p></td>
+<td><p>20</p></td>
+<td><p>327</p></td>
+<td><p>16.35</p></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p>TOTAL</p></td>
+<td><p>24</p></td>
+<td><p>783</p></td>
+<td></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<p><span class="math notranslate nohighlight">\(H_0: 𝛽_2=𝛽_3=𝛽_6=𝛽_7=0\)</span></p>
+<p><span class="math notranslate nohighlight">\(H_a:\)</span> at least one <span class="math notranslate nohighlight">\(𝛽_𝑖≠0\)</span></p>
+<div class="math notranslate nohighlight">
+\[ \begin{align}\begin{aligned}𝐹^∗=\frac{\frac{(𝑆𝑆𝐸_𝑅−𝑆𝑆𝐸_𝐹)}{(𝑘_𝐹−𝑘_𝑅)}}{(𝑀𝑆𝐸_𝐹)}\\=\frac{\frac{(327−255)}{(8−4)}}{(15.9375)}\\=1.13\end{aligned}\end{align} \]</div>
+<p>Critical value: <span class="math notranslate nohighlight">\(f_{0.05} = 3.01 (v_1 = 4, v_2 = 16)\)</span></p>
+<p>Reject H0 if F &gt; 3.01</p>
+<p>1.13 &lt; 3.01</p>
+<p>Do not reject <span class="math notranslate nohighlight">\(H_0\)</span> . There is not evidence that the selected variables are significant to the model when taken together. (The reduced model should be used)</p>
+</div>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+        <a href="OtherDefinitions.html" class="btn btn-neutral float-right" title="Other Definitions" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+        <a href="Regression.html" class="btn btn-neutral float-left" title="Regression" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &#169; Copyright 2021-2022, NDSU ACM.
+
+    </p>
+  </div>
+    
+    
+    
+    Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    
+    provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>

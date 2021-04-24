@@ -271,13 +271,13 @@ Ha: the model is useful in predicting Y
 
 Or
 
-H0: β_1 = β_2 = … = β_𝑘 = 0
+H0: :math:`β_1 = β_2 = … = β_𝑘 = 0`
 
-Ha: at least one β_𝑖≠ 0
+Ha: at least one :math:`β_𝑖≠ 0`
 
-Test statistic:   F = 𝑀𝑆𝑅/𝑀𝑆𝐸
+Test statistic:   :math:`F = \frac{𝑀𝑆𝑅}{𝑀𝑆𝐸}`
 
-Reject H0 if F > 𝑓_𝛼(k, (n – k - 1))
+Reject H0 if :math:`F > 𝑓_𝛼(k, (n – k - 1))`
 
 F test
 =======
@@ -422,3 +422,128 @@ TOTAL                       27                  4799
 
 .. math::
     adj R^2 = 1-\frac{MSE}{SST/(n-1)} = 1 - \frac{(27)516}{(25)4799} = 0.884
+
+
+Polynomial models
+==================
+
+Higher Order models
+--------------------
+
+So far we have only discussed first order models. In a first order model there are no variables with an exponent greater than one.
+
+Ex.
+
+.. math::
+    Y = 𝛽_0 + 𝛽_1X + ε
+
+    Y = 𝛽_0 + 𝛽_1X1 + 𝛽_2X2 + 𝛽_3X3 + ε
+
+In a second order model there is at least one variable with an exponent of two. 
+
+.. math::
+    Y = 𝛽_0 + 𝛽_1X + 𝛽_2X2 + ε
+
+In a third order model there is at least one variable with an exponent of three; and so on for higher order models.
+
+.. math::
+    Y = 𝛽_0 + 𝛽_1X + 𝛽_2X2 + 𝛽_3X3 + ε
+
+When we have a model with an order of two or higher the general name is polynomial model, because the model equation is the form of a polynomial.
+If we have second order we could be specific and say quadratic model.
+If we have third order we could call the model cubic.
+
+If we have more than one independent variable (multiple regression) a complete second order model has a squared term for each independent variable.
+A complete third order model will have a squared term and a cubed term for each independent variable.
+
+**Example**
+
+We wish to run a multiple regression to predict Y using three quantitative independent variables, X1, X_2, and X_3.
+Write the first order model, complete second order model, and complete third order model.
+
+First order model:
+
+.. math::
+    Y = 𝛽_0 + 𝛽_1X_1 + 𝛽_2X_2 + 𝛽_3X_3 + ε
+
+Complete second order model:
+
+.. math::
+    Y = 𝛽_0 + 𝛽_1X_1 + 𝛽_2X_2 + 𝛽_3X_3 
+
+    + 𝛽_4X_1^2 + 𝛽_5X_2^2 + 𝛽_6X_3^2 + ε
+
+Complete third order model:
+
+.. math::
+    Y = 𝛽_0 + 𝛽_1X_1 + 𝛽_2X_2 + 𝛽_3X_3 
+
+    + 𝛽_4X_1^2 + 𝛽_5X_2^2 + 𝛽_6X_3^2
+
+    + 𝛽_7X_1^3 + 𝛽_8X_2^3 + 𝛽_9X_3^3 + ε
+
+Df for Regression = k = 9
+Df for Error = n – k – 1 = n - 10
+
+Interaction
+-------------
+
+Polynomial models can also contain interaction terms which explain two or more variables acting together. To create an interaction term, the independent variables are multiplied together.
+
+Example:
+
+.. math::
+    Y = 𝛽_0 + 𝛽_1X_1 + 𝛽_2X_2 + 𝜷3X_1X_2 + ε
+
+We can create interaction terms between more than two independent variables:
+
+Example:
+
+First order:  :math:`Y = 𝛽_0 + 𝛽_1X_1 + 𝛽_2X_2 + 𝛽_3X_3 + ε`
+
+First order with all interaction:
+
+.. math::
+    Y = 𝛽_0 + 𝛽_1X_1 + 𝛽_2X_2 + 𝛽_3X_3 
+
+    + 𝛽_4X_1X_2 + 𝛽_5X_1X_3 + 𝛽_6X_2X_3 
+    
+    + 𝛽_7X_1X_2X_3 + ε
+
+Most often we are just looking for pairwise interaction (interaction between two variables) but if the model asks for all interaction we must consider all different combinations of independent variables.
+For our purposes we will only create interaction terms using first order terms, but we can have interaction in polynomial models.
+
+**Example**
+
+We wish to run a multiple regression to predict Y using three quantitative independent variables, X1, X2, and X3.
+Write the complete second order model with all interaction.
+
+.. math::
+    Y = 𝛽_0 + 𝛽_1X_1 + 𝛽_2X_2 + 𝛽_3X_3 
+
+    + 𝛽_4X_1^2 + 𝛽5X_2^2 + 𝛽6X_3^2 
+
+    + 𝛽_7X_1X_2 + 𝛽_8X_1X_3 + 𝛽_9X_2X_3 
+
+    + 𝛽_{10}X_1X_2X_3 + ε
+
+Df for Regression = k = 10
+Df for Error = n - 11
+
+Choosing A model
+-----------------
+
+We can determine the need for higher order models by looking at the plot of Y versus an independent variable. 
+If there is curvature in the plot then we can say there appears to be a need for a higher order term.
+The highest term needed in the model will be the number of curves plus one.
+
+If we plot Y versus X and get a parabola shaped curve (one curve), then that would suggest the need of an X2 term in the model.
+If we see 2 curves in the plot, that would suggest the need of an X3 term, and so on.
+
+If we have multiple independent variables, we need to create separate plots for each variable.
+
+- Y vs. X1
+- Y vs. X2
+- Y vs. X3
+
+
