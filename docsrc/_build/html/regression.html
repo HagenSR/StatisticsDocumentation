@@ -41,7 +41,7 @@
     
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
-    <link rel="next" title="Other Definitions" href="OtherDefinitions.html" />
+    <link rel="next" title="Models with Qualitative variables" href="QualitativeVariables.html" />
     <link rel="prev" title="ANOVA" href="Anova.html" />
     <link href="_static/style.css" rel="stylesheet" type="text/css">
 
@@ -130,9 +130,16 @@
 <li class="toctree-l3"><a class="reference internal" href="#adjusted-r-2">Adjusted R^2</a></li>
 </ul>
 </li>
-<li class="toctree-l2"><a class="reference internal" href="#adjusted-multiple-coefficient-of-determination-adj-r2">Adjusted Multiple Coefficient of Determination (adj R2)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#adjusted-multiple-coefficient-of-determination-adj-r2">Adjusted Multiple Coefficient of Determination (adj R2)</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#polynomial-models">Polynomial models</a></li>
 </ul>
 </li>
+<li class="toctree-l2"><a class="reference internal" href="#higher-order-models">Higher Order models</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#interaction">Interaction</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#choosing-a-model">Choosing A model</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="QualitativeVariables.html">Models with Qualitative variables</a></li>
 <li class="toctree-l1"><a class="reference internal" href="OtherDefinitions.html">Other Definitions</a></li>
 <li class="toctree-l1"><a class="reference internal" href="NormalTableTextBook.html">Normal Table from the Textbook</a></li>
 <li class="toctree-l1"><a class="reference internal" href="TTableTextBook.html">T Table from the Textbook</a></li>
@@ -491,10 +498,10 @@ If the model is not useful then the value of Y does not change regardless of the
 <p>H0: the model is not useful in predicting Y</p>
 <p>Ha: the model is useful in predicting Y</p>
 <p>Or</p>
-<p>H0: β_1 = β_2 = … = β_𝑘 = 0</p>
-<p>Ha: at least one β_𝑖≠ 0</p>
-<p>Test statistic:   F = 𝑀𝑆𝑅/𝑀𝑆𝐸</p>
-<p>Reject H0 if F &gt; 𝑓_𝛼(k, (n – k - 1))</p>
+<p>H0: <span class="math notranslate nohighlight">\(β_1 = β_2 = … = β_𝑘 = 0\)</span></p>
+<p>Ha: at least one <span class="math notranslate nohighlight">\(β_𝑖≠ 0\)</span></p>
+<p>Test statistic:   <span class="math notranslate nohighlight">\(F = \frac{𝑀𝑆𝑅}{𝑀𝑆𝐸}\)</span></p>
+<p>Reject H0 if <span class="math notranslate nohighlight">\(F &gt; 𝑓_𝛼(k, (n – k - 1))\)</span></p>
 <div class="section" id="f-test">
 <h3>F test<a class="headerlink" href="#f-test" title="Permalink to this headline">¶</a></h3>
 <p>If we can reject H0 then we can conclude there is enough evidence to say that the model is useful.</p>
@@ -652,6 +659,77 @@ Despite their utility adj R2 and R2 are only sample statistics. We cannot judge 
 \[R^2 = \frac{SSR}{SST} = \frac{4283}{4799} = 0.892\]</div>
 <div class="math notranslate nohighlight">
 \[adj R^2 = 1-\frac{MSE}{SST/(n-1)} = 1 - \frac{(27)516}{(25)4799} = 0.884\]</div>
+<div class="section" id="polynomial-models">
+<h3>Polynomial models<a class="headerlink" href="#polynomial-models" title="Permalink to this headline">¶</a></h3>
+</div>
+</div>
+<div class="section" id="higher-order-models">
+<h2>Higher Order models<a class="headerlink" href="#higher-order-models" title="Permalink to this headline">¶</a></h2>
+<p>So far we have only discussed first order models. In a first order model there are no variables with an exponent greater than one.</p>
+<p>Ex.</p>
+<div class="math notranslate nohighlight">
+\[ \begin{align}\begin{aligned}Y = 𝛽_0 + 𝛽_1X + ε\\Y = 𝛽_0 + 𝛽_1X1 + 𝛽_2X2 + 𝛽_3X3 + ε\end{aligned}\end{align} \]</div>
+<p>In a second order model there is at least one variable with an exponent of two.</p>
+<div class="math notranslate nohighlight">
+\[Y = 𝛽_0 + 𝛽_1X + 𝛽_2X2 + ε\]</div>
+<p>In a third order model there is at least one variable with an exponent of three; and so on for higher order models.</p>
+<div class="math notranslate nohighlight">
+\[Y = 𝛽_0 + 𝛽_1X + 𝛽_2X2 + 𝛽_3X3 + ε\]</div>
+<p>When we have a model with an order of two or higher the general name is polynomial model, because the model equation is the form of a polynomial.
+If we have second order we could be specific and say quadratic model.
+If we have third order we could call the model cubic.</p>
+<p>If we have more than one independent variable (multiple regression) a complete second order model has a squared term for each independent variable.
+A complete third order model will have a squared term and a cubed term for each independent variable.</p>
+<p><strong>Example</strong></p>
+<p>We wish to run a multiple regression to predict Y using three quantitative independent variables, X1, X_2, and X_3.
+Write the first order model, complete second order model, and complete third order model.</p>
+<p>First order model:</p>
+<div class="math notranslate nohighlight">
+\[Y = 𝛽_0 + 𝛽_1X_1 + 𝛽_2X_2 + 𝛽_3X_3 + ε\]</div>
+<p>Complete second order model:</p>
+<div class="math notranslate nohighlight">
+\[ \begin{align}\begin{aligned}Y = 𝛽_0 + 𝛽_1X_1 + 𝛽_2X_2 + 𝛽_3X_3\\+ 𝛽_4X_1^2 + 𝛽_5X_2^2 + 𝛽_6X_3^2 + ε\end{aligned}\end{align} \]</div>
+<p>Complete third order model:</p>
+<div class="math notranslate nohighlight">
+\[ \begin{align}\begin{aligned}Y = 𝛽_0 + 𝛽_1X_1 + 𝛽_2X_2 + 𝛽_3X_3\\+ 𝛽_4X_1^2 + 𝛽_5X_2^2 + 𝛽_6X_3^2\\+ 𝛽_7X_1^3 + 𝛽_8X_2^3 + 𝛽_9X_3^3 + ε\end{aligned}\end{align} \]</div>
+<p>Df for Regression = k = 9
+Df for Error = n – k – 1 = n - 10</p>
+</div>
+<div class="section" id="interaction">
+<h2>Interaction<a class="headerlink" href="#interaction" title="Permalink to this headline">¶</a></h2>
+<p>Polynomial models can also contain interaction terms which explain two or more variables acting together. To create an interaction term, the independent variables are multiplied together.</p>
+<p>Example:</p>
+<div class="math notranslate nohighlight">
+\[Y = 𝛽_0 + 𝛽_1X_1 + 𝛽_2X_2 + 𝜷3X_1X_2 + ε\]</div>
+<p>We can create interaction terms between more than two independent variables:</p>
+<p>Example:</p>
+<p>First order:  <span class="math notranslate nohighlight">\(Y = 𝛽_0 + 𝛽_1X_1 + 𝛽_2X_2 + 𝛽_3X_3 + ε\)</span></p>
+<p>First order with all interaction:</p>
+<div class="math notranslate nohighlight">
+\[ \begin{align}\begin{aligned}Y = 𝛽_0 + 𝛽_1X_1 + 𝛽_2X_2 + 𝛽_3X_3\\+ 𝛽_4X_1X_2 + 𝛽_5X_1X_3 + 𝛽_6X_2X_3\\+ 𝛽_7X_1X_2X_3 + ε\end{aligned}\end{align} \]</div>
+<p>Most often we are just looking for pairwise interaction (interaction between two variables) but if the model asks for all interaction we must consider all different combinations of independent variables.
+For our purposes we will only create interaction terms using first order terms, but we can have interaction in polynomial models.</p>
+<p><strong>Example</strong></p>
+<p>We wish to run a multiple regression to predict Y using three quantitative independent variables, X1, X2, and X3.
+Write the complete second order model with all interaction.</p>
+<div class="math notranslate nohighlight">
+\[ \begin{align}\begin{aligned}Y = 𝛽_0 + 𝛽_1X_1 + 𝛽_2X_2 + 𝛽_3X_3\\+ 𝛽_4X_1^2 + 𝛽5X_2^2 + 𝛽6X_3^2\\+ 𝛽_7X_1X_2 + 𝛽_8X_1X_3 + 𝛽_9X_2X_3\\+ 𝛽_{10}X_1X_2X_3 + ε\end{aligned}\end{align} \]</div>
+<p>Df for Regression = k = 10
+Df for Error = n - 11</p>
+</div>
+<div class="section" id="choosing-a-model">
+<h2>Choosing A model<a class="headerlink" href="#choosing-a-model" title="Permalink to this headline">¶</a></h2>
+<p>We can determine the need for higher order models by looking at the plot of Y versus an independent variable.
+If there is curvature in the plot then we can say there appears to be a need for a higher order term.
+The highest term needed in the model will be the number of curves plus one.</p>
+<p>If we plot Y versus X and get a parabola shaped curve (one curve), then that would suggest the need of an X2 term in the model.
+If we see 2 curves in the plot, that would suggest the need of an X3 term, and so on.</p>
+<p>If we have multiple independent variables, we need to create separate plots for each variable.</p>
+<ul class="simple">
+<li><p>Y vs. X1</p></li>
+<li><p>Y vs. X2</p></li>
+<li><p>Y vs. X3</p></li>
+</ul>
 </div>
 </div>
 
@@ -661,7 +739,7 @@ Despite their utility adj R2 and R2 are only sample statistics. We cannot judge 
           </div>
           <footer>
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
-        <a href="OtherDefinitions.html" class="btn btn-neutral float-right" title="Other Definitions" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+        <a href="QualitativeVariables.html" class="btn btn-neutral float-right" title="Models with Qualitative variables" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
         <a href="Anova.html" class="btn btn-neutral float-left" title="ANOVA" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
     </div>
 

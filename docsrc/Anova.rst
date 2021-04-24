@@ -134,3 +134,5 @@ Reject H0 if F > 10.1
 
 Reject H0. At the 0.05 level we conclude that X is useful in predicting Y. (advertising expenditure is useful in predicting sales revenue)
 
+
+
