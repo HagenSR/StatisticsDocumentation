@@ -1,0 +1,759 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8" />
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  
+  <title>Multicollinearity &mdash; Statistics Documentation 9 documentation</title>
+  
+
+  
+  <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="_static/accordion.css" type="text/css" />
+
+  
+  
+
+  
+  
+
+  
+
+  
+  <!--[if lt IE 9]>
+    <script src="_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
+        <script src="_static/jquery.js"></script>
+        <script src="_static/underscore.js"></script>
+        <script src="_static/doctools.js"></script>
+        <script src="_static/accordion.js"></script>
+        <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    
+    <script type="text/javascript" src="_static/js/theme.js"></script>
+
+    
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="Other Definitions" href="OtherDefinitions.html" />
+    <link rel="prev" title="Models with Qualitative variables" href="QualitativeVariables.html" />
+    <link href="_static/style.css" rel="stylesheet" type="text/css">
+
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="index.html" class="icon icon-home"> Statistics Documentation
+          
+
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                Version 1.0
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <p class="caption"><span class="caption-text">Contents:</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="Formulas.html">Formulas</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Distributions.html">Distributions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Estimation.html">Estimating</a></li>
+<li class="toctree-l1"><a class="reference internal" href="HypothesisTesting.html">Hypothesis Testing</a></li>
+<li class="toctree-l1"><a class="reference internal" href="simpleLinearRegression.html">Simple Linear Regression</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Anova.html">ANOVA</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Regression.html">Regression</a></li>
+<li class="toctree-l1"><a class="reference internal" href="QualitativeVariables.html">Models with Qualitative variables</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Multicollinearity</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#problems-with-multicollinearity">Problems with Multicollinearity</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#detecting-multicollinearity">Detecting Multicollinearity</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#dealing-with-multicollinearity">Dealing with multicollinearity</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#test-for-linearity">Test for linearity</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#repeated-observations">Repeated observations</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#measures-of-error">Measures of Error</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#unbiased-estimate-of-2-with-repeated-observations">Unbiased Estimate of σ2 with repeated observations</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#testing-for-model-adequacy">Testing for Model Adequacy</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#finding-lack-of-fit">Finding lack-of-fit:</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="OtherDefinitions.html">Other Definitions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="NormalTableTextBook.html">Normal Table from the Textbook</a></li>
+<li class="toctree-l1"><a class="reference internal" href="TTableTextBook.html">T Table from the Textbook</a></li>
+<li class="toctree-l1"><a class="reference internal" href="ChiSquaredTextBook.html">Chi Squared from Text Book</a></li>
+</ul>
+
+            
+          
+        </div>
+        
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">Statistics Documentation</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="index.html" class="icon icon-home"></a> &raquo;</li>
+        
+      <li>Multicollinearity</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+          
+            <a href="_sources/Multicollinearity.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="multicollinearity">
+<h1>Multicollinearity<a class="headerlink" href="#multicollinearity" title="Permalink to this headline">¶</a></h1>
+<p>Multicollinearity exists when two or more of the independent variables used in the multiple regression model are highly correlated.
+This will cause serious problems in analyzing the model.</p>
+<div class="section" id="problems-with-multicollinearity">
+<h2>Problems with Multicollinearity<a class="headerlink" href="#problems-with-multicollinearity" title="Permalink to this headline">¶</a></h2>
+<p>If multicollinearity exists in the model we will see these effects on the analysis:</p>
+<ul class="simple">
+<li><p>The estimated regression coefficients will have large standard errors, causing imprecision in confidence and prediction intervals.</p></li>
+<li><p>Adding or deleting a predictor variable may cause significant changes in the values of the other regression coefficients.</p></li>
+</ul>
+</div>
+<div class="section" id="detecting-multicollinearity">
+<h2>Detecting Multicollinearity<a class="headerlink" href="#detecting-multicollinearity" title="Permalink to this headline">¶</a></h2>
+<p>How can you tell whether a regression analysis exhibits multicollinearity?
+We will have confusing regression results.</p>
+<ol class="arabic simple">
+<li><dl class="simple">
+<dt>The individual T-tests are insignificant but the overall F-test is significant.</dt><dd><ul class="simple">
+<li><p>Meaning the individual variables are all insignificant but our model is useful.</p></li>
+</ul>
+</dd>
+</dl>
+</li>
+<li><dl class="simple">
+<dt>The signs of the regression coefficients are contrary to what you would intuitively expect the contributions of those variables to be.</dt><dd><ul class="simple">
+<li><p>Ex. We are analyzing weight (Y) and find that height has a negative coefficient value.</p></li>
+</ul>
+</dd>
+</dl>
+</li>
+<li><dl class="simple">
+<dt>A matrix of correlations, generated by the computer shows you which predictor variables are highly correlated with each other.</dt><dd><ul class="simple">
+<li><p>Correlations close to 1 suggest multicollinearity is present.</p></li>
+</ul>
+</dd>
+</dl>
+</li>
+<li><dl class="simple">
+<dt>The variance inflation factor (VIF) for a particular independent variable is greater than 10.</dt><dd><ul class="simple">
+<li><p>VIF values are given when regression analysis is done using computer software</p></li>
+</ul>
+</dd>
+</dl>
+</li>
+</ol>
+</div>
+<div class="section" id="dealing-with-multicollinearity">
+<h2>Dealing with multicollinearity<a class="headerlink" href="#dealing-with-multicollinearity" title="Permalink to this headline">¶</a></h2>
+<p>What do we do if we detect multicollinearity in our model?</p>
+<ol class="arabic simple">
+<li><p>Drop one or more of the correlated independent variables from the model</p></li>
+<li><p>Use the model for prediction only, not for inferences of individual variables. (only if overall F is significant)</p></li>
+<li><p>Add interaction terms between the correlated variables.</p></li>
+</ol>
+<p><strong>Example</strong></p>
+<p>The table below is a portion of output for a multiple regression analysis.</p>
+<p>Overall F value has p-value = 0.001</p>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 20%" />
+<col style="width: 20%" />
+<col style="width: 20%" />
+<col style="width: 20%" />
+<col style="width: 20%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Term</p></th>
+<th class="head"><p>Estimated value</p></th>
+<th class="head"><p>SE</p></th>
+<th class="head"><p>P Value</p></th>
+<th class="head"><p>VIF</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>𝛽_0</p></td>
+<td><p>0.58</p></td>
+<td><p>0.607</p></td>
+<td><p>0.056</p></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p>𝛽_1</p></td>
+<td><p>2.712</p></td>
+<td><p>0.202</p></td>
+<td><p>0.237</p></td>
+<td><p>13</p></td>
+</tr>
+<tr class="row-even"><td><p>𝛽_2</p></td>
+<td><p>2.05</p></td>
+<td><p>0.048</p></td>
+<td><p>0.522</p></td>
+<td><p>50</p></td>
+</tr>
+</tbody>
+</table>
+<div class="section" id="test-for-linearity">
+<h3>Test for linearity<a class="headerlink" href="#test-for-linearity" title="Permalink to this headline">¶</a></h3>
+</div>
+</div>
+<div class="section" id="repeated-observations">
+<h2>Repeated observations<a class="headerlink" href="#repeated-observations" title="Permalink to this headline">¶</a></h2>
+<p>In certain kinds of experiments the researcher has the capability of obtaining repeated observations on the response for each value of X.
+These repetitions are not necessary to estimate the beta parameters, but they do provide more information that will allow us to determine the appropriateness of the model.</p>
+<p>Consider a random sample of n observations with k distinct values of X.</p>
+<p>X1, X2, …., Xk</p>
+<p>The sample contains n1 observed values of Y1 corresponding to X1, n2 observed values of Y2 corresponding to X2, and so on.</p>
+<p>Thus, n = n1 + n2 + … nk</p>
+<p>We have the following notation:</p>
+<p><span class="math notranslate nohighlight">\(Y_{ij}\)</span> = the the jth value of <span class="math notranslate nohighlight">\(Y_{i}\)</span> = the jth observation of Y at <span class="math notranslate nohighlight">\(X_{i}\)</span></p>
+<div class="math notranslate nohighlight">
+\[Y_i = T_i = \sum_{j=i}^{n_i} y_{ij}\]</div>
+<div class="math notranslate nohighlight">
+\[\bar{Y_i} = \frac{T_i}{n_i}\]</div>
+<p><strong>Example Data:</strong></p>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 50%" />
+<col style="width: 50%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>X</p></th>
+<th class="head"><p>Y</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>X_1</p></td>
+<td><p>Y_11</p></td>
+</tr>
+<tr class="row-odd"><td><p>X_1</p></td>
+<td><p>Y_12</p></td>
+</tr>
+<tr class="row-even"><td><p>X_1</p></td>
+<td><p>Y_13</p></td>
+</tr>
+<tr class="row-odd"><td><p>X_2</p></td>
+<td><p>Y_21</p></td>
+</tr>
+<tr class="row-even"><td><p>X_2</p></td>
+<td><p>Y_22</p></td>
+</tr>
+<tr class="row-odd"><td><p>X_3</p></td>
+<td><p>Y_31</p></td>
+</tr>
+<tr class="row-even"><td><p>X_3</p></td>
+<td><p>Y_32</p></td>
+</tr>
+</tbody>
+</table>
+<p>Then :math:<a href="#id1"><span class="problematic" id="id2">`</span></a>Y_1 = T_1 = Y_{11} + Y_{12} + Y_{13} `</p>
+</div>
+<div class="section" id="measures-of-error">
+<h2>Measures of Error<a class="headerlink" href="#measures-of-error" title="Permalink to this headline">¶</a></h2>
+<p>Error Sum of Squares consists of two parts:</p>
+<p>Lack-of-fit: a measure of the systematic variation brought about by higher order terms.</p>
+<p>Pure experimental error: variation between the values of Y within given values of X. (random variation)</p>
+<p>If we are fitting a simple linear model, we do not have higher order terms and are essentially assuming that the lack-of-fit contribution does not exist. In this case SSE is completely due to random error.
+If this is the case, then s2 = SSE/(n-2) is an unbiased estimate of σ2.</p>
+<p>However, if the model does not adequately fit the data, then SSE is inflated and produces a biased estimate of σ2.</p>
+</div>
+<div class="section" id="unbiased-estimate-of-2-with-repeated-observations">
+<h2>Unbiased Estimate of σ2 with repeated observations<a class="headerlink" href="#unbiased-estimate-of-2-with-repeated-observations" title="Permalink to this headline">¶</a></h2>
+<p>If our data has repeated observations an unbiased estimate of σ2 can be calculated as:</p>
+<div class="math notranslate nohighlight">
+\[S^2 = \frac{\sum_{i=1}^{k}\sum_{j=1}^{n_1}(y_{ij}-\bar{y_i})^2}{n-k}\]</div>
+<p>The numerator represents a measure of the pure experimental error.</p>
+<p>If our data has repeated observations we can represent lack-of-fit in the ANOVA table to test the linear model’s adequacy.</p>
+<ol class="arabic simple">
+<li><p>Compute SSE, SST, and SSR as you normally would for a simple linear model.</p></li>
+<li><dl class="simple">
+<dt>Compute the pure error sum of squares</dt><dd><ul class="simple">
+<li><p><span class="math notranslate nohighlight">\(\sum_{i=1}^{k}\sum_{j=1}^{n_i}(y_{ij}-\bar{y_i})^2\)</span></p></li>
+<li><p>This will have (n – k) degrees of freedom.</p></li>
+</ul>
+</dd>
+</dl>
+</li>
+<li><p>Subtract pure error SS from SSE to obtain the SS due to lack of fit. This will have (n – 2) - (n – k) = k – 2 degrees of freedom.</p></li>
+</ol>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 20%" />
+<col style="width: 20%" />
+<col style="width: 20%" />
+<col style="width: 20%" />
+<col style="width: 20%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Source</p></th>
+<th class="head"><p>DF</p></th>
+<th class="head"><p>SS</p></th>
+<th class="head"><p>MS</p></th>
+<th class="head"><p>F</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>Regression</p></td>
+<td><p>1</p></td>
+<td><p>SSR</p></td>
+<td><p>SSR</p></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p>Error</p></td>
+<td><p>n-2</p></td>
+<td><p>SSE</p></td>
+<td></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p>Lack of fit</p></td>
+<td><p>k-2</p></td>
+<td><p>SSE - SSE(pure)</p></td>
+<td><p>(see note 1)</p></td>
+<td><p>(see note 2)</p></td>
+</tr>
+<tr class="row-odd"><td><p>Pure error</p></td>
+<td><p>n-k</p></td>
+<td><p>SSE(pure)</p></td>
+<td><p>S^2</p></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p>Total</p></td>
+<td><p>n-1</p></td>
+<td><p>SST</p></td>
+<td></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<p>Note 1: <span class="math notranslate nohighlight">\(\frac{SSE-SEE(Pure)}{k-2}\)</span></p>
+<p><span class="math notranslate nohighlight">\(S^2 = \frac{SSE(pure)}{n-k}\)</span></p>
+<p>Note 2: <span class="math notranslate nohighlight">\(\frac{SSE-SEE(Pure)}{(k-2)s^2}\)</span></p>
+</div>
+<div class="section" id="testing-for-model-adequacy">
+<h2>Testing for Model Adequacy<a class="headerlink" href="#testing-for-model-adequacy" title="Permalink to this headline">¶</a></h2>
+<p>Once we have fit a simple linear model and created an ANOVA table which shows the breakdown of error into lack-of-fit, we can use the F-value to test if the linear model is adequate.</p>
+<p><span class="math notranslate nohighlight">\(H_0\)</span> : linear model is adequate</p>
+<p><span class="math notranslate nohighlight">\(H_a\)</span> : higher order terms are needed</p>
+<p><span class="math notranslate nohighlight">\(F = \frac{SSE-SEE(pure)}{(k-2)s^2}\)</span></p>
+<p>Critical value: 𝑓_𝛼 with v1 = (k-2), v2 = (n-k)</p>
+<p>Reject H0 if F &gt; 𝑓_𝛼</p>
+<p>If we do not reject H0, then we conclude that the first order model is adequate.</p>
+<p><strong>Example</strong></p>
+<p>Observations of the yield of a chemical reaction taken at various temperatures are recorded in the table on the next slide. Estimate the linear model Y = β0 + β1X + ε and test for lack of fit.</p>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 50%" />
+<col style="width: 50%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Y</p></th>
+<th class="head"><p>X</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>77.4</p></td>
+<td><p>150</p></td>
+</tr>
+<tr class="row-odd"><td><p>76.7</p></td>
+<td><p>150</p></td>
+</tr>
+<tr class="row-even"><td><p>78.2</p></td>
+<td><p>150</p></td>
+</tr>
+<tr class="row-odd"><td><p>84.1</p></td>
+<td><p>200</p></td>
+</tr>
+<tr class="row-even"><td><p>84.5</p></td>
+<td><p>200</p></td>
+</tr>
+<tr class="row-odd"><td><p>83.7</p></td>
+<td><p>200</p></td>
+</tr>
+<tr class="row-even"><td><p>88.9</p></td>
+<td><p>250</p></td>
+</tr>
+<tr class="row-odd"><td><p>89.2</p></td>
+<td><p>250</p></td>
+</tr>
+<tr class="row-even"><td><p>89.7</p></td>
+<td><p>250</p></td>
+</tr>
+<tr class="row-odd"><td><p>94.8</p></td>
+<td><p>300</p></td>
+</tr>
+<tr class="row-even"><td><p>94.7</p></td>
+<td><p>300</p></td>
+</tr>
+<tr class="row-odd"><td><p>95.9</p></td>
+<td><p>300</p></td>
+</tr>
+</tbody>
+</table>
+<p><span class="math notranslate nohighlight">\(\bar{𝑥}\)</span> = 225</p>
+<p><span class="math notranslate nohighlight">\(\bar{y}\)</span> = 86.483</p>
+<p><span class="math notranslate nohighlight">\(S_{xx}\)</span> = 645000 – <span class="math notranslate nohighlight">\(12(225)^2\)</span> = 37500</p>
+<p><span class="math notranslate nohighlight">\(S_{xy}\)</span> = 237875 – 12(225)(86.483) = 4370</p>
+<p><span class="math notranslate nohighlight">\(b_1\)</span> = 4370/37500=0.1165</p>
+<p><span class="math notranslate nohighlight">\(b_0\)</span> = 86.483 – (0.1165)225 = 60.263</p>
+<p><span class="math notranslate nohighlight">\(\hat{y}\)</span> = 60.263+0.1165𝑋</p>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 25%" />
+<col style="width: 25%" />
+<col style="width: 25%" />
+<col style="width: 25%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Y</p></th>
+<th class="head"><p>X</p></th>
+<th class="head"><p>xy</p></th>
+<th class="head"><p>X^2</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>77.4</p></td>
+<td><p>150</p></td>
+<td><p>11610</p></td>
+<td><p>22500</p></td>
+</tr>
+<tr class="row-odd"><td><p>76.7</p></td>
+<td><p>150</p></td>
+<td><p>11505</p></td>
+<td><p>22500</p></td>
+</tr>
+<tr class="row-even"><td><p>78.2</p></td>
+<td><p>150</p></td>
+<td><p>11730</p></td>
+<td><p>22500</p></td>
+</tr>
+<tr class="row-odd"><td><p>84.1</p></td>
+<td><p>200</p></td>
+<td><p>16820</p></td>
+<td><p>40000</p></td>
+</tr>
+<tr class="row-even"><td><p>84.5</p></td>
+<td><p>200</p></td>
+<td><p>16900</p></td>
+<td><p>40000</p></td>
+</tr>
+<tr class="row-odd"><td><p>83.7</p></td>
+<td><p>200</p></td>
+<td><p>16740</p></td>
+<td><p>40000</p></td>
+</tr>
+<tr class="row-even"><td><p>88.9</p></td>
+<td><p>250</p></td>
+<td><p>22225</p></td>
+<td><p>62500</p></td>
+</tr>
+<tr class="row-odd"><td><p>89.2</p></td>
+<td><p>250</p></td>
+<td><p>22300</p></td>
+<td><p>62500</p></td>
+</tr>
+<tr class="row-even"><td><p>89.7</p></td>
+<td><p>250</p></td>
+<td><p>22425</p></td>
+<td><p>62500</p></td>
+</tr>
+<tr class="row-odd"><td><p>94.8</p></td>
+<td><p>300</p></td>
+<td><p>28440</p></td>
+<td><p>90000</p></td>
+</tr>
+<tr class="row-even"><td><p>94.7</p></td>
+<td><p>300</p></td>
+<td><p>28410</p></td>
+<td><p>90000</p></td>
+</tr>
+<tr class="row-odd"><td><p>95.9</p></td>
+<td><p>300</p></td>
+<td><p>28770</p></td>
+<td><p>90000</p></td>
+</tr>
+</tbody>
+</table>
+<p>The totals for each collumns are 1037.8, 2700, 237875, 645000</p>
+<p><span class="math notranslate nohighlight">\(S_{xy}\)</span> = 90265.52 – <span class="math notranslate nohighlight">\(12(86.483)^2\)</span> = 513.1167</p>
+<p><span class="math notranslate nohighlight">\(SSE\)</span> = 513.1167 – 0.1165(4370) = 3.866</p>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 33%" />
+<col style="width: 33%" />
+<col style="width: 33%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Y</p></th>
+<th class="head"><p>X</p></th>
+<th class="head"><p>y^2</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>77.4</p></td>
+<td><p>150</p></td>
+<td><p>5990.76</p></td>
+</tr>
+<tr class="row-odd"><td><p>76.7</p></td>
+<td><p>150</p></td>
+<td><p>5882.89</p></td>
+</tr>
+<tr class="row-even"><td><p>78.2</p></td>
+<td><p>150</p></td>
+<td><p>6115.24</p></td>
+</tr>
+<tr class="row-odd"><td><p>84.1</p></td>
+<td><p>200</p></td>
+<td><p>7072.81</p></td>
+</tr>
+<tr class="row-even"><td><p>84.5</p></td>
+<td><p>200</p></td>
+<td><p>7140.25</p></td>
+</tr>
+<tr class="row-odd"><td><p>83.7</p></td>
+<td><p>200</p></td>
+<td><p>7005.69</p></td>
+</tr>
+<tr class="row-even"><td><p>88.9</p></td>
+<td><p>250</p></td>
+<td><p>7903.21</p></td>
+</tr>
+<tr class="row-odd"><td><p>89.2</p></td>
+<td><p>250</p></td>
+<td><p>7956.64</p></td>
+</tr>
+<tr class="row-even"><td><p>89.7</p></td>
+<td><p>250</p></td>
+<td><p>8046.09</p></td>
+</tr>
+<tr class="row-odd"><td><p>94.8</p></td>
+<td><p>300</p></td>
+<td><p>8987.04</p></td>
+</tr>
+<tr class="row-even"><td><p>94.7</p></td>
+<td><p>300</p></td>
+<td><p>8968.09</p></td>
+</tr>
+<tr class="row-odd"><td><p>95.9</p></td>
+<td><p>300</p></td>
+<td><p>9196.81</p></td>
+</tr>
+</tbody>
+</table>
+<p>The totals for each collumns are 1037.8, 2700, 90265.52</p>
+<p>Sum of Squares:</p>
+<p>SST = 513.1167</p>
+<p>SSE = 3.866</p>
+<p>SSR = SST – SSE = 509.251</p>
+</div>
+<div class="section" id="finding-lack-of-fit">
+<h2>Finding lack-of-fit:<a class="headerlink" href="#finding-lack-of-fit" title="Permalink to this headline">¶</a></h2>
+<p>X1 = 150     X2 = 200      X3 = 250     X4 = 300</p>
+<div class="math notranslate nohighlight">
+\[\bar{y_1} = \frac{y_{11}+y_{12}+y_{13}}{3} = \frac{77.4+ 76.7 + 78.2}}{3} = 77.43\]</div>
+<div class="math notranslate nohighlight">
+\[\bar{y_2} =  \frac{84.1 + 84.5 + 83.7}{3} = 84.1\]</div>
+<div class="math notranslate nohighlight">
+\[\bar{y_3} =  \frac{88.9+89.2+89.7}{3} = 89.27\]</div>
+<div class="math notranslate nohighlight">
+\[\bar{y_4} =  \frac{94.8+94.7+95.9}{3} = 95.13\]</div>
+<p>SSE(pure) = <span class="math notranslate nohighlight">\((77.4 – 77.43)^2 + (76.7 – 77.43)^2  + … + (94.7 – 95.13)^2 + (95.9 – 95.13)^2\)</span> = 2.66</p>
+<p>Lack-of-fit = SSE  - SSE(pure) = 3.866 – 2.66 = 1.206</p>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 20%" />
+<col style="width: 20%" />
+<col style="width: 20%" />
+<col style="width: 20%" />
+<col style="width: 20%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Source</p></th>
+<th class="head"><p>DF</p></th>
+<th class="head"><p>SS</p></th>
+<th class="head"><p>MS</p></th>
+<th class="head"><p>F</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>Regression</p></td>
+<td><p>1</p></td>
+<td><p>509.251</p></td>
+<td><p>509.251</p></td>
+<td><p>1531.58</p></td>
+</tr>
+<tr class="row-odd"><td><p>Error</p></td>
+<td><p>10</p></td>
+<td><p>3.866</p></td>
+<td></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p>Lack of fit</p></td>
+<td><p>2</p></td>
+<td><p>1.206</p></td>
+<td><p>0.603</p></td>
+<td><p>1.81</p></td>
+</tr>
+<tr class="row-odd"><td><p>Pure error</p></td>
+<td><p>8</p></td>
+<td><p>2.66</p></td>
+<td><p>0.3325</p></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p>Total</p></td>
+<td><p>11</p></td>
+<td><p>513.1167</p></td>
+<td></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<p>Testing Lack-of-Fit:</p>
+<p>H0: the linear model is adequate</p>
+<p>Ha: higher order terms are needed</p>
+<p>F = 1.81</p>
+<p>Critical value 𝑓_𝛼 = 4.46     with v1 = 2,  v2 = 8</p>
+<p>1.18 &lt; 4.46</p>
+<p>Do not reject H0. The linear model is adequate.</p>
+<p>** Not Complete**</p>
+</div>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+        <a href="OtherDefinitions.html" class="btn btn-neutral float-right" title="Other Definitions" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+        <a href="QualitativeVariables.html" class="btn btn-neutral float-left" title="Models with Qualitative variables" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &#169; Copyright 2021-2022, NDSU ACM.
+
+    </p>
+  </div>
+    
+    
+    
+    Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    
+    provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>

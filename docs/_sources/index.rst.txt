@@ -18,6 +18,7 @@ Welcome to Statistics Documentation!
    Anova
    Regression
    QualitativeVariables
+   Multicollinearity
    OtherDefinitions
    NormalTableTextBook
    TTableTextBook
