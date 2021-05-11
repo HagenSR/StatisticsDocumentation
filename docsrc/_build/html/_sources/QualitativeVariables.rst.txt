@@ -343,3 +343,92 @@ Reject H0 if F > 3.01
 
 Do not reject :math:`H_0` . There is not evidence that the selected variables are significant to the model when taken together. (The reduced model should be used)
 
+
+Selection Procedures
+======================
+
+Building a model
+-------------------
+
+Usually, we have a good idea which independent variables to use in a model.
+We have several variables or terms that could be used in a model, some of which are significant and some are not.
+We would like to find a subset of these variables that does the “best” possible job of predicting y (without including insignificant variables)
+
+We want to reduce the number of variables so that the resulting regression equation is easy to understand, interpret and work with.
+Thus we only include the most significant variables. 
+Overall, we want as few variables as possible in the final regression equation while at the same time retaining the ability to effectively predict Y.
+
+Finding a subset of variables to predict Y is often referred to as the variable selection problem.
+
+Selection Methods:
+
+- Forward Selection
+- Backward Elimination
+- Stepwise Regression
+
+Each method has a series of steps which will lead you to the optimal model.
+
+Forward Selection 
+------------------
+
+At first the model only contains the intercept, β0. At each step, at most one variable can be added to the model. 
+
+Step 1:
+
+Fit a simple linear regression model with each of the potential independent variables. Choose the variable that is most significant (has the largest R2, or has the largest T-statistic, or has the lowest p-value)
+
+Step 2:
+
+Find the variable that, when inserted in the model found in the previous step, gives the largest increase in R2 (the most significant variable possible)
+If this variable is insignificant based on some predetermined α, the procedure stops.
+
+Step 3:
+
+The procedure continues until no variable considered for addition to the model provides a significant increase in R2.
+(until the next variable to be added is insignificant compared to α) 
+
+Backward Elimination
+---------------------
+
+Backward elimination starts with all independent variables in the model. At each step at most one variable is eliminated from the model.
+
+Step 1:
+
+Fit a regression equation with all independent variables included. Choose the variable that is the most insignificant (has the smallest T-statistic, or has the largest p-value). If this variable is insignificant compared to some predetermined α, it is eliminated from the model.
+
+Step 2:
+
+Fit a regression equation using all variables except the one that was eliminated in the previous step.
+Choose the variable that is the most insignificant (has the smallest T-statistic). If this variable is insignificant compared to some predetermined α, it is eliminated from the model. If this variable is significant, the procedure stops.
+
+Step 3:
+
+The procedure continues until a variable selected for elimination is found to be significant.
+
+Stepwise Regression
+----------------------
+
+Stepwise regression combines forward selection and backward elimination in the following way:
+
+Step 1:
+
+Start with only the intercept, β0, in the model. At each step the forward selection method is used in an attempt to add a variable into the model. 
+If no variables are added, the process stops.
+
+Step 2:
+
+After a variable is added to a model already containing at least one variable, then employ one step of the backward elimination method on the model containing all of the 
+entered variables. If a variable is removed it is returned to the collection of un-entered variables.
+Continue until no variables are added or eliminated.
+
+Level Of Significance
+----------------------
+
+It is common to use a level of significance of α = 0.15.
+So for forward selection a variable is only added if its p-value is less than 0.15.
+For backward elimination a variable is only eliminated if its p-value is greater than 0.15.
+
+Note that These selection procedures fit first order models and are not helpful in detecting curvature or interaction in the data.
+
+
+

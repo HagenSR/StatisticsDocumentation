@@ -254,7 +254,7 @@ Finding lack-of-fit:
 X1 = 150     X2 = 200      X3 = 250     X4 = 300
 
 .. math::
-    \bar{y_1} = \frac{y_{11}+y_{12}+y_{13}}{3} = \frac{77.4+ 76.7 + 78.2}}{3} = 77.43
+    \bar{y_1} = \frac{y_{11}+y_{12}+y_{13}}{3} = \frac{77.4+ 76.7 + 78.2}{3} = 77.43
 
 .. math::
     \bar{y_2} =  \frac{84.1 + 84.5 + 83.7}{3} = 84.1
@@ -295,4 +295,227 @@ Critical value 𝑓_𝛼 = 4.46     with v1 = 2,  v2 = 8
 
 Do not reject H0. The linear model is adequate.
 
-** Not Complete**
+One Factor experiments
+-----------------------
+
+In our confidence intervals and hypothesis tests we were restricted to considering no more than 2 populations at once.
+
+- CI for µ1 - µ2 
+
+- H0: µ1 = µ2
+
+This is called the one-factor problem.
+
+Ex. Running times of films produced by 2 motion picture companies are compared.
+
+One Factor = company (2 levels -> company 1 and company 2)
+
+If we wanted to compare more companies we would have 1 factor but more levels and more samples.
+
+If the number of levels, k, is greater than 2 we will assume there are k samples from k populations.
+
+A common procedure to deal with testing population means is called Analysis of Variance, or ANOVA.
+
+**Example**
+
+Suppose we wish to compare average running time of films from 4 different production companies. It is decided that 5 films from each company will be sampled. So we have a total of 20 sample observations.
+There are 4 populations. We may wish to test:
+- H0: µ1 = µ2 = µ3 = µ4
+- Ha: at least 2 means are not equal
+
+Or we could be interested in making individual comparisons among the 4 populations.
+
+=============== =============== =============== =============== ===============
+ Company                1              2              3                 4
+=============== =============== =============== =============== ===============
+                      102              81              87              98
+                      86               165             114             117
+                      98               97              94              109
+                      109              134             100             91
+                      92               92              107             93
+                      -                -                -               -
+    Total:            487             569             502             508
+    Mean:             97.4            113.8           100.4           101.6
+=============== =============== =============== =============== ===============
+
+Sources of Variability
+------------------------
+
+In the analysis of variance procedure, it is assumed that whatever variation exists between the averages is attributed to:
+- Variation in film length among observations within the companies
+- Variation among companies (due to differences between the different companies)
+- The within-sample variation is considered to be chance or random variation.
+
+We wish to determine if the difference among the 4 sample means are what we would expect due to random variation alone.
+
+Random samples of size n are selected from each of k populations. The k different populations are classified on the basis of a single criterion (i.e. different treatments or groups)
+We use the term treatment to generally refer to various classifications.
+It is assumed that the k populations are independent and normally distributed with means µ1, µ2, …, µk and common variance σ2
+
+Let yij denote the jth observation from the ith treatment.
+
+:math:`Y_i` = total of all observations from ith treatment = :math:`\sum^{n}_{j=1}{y_{ij}}`
+
+:math:`\bar{Y_i}` = sample mean of observations from ith treatment = :math:`\frac{y_i}{n}`                                                               
+	
+:math:`Y_{..}` = total of all nk observations = :math:`\sum^{k}_{i=i}\sum^{n}_{j=1}{y_{ij}}`
+
+:math:`\bar{Y_{..}}` = mean of all nk observations = :math:`\frac{y_{..}}{nk}`
+
+=============== =============== =============== =============== ==========================
+ Treatment             1              i                k
+=============== =============== =============== =============== ==========================
+                      Y_11          y_i1             y_k1
+                      Y_12          y_i2             y_k2
+                        .             .               .
+                        .             .               .
+                        .             .               .
+                      Y_1n            y_in           y_kn
+                      -                -                -             -
+    Total:              Y_1             Y_i           Y_K               :math:`Y_..`
+    Mean:             Ybar1          Ybari           Ybark          :math:`\bar{Y_{..}}`
+=============== =============== =============== =============== ==========================
+
+Each observation can be written as: :math:`Y_{ij} = µ_i + ε_{ij}`
+
+Where :math:`ε_{ij}` measures the deviation of the jth observation from its treatment mean = random error
+
+We can also write: 	:math:`µ_i = µ + α_i`
+
+Where
+
+- :math:`α_i` = effect of ith treatment    ( :math:`\sum^{k}_{i=1}{a_i=0}` )
+- µ = grand mean= (:math:`\sum^{k}_{i=1}{u_i}`)/k
+
+Thus :math:`Y_{ij} = µ + α_i + ε_{ij}` 
+
+Now we can write
+
+H0: µ1 = µ2 = … = µk 
+
+Ha: at least 2 means are not equal
+
+Or
+
+H0: α1 = α2 = … = αk = 0
+
+Ha: at least 1 αi is not zero
+
+Partitioning Variability
+-------------------------
+
+Total Sum of Squares = SST = :math:`\sum^{k}_{i=i}\sum^{n}_{j=1}{(y_{ij}-\bar{y_{..}})^2}`
+
+Treatment Sum of Squares = SSA = :math:`n\sum^{k}_{i=i}(\bar{y_{i.}}-\bar{y_{..}})^2`
+
+Error Sum of Squares = SSE = :math:`\sum^{k}_{i=i}\sum^{n}_{j=1}{(y_{ij}-\bar{y_{i.}})^2}`
+
+Sum of Square Identity: SST = SSA + SSE
+
+=================== =================== =================== ================================= =================================
+Source                     SS                   DF                    MS                                F 
+=================== =================== =================== ================================= =================================
+Regression                  SSA                  k-1         :math:`S^2_1=\frac{SSA}{k-1}`     :math:`\frac{s^2_1}{s^2}`
+ERROR                       SSE                  k(n-1)      :math:`S^2=\frac{SSE}{k(n-1)}`
+TOTAL                       SST                  nk-1
+=================== =================== =================== ================================= =================================
+
+s2 is an unbiased estimate of σ2 (common population variance). It is unbiased regardless of the truth or falsity of H0: µ1= … = µk 
+
+𝑠_1^2 provides an unbiased estimate of σ2 when H0 is true. If Ha is true, 𝑠_1^2 will estimate σ2 with an extra term to measure variations due to the treatment effects (αi’s).
+
+So if Ha is true 𝑠_1^2 > s2 and F will be large.
+
+Testing Multiple populations
+------------------------------
+
+H0: µ1 = µ2 = … = µk 
+
+Ha: at least 2 means are not equal
+
+Test statistic: F = (𝑠_1^2)/𝑠^2 
+
+Reject H0 if F > fα[(k – 1), k(n – 1)]
+
+If you reject H0, there is evidence that a difference exists in the population means for the k treatments.
+
+We wish to compare average running time of films from 4 different production companies.
+It is decided that 5 films from each company will be sampled.
+
+=============== =============== =============== =============== =============== ===============
+ Company                1              2              3                 4
+=============== =============== =============== =============== =============== ===============
+                      102              81              87              98
+                      86               165             114             117
+                      98               97              94              109
+                      109              134             100             91
+                      92               92              107             93
+                      -                -                -               -
+    Total:            487             569             502             508           2066
+    Mean:             97.4            113.8           100.4           101.6         103.3
+=============== =============== =============== =============== =============== ===============
+
+Test if there is a difference in the average running times for the different companies at 0.05 level of significance.
+
+k = 4       n = 5
+
+.. math::
+    SST = \sum^{k}_{i=i}\sum^{n}_{j=1}{(y_{ij}-\bar{y_{..}})^2}
+        = (102 – 103.3)^2 + (86 – 103.3)^2 + … +  (93 – 103.3)^2   
+        = 6900.2
+
+(nk = 20 terms in the summation)
+
+.. math::   
+    SSA = n\sum^{k}_{i=i}(\bar{y_{i.}}-\bar{y_{..}})^2
+    = 5[ (97.4 – 103.3)^2 + (113.8 – 103.3)^2 + (100.4 – 103.3)^2 + (101.6 – 103.3)^2 ]
+    = 781.8
+    
+(k = 4 terms in the summation)
+
+.. math::
+    SSE = \sum^{k}_{i=i}\sum^{n}_{j=1}{(y_{ij}-\bar{y_{i.}})^2}
+    = (102 – 97.4)^2 + (86 – 97.4)^2 + … + (91 – 101.6)^2 + (93 – 101.6)^2 
+    = 6118.4
+
+(nk = 20 terms in summation)
+
+=================== =================== =================== ================================= =================================
+Source                     SS                   DF                    MS                                F 
+=================== =================== =================== ================================= =================================
+Regression                  781.8               3            :math:`S^2_1=260.6`                  0.681
+ERROR                       SSE                  k(n-1)      :math:`S^2=382.4`
+TOTAL                       SST                  nk-1
+=================== =================== =================== ================================= =================================
+
+H0: µ1 = µ2 = µ3 = µ4
+
+Ha: at least 2 means are not equal
+
+Test statistic: F = 0.681
+
+Critical value: f0.05(3, 16) = 3.24
+
+0.681 < 3.24    Do not reject H0
+
+There is not evidence that the average running times for these 4 companies are significantly different at α = 0.05.
+
+Unequal Sample Sizes
+---------------------
+
+We are not always able to obtain equal sample sizes from all populations. (experimental data is lost/ damaged, humans drop out of the study, etc.)
+
+The process of testing for equivalent means will be the same, but we need to adjust the SS formulas to take into account the different sample sizes.
+
+k random samples
+
+Sizes n1, n2, …, nk
+
+N = n1 + n2 + … + nk 
+
+𝑆𝑆𝑇= :math:`\sum^{k}_{i=i}\sum^{n_i}_{j=1}{(y_{ij}-\bar{y_{..}})^2}`                   𝑑𝑓=𝑁−1
+
+𝑆𝑆𝐴= :math:`\sum^{k}_{i=i}n_i(\bar{y_{i.}}-\bar{y_{..}})^2`                       𝑑𝑓=𝑘−1
+
+𝑆𝑆𝐸=𝑆𝑆𝑇 −𝑆𝑆𝐴                                 𝑑𝑓=𝑁−𝑘
+
